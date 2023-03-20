@@ -32,7 +32,7 @@ export const SEO: React.FC<TSEOProps> = (props) => {
       <meta property="og:image" content={image} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Upsolve" />
+      <meta property="og:site_name" content="CHAOS GARDEN CLUB" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
