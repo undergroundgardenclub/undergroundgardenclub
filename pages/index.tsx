@@ -7,7 +7,7 @@ import { SEO } from "../components/seo/SEO";
 import { VideoBackground } from "../components/media/VideoBackground";
 import { Logo } from "../components/styled/Logo";
 
-type TLink = { text: string; url: string }
+type TLink = { text: string; url: string };
 
 export default function HomePage({ links }: { links: TLink[] }) {
   return (

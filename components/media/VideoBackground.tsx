@@ -1,7 +1,9 @@
+// @ts-nocheck
+
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 
-export const VideoBackground = ({ autoPlay, src }) => { 
+export const VideoBackground = ({ autoPlay, src }) => {
   const videoRef = useRef();
   useEffect(() => {
     if (videoRef.current) {
