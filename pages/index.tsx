@@ -106,7 +106,6 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   const links: TLink[] = [];
   blocks.results.forEach((block: any) => {
     if (block.type === "paragraph" && block.paragraph.rich_text[0]) {
-      console.log(JSON.parse(JSON.stringify(block)));
       links.push({
         text: block.paragraph.rich_text[0].plain_text,
         url: block.paragraph.rich_text[0].href,

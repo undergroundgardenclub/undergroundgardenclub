@@ -11,7 +11,7 @@ type TSEOProps = {
 export const SEO: React.FC<TSEOProps> = (props) => {
   const {
     title = "CHAOS GARDEN CLUB",
-    description = "Lab, Garden, Plant as Sanctuary and Playground.",
+    description = "Lab, Garden, Planet as Sanctuary and Playground.",
     image = "/banner.png",
     url = "https://chaosgarden.club",
   } = props;
