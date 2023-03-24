@@ -27,6 +27,8 @@ const StyledVideoBackground = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: flex;
   // background: rgba(0, 0, 0, 0.75);
   video {
