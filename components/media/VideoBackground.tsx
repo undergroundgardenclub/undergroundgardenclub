@@ -33,5 +33,8 @@ const StyledVideoBackground = styled.div`
     width: 100%;
     object-fit: cover;
     z-index: -1;
+    @media (max-width: 45em) {
+      transform: scale(2.5);
+    }
   }
 `;
