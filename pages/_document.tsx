@@ -41,7 +41,12 @@ export default class CGCDocument extends Document {
     return (
       <Html>
         {/* HEAD */}
-        <Head></Head>
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
+          />
+        </Head>
         {/* BODY */}
         <body>
           <Main />
