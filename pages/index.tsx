@@ -58,7 +58,7 @@ const StyledHomePage = styled.div`
     z-index: 1;
   }
   header {
-    background: url("/chaosgardenclub.svg"), rgba(10, 10, 10, 0.5);
+    background: url("/undergroundgardenclub.svg"), rgba(10, 10, 10, 0.5);
     border-top: 4px solid #1f1;
     border-bottom: 4px solid #1f1;
     background-position: center;
