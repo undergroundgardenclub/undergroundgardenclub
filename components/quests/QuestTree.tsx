@@ -75,6 +75,7 @@ const StyledQuestTree = styled.div`
   }
   .ugc-edge--resource {
     path {
+      stroke-width: 3;
       stroke: #d8ff85;
     }
   }
