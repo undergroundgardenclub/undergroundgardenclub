@@ -143,7 +143,7 @@ export const questNodes: Node[] = [
     data: {
       title: "Environmental Justice",
       byLine:
-        "ft. [Soverign Science @ Genspace](https://www.instagram.com/sovereign.science/)",
+        "ft. [Soverign Science](https://www.instagram.com/sovereign.science/)",
     },
   },
   {
