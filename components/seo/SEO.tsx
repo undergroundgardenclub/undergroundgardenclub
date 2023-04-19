@@ -10,8 +10,8 @@ type TSEOProps = {
 
 export const SEO: React.FC<TSEOProps> = (props) => {
   const {
-    title = "UNDERGROUND GARDEN CLUB",
-    description = "Lab, Garden, Planet as Sanctuary and Playground.",
+    title = "⚘ UNDERGROUND ⚘ GARDEN ⚘ CLUB ⚘",
+    description = "LAB, GARDEN, PLANET AS SANCTUARY AND PLAYGROUND",
     image = "/banner.png",
     url = "https://undergroundgarden.club",
   } = props;
@@ -32,7 +32,7 @@ export const SEO: React.FC<TSEOProps> = (props) => {
       <meta property="og:image" content={image} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="UNDERGROUND GARDEN CLUB" />
+      <meta property="og:site_name" content="⚘ UNDERGROUND ⚘ GARDEN ⚘ CLUB ⚘" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
