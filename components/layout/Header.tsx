@@ -3,6 +3,7 @@ import { Logo } from "../styled/Logo";
 import styled from "styled-components";
 import { ViewMode, ugcStore } from "../ugcStore";
 import { useInterval, useMouse } from "react-use";
+import { Flower } from "../styled/Flower";
 
 // for fun bc why not
 const LogoSkewer = () => {
@@ -26,7 +27,7 @@ const LogoSkewer = () => {
     <>
       {/* @ts-ignore */}
       <div ref={divRef}>
-        <Logo />
+        <Flower />
       </div>
     </>
   );
@@ -64,7 +65,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5em 1em;
+  padding: 0.75em 1.5em;
   pointer-events: none;
   .header__logo {
     svg {
@@ -75,7 +76,7 @@ const StyledHeader = styled.header`
     }
     &,
     svg {
-      height: 80px;
+      height: 48px;
     }
   }
   .header__inspo {
