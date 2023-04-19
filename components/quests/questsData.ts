@@ -278,7 +278,7 @@ export const questEdges: Edge[] = [
   },
   {
     source: "start-02",
-    target: "bioPigments-00",
+    target: "start-03",
   },
   // --- start ->>>> section headers
   {
@@ -291,7 +291,7 @@ export const questEdges: Edge[] = [
   },
   {
     source: "start-03",
-    target: "envJustice-00",
+    target: "bioPigments-00",
   },
   // --- plant evol
   {
