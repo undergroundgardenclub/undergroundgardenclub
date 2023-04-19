@@ -12,13 +12,13 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-00",
     type: "start",
-    position: { x: -55, y: -180 },
+    position: { x: -55, y: -200 },
     data: {},
   },
   {
     id: "resource-00",
     type: "quest",
-    position: { x: 130, y: -85 },
+    position: { x: 130, y: -95 },
     data: {
       title:
         "[Bio/Chem Lectures 1-3](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
@@ -29,7 +29,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-01",
     type: "quest",
-    position: { x: -80, y: 0 },
+    position: { x: -90, y: -10 },
     data: {
       title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
       byLine: "@ Genspace",
@@ -39,16 +39,27 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-01",
     type: "quest",
-    position: { x: 0, y: 80 },
+    position: { x: 0, y: 60 },
     data: {
       title: "Bio-Plastic Membership Card",
       byLine: "(Deli Potatoes + Cyanotype)",
     },
   },
   {
+    id: "resource-02",
+    type: "quest",
+    position: { x: 250, y: 110 },
+    data: {
+      title:
+        "[Green Fluorescent Protein(GFP)](https://www.youtube.com/watch?v=d-gUPSVX25U)",
+      byLine: "What is this thing?",
+      variant: "course",
+    },
+  },
+  {
     id: "start-02",
     type: "quest",
-    position: { x: -20, y: 170 },
+    position: { x: -20, y: 190 },
     data: {
       title:
         "[Transforming Bacteria to Glow Green](https://www.notion.so/Bio-Quest-1-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80)",
@@ -58,7 +69,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-03",
     type: "quest",
-    position: { x: 0, y: 250 },
+    position: { x: 0, y: 270 },
     data: {
       title:
         "[Using Bacteria as Bio-Factories](https://www.notion.so/Bio-Quest-2-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611)",
@@ -275,6 +286,10 @@ export const questEdges: Edge[] = [
   {
     source: "resource-01",
     target: "start-01",
+  },
+  {
+    source: "resource-02",
+    target: "start-02",
   },
   {
     source: "start-01",
