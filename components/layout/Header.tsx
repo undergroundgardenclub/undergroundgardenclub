@@ -8,11 +8,12 @@ import { useInterval, useMouse } from "react-use";
 const LogoSkewer = () => {
   const divRef = useRef();
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const skewFactor = 0.1;
       const skewX = (e.clientX - window.innerWidth / 2) * skewFactor;
       const skewY = (e.clientY - window.innerHeight / 2) * skewFactor;
       if (divRef.current) {
+        // @ts-ignore
         divRef.current.style.transform = `skew(${skewX}deg, ${skewY}deg)`;
       }
     };
@@ -22,9 +23,12 @@ const LogoSkewer = () => {
     };
   }, []);
   return (
-    <div ref={divRef}>
-      <Logo />
-    </div>
+    <>
+      {/* @ts-ignore */}
+      <div ref={divRef}>
+        <Logo />
+      </div>
+    </>
   );
 };
 

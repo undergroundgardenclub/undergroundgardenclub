@@ -149,9 +149,9 @@ export const questNodes: Node[] = [
   {
     id: "envJustice-01",
     type: "quest",
-    position: { x: -150, y: 615 },
+    position: { x: -155, y: 620 },
     data: {
-      title: "Environmental Data/Record Keeping",
+      title: "Environmental Data Stewardship",
       byLine: "(Currnet & Past)",
     },
   },
