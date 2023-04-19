@@ -48,7 +48,7 @@ const StartNodeType = (props: any) => {
       <StyledSectionNodeType variant={data.variant}>
         <ReactMarkdown linkTarget="_blank" className="title">
           {inspo ??
-            "WELCOME TO THE [UNDERGROUND GARDEN CLUB](https://undergroundgarden.club)"}
+            "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)"}
         </ReactMarkdown>
       </StyledSectionNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
