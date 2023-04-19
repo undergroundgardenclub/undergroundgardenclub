@@ -1,23 +1,48 @@
 import { Edge, Node } from "reactflow";
 
+type TNodeDataExtras = {
+  data: { title?: string; byLine?: string; variant?: string };
+};
+
 // ===============================
 // NODES
 // ===============================
-export const questNodes: Node[] = [
+export const questNodes: (Node & TNodeDataExtras)[] = [
   // --- litigation
   {
     id: "start-00",
     type: "start",
-    position: { x: -65, y: -50 },
+    position: { x: -65, y: -180 },
     data: {},
+  },
+  {
+    id: "resource-00",
+    type: "quest",
+    position: { x: -150, y: 0 },
+    data: {
+      title:
+        "[Intro Bio/Chem, Lectures 1-3](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
+      byLine: "@ MIT Opencourseware",
+      variant: "course",
+    },
+  },
+  {
+    id: "resource-01",
+    type: "quest",
+    position: { x: 150, y: 0 },
+    data: {
+      title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
+      byLine: "@ Genspace",
+      variant: "course",
+    },
   },
   {
     id: "start-01",
     type: "quest",
-    position: { x: 0, y: 100 },
+    position: { x: 0, y: 80 },
     data: {
       title: "Bio-Plastic Membership Card",
-      byLine: "(from Potatoes at the Deli)",
+      byLine: "(Deli Potatoes + Cyanotype)",
     },
   },
   {
@@ -211,6 +236,14 @@ export const questEdges: Edge[] = [
     target: "start-01",
   },
   {
+    source: "resource-00",
+    target: "start-01",
+  },
+  {
+    source: "resource-01",
+    target: "start-01",
+  },
+  {
     source: "start-01",
     target: "start-02",
   },
@@ -324,5 +357,9 @@ export const questEdges: Edge[] = [
 ].map((e) => ({
   ...e,
   id: `e--${e.source}--${e.target}`,
-  className: "ugc-edge",
+  // @ts-ignore
+  className:
+    e.source?.includes("resource") || e.target?.includes("resource")
+      ? "ugc-edge--resource"
+      : "ugc-edge",
 }));

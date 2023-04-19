@@ -81,11 +81,3 @@ const StyledHeader = styled.header`
     text-align: center;
   }
 `;
-
-const StyledButton = styled.button`
-  background: #1f1;
-  border: 4px solid blue;
-  height: 48px;
-  width: 120px;
-  text-transform: uppercase;
-`;

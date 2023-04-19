@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useInterval } from "react-use";
 import { Handle, Position } from "reactflow";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const StyledBaseNodeType = styled.div`
+const StyledBaseNodeType = styled.div<{ variant?: string }>`
   margin: 0;
   padding: 0.5em 1em;
   display: flex;
@@ -38,16 +38,17 @@ const StartNodeType = (props: any) => {
     "BEFORE APPLE CAME THE [HOMEBREW COMPUTER CLUB](https://en.wikipedia.org/wiki/Homebrew_Computer_Club)...",
     "BEFORE RADIO CAME THE [WIRELESS TELEGRAPH CLUB](https://en.wikipedia.org/wiki/History_of_amateur_radio#Beginnings)...",
     "BEFORE NASA CAME THE [PACIFIC ROCKET SOCIETY](https://en.wikipedia.org/wiki/Amateur_rocketry#History)...",
-    "BEFORE GOOGLE EAxRTH CAME [THE CHAOS COMPUTER CLUB](https://en.wikipedia.org/wiki/Terravision_(computer_program))...",
+    "BEFORE GOOGLE EARTH CAME [THE CHAOS COMPUTER CLUB](https://en.wikipedia.org/wiki/Terravision_(computer_program))...",
   ];
   const [inspoIndex, setInspoIndex] = useState(0);
   const inspo = inspos[inspoIndex];
   useInterval(() => setInspoIndex(inspoIndex + 1), !!inspo ? 1000 * 5 : null);
   return (
     <>
-      <StyledSectionNodeType>
+      <StyledSectionNodeType variant={data.variant}>
         <ReactMarkdown linkTarget="_blank" className="title">
-          {inspo ?? "WELCOME TO THE UNDERGROUND GARDEN CLUB"}
+          {inspo ??
+            "WELCOME TO THE [UNDERGROUND GARDEN CLUB](https://undergroundgarden.club)"}
         </ReactMarkdown>
       </StyledSectionNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
@@ -64,7 +65,7 @@ const SectionNodeType = (props: any) => {
   return (
     <>
       <Handle type="target" position={Position.Top} id={id} />
-      <StyledSectionNodeType>
+      <StyledSectionNodeType variant={data.variant}>
         <ReactMarkdown linkTarget="_blank" className="title">
           {data.title}
         </ReactMarkdown>
@@ -97,7 +98,7 @@ const QuestNodeType = (props: any) => {
   return (
     <>
       <Handle type="target" position={Position.Top} id={id} />
-      <StyledQuestNodeType>
+      <StyledQuestNodeType variant={data.variant}>
         <ReactMarkdown linkTarget="_blank" className="title">
           {data.title}
         </ReactMarkdown>
@@ -125,6 +126,13 @@ const StyledQuestNodeType = styled(StyledBaseNodeType)`
   a:hover {
     color: blue !important; // todo not do this lol
   }
+  ${({ variant }) => {
+    if (variant && ["course", "reading"].includes(variant)) {
+      return css`
+        background: #d8ff85;
+      `;
+    }
+  }}
 `;
 
 // EXPORT FOR REACT FLOW: BE AWARE OF NAMING MATCHING questsData type: "xyz"

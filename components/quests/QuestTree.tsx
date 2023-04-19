@@ -14,25 +14,26 @@ import { questsNodeTypes } from "./questsNodeTypes";
 
 // TREE
 export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(questNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(questEdges);
+  // TODO: IF WE WANT TO ALLOW FOR DYNAMIC VALUES/CHANGES
+  // const [nodes, setNodes, onNodesChange] = useNodesState(questNodes);
+  // const [edges, setEdges, onEdgesChange] = useEdgesState(questEdges);
 
-  const onInit = (inst: ReactFlowInstance) => {
-    // console.log(inst);
-    // console.log(inst.getZoom());
-    inst.setCenter(140, 100);
-    inst.zoomTo(1);
-  };
-
+  // RENDER THE JOURNEY
   return (
     <StyledQuestTree>
       <ReactFlow
-        nodes={nodes}
-        edges={edges}
+        nodes={questNodes}
+        edges={questEdges}
         nodeTypes={questsNodeTypes}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onInit={onInit}
+        // TODO: IF WE WANT TO ALLOW FOR DYNAMIC VALUES/CHANGES
+        // onNodesChange={onNodesChange}
+        // onEdgesChange={onEdgesChange}
+        onInit={(inst: ReactFlowInstance) => {
+          // console.log(inst);
+          // console.log(inst.getZoom());
+          inst.setCenter(140, -100);
+          inst.zoomTo(0.95);
+        }}
         edgesUpdatable={false} // still allows for deletion tho?
         nodesConnectable={false}
         proOptions={{ hideAttribution: true }}
@@ -65,6 +66,11 @@ const StyledQuestTree = styled.div`
     path {
       stroke: blue;
       stroke-width: 4;
+    }
+  }
+  .ugc-edge--resource {
+    path {
+      stroke: #d8ff85;
     }
   }
 `;
