@@ -224,6 +224,35 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       byLine: "(Case Building Strategy)",
     },
   },
+  // --- bio-production of b-carotene pigments
+  {
+    id: "bioPigments-00",
+    type: "section",
+    position: { x: 660, y: 400 },
+    data: {
+      title: "Orange Pigment Bio-Production",
+      byLine: "(Beta-Carotene)",
+    },
+  },
+  {
+    id: "bioPigments-10",
+    type: "section",
+    position: { x: 520, y: 475 },
+    data: {
+      title: "Cell-Based Production",
+      byLine: "(E. Coli)",
+    },
+  },
+  {
+    id: "bioPigments-20",
+    type: "section",
+    position: { x: 860, y: 475 },
+    data: {
+      title: "Enzyme-based Production",
+      byLine: "(aka 'Cell Free')",
+    },
+  },
+  // --- TODO: engineering spider silk
 ];
 
 // ===============================
@@ -249,12 +278,16 @@ export const questEdges: Edge[] = [
   },
   {
     source: "start-02",
-    target: "start-03",
+    target: "bioPigments-00",
   },
   // --- start ->>>> section headers
   {
     source: "start-03",
     target: "plantEvolution-00",
+  },
+  {
+    source: "start-03",
+    target: "envJustice-00",
   },
   {
     source: "start-03",
@@ -353,6 +386,15 @@ export const questEdges: Edge[] = [
   {
     source: "envJustice-13",
     target: "envJustice-20",
+  },
+  // --- pigment bio production
+  {
+    source: "bioPigments-00",
+    target: "bioPigments-10",
+  },
+  {
+    source: "bioPigments-00",
+    target: "bioPigments-20",
   },
 ].map((e) => ({
   ...e,
