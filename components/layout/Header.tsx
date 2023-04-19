@@ -27,7 +27,7 @@ const LogoSkewer = () => {
     <>
       {/* @ts-ignore */}
       <div ref={divRef}>
-        <Flower />
+        <Logo />
       </div>
     </>
   );
@@ -76,7 +76,7 @@ const StyledHeader = styled.header`
     }
     &,
     svg {
-      height: 48px;
+      height: 80px; // 48px
     }
   }
   .header__inspo {
