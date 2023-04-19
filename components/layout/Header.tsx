@@ -71,10 +71,17 @@ const StyledHeader = styled.header`
     &,
     svg {
       height: 60px; // 48px
+      @media (max-width: 45em) {
+        height: 48px;
+      }
     }
   }
   .header__inspo {
     text-align: center;
+  }
+  .header__actions {
+    width: 130px;
+    text-align: right;
   }
 `;
 

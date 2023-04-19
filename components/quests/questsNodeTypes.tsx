@@ -60,7 +60,6 @@ const StartNodeType = (props: any) => {
 // SECTION HEADER
 // ===============================
 const SectionNodeType = (props: any) => {
-  console.log(props);
   const { data, id } = props;
   return (
     <>
@@ -93,7 +92,6 @@ const StyledSectionNodeType = styled(StyledBaseNodeType)`
 // QUEST TILE
 // ===============================
 const QuestNodeType = (props: any) => {
-  console.log(props);
   const { data, id } = props;
   return (
     <>
