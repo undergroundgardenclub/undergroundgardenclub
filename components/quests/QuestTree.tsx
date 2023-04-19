@@ -11,23 +11,28 @@ import styled from "styled-components";
 import { TQuest } from "./types";
 import { questEdges, questNodes } from "./questsData";
 import { questsNodeTypes } from "./questsNodeTypes";
+import { useEffect } from "react";
 
 // TREE
 export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
-  // TODO: IF WE WANT TO ALLOW FOR DYNAMIC VALUES/CHANGES
-  // const [nodes, setNodes, onNodesChange] = useNodesState(questNodes);
-  // const [edges, setEdges, onEdgesChange] = useEdgesState(questEdges);
+  const [nodes, setNodes, onNodesChange] = useNodesState(questNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(questEdges);
+
+  // i like that people can play w/ positioning in the UI, but i want hotreloading
+  useEffect(() => {
+    setNodes(questNodes);
+    setEdges(questEdges);
+  }, [questNodes, questEdges]);
 
   // RENDER THE JOURNEY
   return (
     <StyledQuestTree>
       <ReactFlow
-        nodes={questNodes}
-        edges={questEdges}
+        nodes={nodes}
+        edges={edges}
         nodeTypes={questsNodeTypes}
-        // TODO: IF WE WANT TO ALLOW FOR DYNAMIC VALUES/CHANGES
-        // onNodesChange={onNodesChange}
-        // onEdgesChange={onEdgesChange}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
         onInit={(inst: ReactFlowInstance) => {
           // console.log(inst);
           // console.log(inst.getZoom());

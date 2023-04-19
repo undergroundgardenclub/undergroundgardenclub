@@ -43,15 +43,9 @@ export const Header = () => {
       <div className="header__inspo"></div>
       <div className="header__actions">
         {/* TODO: music player */}
-        {/* <StyledButton
-          onClick={() =>
-            setViewMode(
-              viewMode === ViewMode.diagram ? ViewMode.list : ViewMode.diagram
-            )
-          }
-        >
-          {viewMode}
-        </StyledButton> */}
+        <a href="https://genspace.org" target="_blank" rel="noreferrer">
+          <StyledButton>JOIN GENSPACE</StyledButton>
+        </a>
       </div>
     </StyledHeader>
   );
@@ -76,10 +70,23 @@ const StyledHeader = styled.header`
     }
     &,
     svg {
-      height: 80px; // 48px
+      height: 60px; // 48px
     }
   }
   .header__inspo {
     text-align: center;
   }
+`;
+
+const StyledButton = styled.button`
+  pointer-events: all;
+  text-transform: uppercase;
+  border: none;
+  background: blue;
+  color: white;
+  font-family: "Stonewall 50";
+  padding: 8px 12px 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transform: skew(-5deg, 0);
 `;

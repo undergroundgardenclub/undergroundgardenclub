@@ -12,13 +12,13 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-00",
     type: "start",
-    position: { x: -65, y: -180 },
+    position: { x: -55, y: -180 },
     data: {},
   },
   {
     id: "resource-00",
     type: "quest",
-    position: { x: 110, y: -85 },
+    position: { x: 130, y: -85 },
     data: {
       title:
         "[Bio/Chem Lectures 1-3](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
@@ -29,7 +29,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-01",
     type: "quest",
-    position: { x: -90, y: 0 },
+    position: { x: -80, y: 0 },
     data: {
       title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
       byLine: "@ Genspace",
@@ -231,22 +231,22 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 660, y: 400 },
     data: {
       title: "Orange Pigment Bio-Production",
-      byLine: "(Beta-Carotene)",
+      byLine: "(Carrots' Beta-Carotene)",
     },
   },
   {
     id: "bioPigments-10",
     type: "section",
-    position: { x: 520, y: 475 },
+    position: { x: 520, y: 495 },
     data: {
-      title: "Cell-Based Production",
+      title: "Bacteria-based Production",
       byLine: "(E. Coli)",
     },
   },
   {
     id: "bioPigments-20",
     type: "section",
-    position: { x: 860, y: 475 },
+    position: { x: 860, y: 495 },
     data: {
       title: "Enzyme-based Production",
       byLine: "(aka 'Cell Free')",
