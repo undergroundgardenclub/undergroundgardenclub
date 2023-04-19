@@ -31,7 +31,7 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         onInit={(inst: ReactFlowInstance) => {
           // console.log(inst);
           // console.log(inst.getZoom());
-          inst.setCenter(150, -100);
+          inst.setCenter(125, -100);
           inst.zoomTo(0.9);
         }}
         edgesUpdatable={false} // still allows for deletion tho?
