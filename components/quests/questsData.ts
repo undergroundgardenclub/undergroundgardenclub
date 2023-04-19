@@ -39,7 +39,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-01",
     type: "quest",
-    position: { x: 0, y: 60 },
+    position: { x: 0, y: 75 },
     data: {
       title: "Bio-Plastic Membership Card",
       byLine: "(Deli Potatoes + Cyanotype)",
