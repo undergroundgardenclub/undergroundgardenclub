@@ -18,10 +18,10 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-00",
     type: "quest",
-    position: { x: -150, y: 0 },
+    position: { x: 110, y: -85 },
     data: {
       title:
-        "[Intro Bio/Chem, Lectures 1-3](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
+        "[Bio/Chem Lectures 1-3](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
       byLine: "@ MIT Opencourseware",
       variant: "course",
     },
@@ -29,7 +29,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-01",
     type: "quest",
-    position: { x: 150, y: 0 },
+    position: { x: -90, y: 0 },
     data: {
       title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
       byLine: "@ Genspace",
@@ -267,6 +267,10 @@ export const questEdges: Edge[] = [
   {
     source: "resource-00",
     target: "start-01",
+  },
+  {
+    source: "resource-00",
+    target: "resource-01",
   },
   {
     source: "resource-01",
