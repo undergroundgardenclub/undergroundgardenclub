@@ -65,6 +65,7 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0.5em 1em;
+  pointer-events: none;
   .header__logo {
     svg {
       mix-blend-mode: difference;

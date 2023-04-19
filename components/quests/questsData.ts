@@ -133,7 +133,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -350, y: 760 },
     data: {
       title: "Growing Chemicals via Plants",
-      byLine: "(w/ Agrobacterium)",
+      byLine: "(Gene Transfer w/ Agrobacterium)",
     },
   },
   {
