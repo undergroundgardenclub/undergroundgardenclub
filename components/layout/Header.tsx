@@ -27,7 +27,7 @@ const LogoSkewer = () => {
     <>
       {/* @ts-ignore */}
       <div ref={divRef}>
-        <Logo />
+        <Flower />
       </div>
     </>
   );
@@ -62,6 +62,7 @@ const StyledHeader = styled.header`
   padding: 0.75em 1.5em;
   pointer-events: none;
   .header__logo {
+    transform: rotate(180deg);
     svg {
       mix-blend-mode: difference;
       path {

@@ -12,7 +12,7 @@ export const SEO: React.FC<TSEOProps> = (props) => {
   const {
     title = "UNDERGROUND GARDEN CLUB",
     description = "Lab, Garden, Planet as Sanctuary and Playground",
-    image = "/banner3.png",
+    image = "/banner4.png",
     url = "https://undergroundgarden.club",
   } = props;
 
