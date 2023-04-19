@@ -31,8 +31,9 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         nodes={nodes}
         edges={edges}
         nodeTypes={questsNodeTypes}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
+        // Not allowing updates makes it a bit easier to navigate on mobile
+        // onNodesChange={onNodesChange}
+        // onEdgesChange={onEdgesChange}
         onInit={(inst: ReactFlowInstance) => {
           // console.log(inst);
           // console.log(inst.getZoom());
