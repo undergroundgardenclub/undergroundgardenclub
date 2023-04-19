@@ -20,7 +20,7 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
   const onInit = (inst: ReactFlowInstance) => {
     // console.log(inst);
     // console.log(inst.getZoom());
-    inst.setCenter(100, 300);
+    inst.setCenter(140, 100);
     inst.zoomTo(1);
   };
 

@@ -8,8 +8,8 @@ export const questNodes: Node[] = [
   {
     id: "start-00",
     type: "start",
-    position: { x: -50, y: 0 },
-    data: { title: "BEGIN TO PLAY", url: "http://bit.ly/3ySLalS" },
+    position: { x: -65, y: -50 },
+    data: {},
   },
   {
     id: "start-01",
