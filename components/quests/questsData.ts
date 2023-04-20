@@ -90,7 +90,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "plantEvolution-01",
     type: "quest",
-    position: { x: -480, y: 485 },
+    position: { x: -600, y: 520 },
     data: {
       title: "Growing Marchantia Stock",
       byLine: "(Harvesting & Freezing Spores)",
@@ -99,19 +99,20 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "plantEvolution-02",
     type: "quest",
-    position: { x: -510, y: 570 },
+    position: { x: -360, y: 520 },
     data: {
-      title: "Growing Marchantia on Plates/Media",
+      title: "Growing Marchantia on Media",
       byLine: "(Going From Spore to Plant)",
     },
   },
   {
     id: "plantEvolution-03",
     type: "quest",
-    position: { x: -500, y: 655 },
+    position: { x: -540, y: 655 },
     data: {
-      title: "GMO'ing Marchantia to Be Red",
-      byLine: "(Gene Transfer w/ Agrobacterium)",
+      title:
+        "[Transforming + Growing Purple Marchantia](https://www.notion.so/BQ-04-Genetically-Modifying-Marchantia-to-be-Purple-Spore-Transformation-using-Aggrobactereum-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
+      byLine: "(Spore Transformation w/ Agrobacterium)",
     },
   },
   {
@@ -318,8 +319,12 @@ export const questEdges: Edge[] = [
     target: "plantEvolution-01",
   },
   {
-    source: "plantEvolution-01",
+    source: "plantEvolution-00",
     target: "plantEvolution-02",
+  },
+  {
+    source: "plantEvolution-01",
+    target: "plantEvolution-03",
   },
   {
     source: "plantEvolution-02",
