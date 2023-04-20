@@ -92,7 +92,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "quest",
     position: { x: -600, y: 520 },
     data: {
-      title: "Growing Marchantia Stock",
+      title: "Growing Marchantia on Soil",
       byLine: "(Harvesting & Freezing Spores)",
     },
   },
