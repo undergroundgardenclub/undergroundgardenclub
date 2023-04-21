@@ -42,7 +42,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 0, y: 75 },
     data: {
       title: "Bio-Plastic Membership Card",
-      byLine: "(Deli Potatoes + Cyanotype)",
+      byLine: "(Deli Potatoes + Homemade Glycerol)",
     },
   },
   {
@@ -93,7 +93,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -600, y: 520 },
     data: {
       title: "Growing Marchantia on Soil",
-      byLine: "(Harvesting & Freezing Spores)",
+      byLine: "(From Thallus to Spores/Gemmae)",
     },
   },
   {
@@ -102,7 +102,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -360, y: 520 },
     data: {
       title: "Growing Marchantia on Media",
-      byLine: "(Going From Spore to Plant)",
+      byLine: "(From Thallus to Spores/Gemmae)",
     },
   },
   {
@@ -118,7 +118,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "plantEvolution-10",
     type: "section",
-    position: { x: -570, y: 760 },
+    position: { x: -590, y: 760 },
     data: { title: "Growth Hacking" },
   },
   {
@@ -203,7 +203,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-11",
     type: "quest",
-    position: { x: 85, y: 550 },
+    position: { x: 85, y: 555 },
     data: {
       title: "Soil Sampling",
       byLine: "(Collection & Analysis)",
@@ -212,21 +212,21 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-12",
     type: "quest",
-    position: { x: 275, y: 550 },
+    position: { x: 275, y: 555 },
     data: {
       title: "Water Sampling",
       byLine: "(Collection & Analysis)",
     },
   },
-  {
-    id: "envJustice-13",
-    type: "quest",
-    position: { x: 180, y: 615 },
-    data: {
-      title: "Air Sampling",
-      byLine: "(Collection & Analysis)",
-    },
-  },
+  // {
+  //   id: "envJustice-13",
+  //   type: "quest",
+  //   position: { x: 180, y: 615 },
+  //   data: {
+  //     title: "Air Sampling",
+  //     byLine: "(Collection & Analysis)",
+  //   },
+  // },
   {
     id: "envJustice-20",
     type: "section",

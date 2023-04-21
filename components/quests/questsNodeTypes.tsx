@@ -35,10 +35,10 @@ const StartNodeType = (props: any) => {
   const { data, id } = props;
   const inspos = [
     // "BEFORE AIRPLANES CAME [MOTORCYCLE MECHANICS](https://en.wikipedia.org/wiki/History_of_aviation#Wright_brothers)...",
-    "BEFORE APPLE CAME THE [HOMEBREW COMPUTER CLUB](https://en.wikipedia.org/wiki/Homebrew_Computer_Club)...",
-    "BEFORE RADIO CAME THE [WIRELESS TELEGRAPH CLUB](https://en.wikipedia.org/wiki/History_of_amateur_radio#Beginnings)...",
-    "BEFORE NASA CAME THE [PACIFIC ROCKET SOCIETY](https://en.wikipedia.org/wiki/Amateur_rocketry#History)...",
-    "BEFORE GOOGLE EARTH CAME [THE CHAOS COMPUTER CLUB](https://en.wikipedia.org/wiki/Terravision_(computer_program))",
+    // "BEFORE APPLE CAME THE [HOMEBREW COMPUTER CLUB](https://en.wikipedia.org/wiki/Homebrew_Computer_Club)...",
+    // "BEFORE RADIO CAME THE [WIRELESS TELEGRAPH CLUB](https://en.wikipedia.org/wiki/History_of_amateur_radio#Beginnings)...",
+    // "BEFORE NASA CAME THE [PACIFIC ROCKET SOCIETY](https://en.wikipedia.org/wiki/Amateur_rocketry#History)...",
+    // "BEFORE GOOGLE EARTH CAME [THE CHAOS COMPUTER CLUB](https://en.wikipedia.org/wiki/Terravision_(computer_program))",
   ];
   const [inspoIndex, setInspoIndex] = useState(0);
   const inspo = inspos[inspoIndex];
