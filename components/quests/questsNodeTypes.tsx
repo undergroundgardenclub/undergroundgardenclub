@@ -33,7 +33,7 @@ const StyledBaseNodeType = styled.div<{ variant?: string }>`
 // ===============================
 const StartNodeType = (props: any) => {
   const { data, id } = props;
-  const inspos = [
+  const inspos: string[] = [
     // "BEFORE AIRPLANES CAME [MOTORCYCLE MECHANICS](https://en.wikipedia.org/wiki/History_of_aviation#Wright_brothers)...",
     // "BEFORE APPLE CAME THE [HOMEBREW COMPUTER CLUB](https://en.wikipedia.org/wiki/Homebrew_Computer_Club)...",
     // "BEFORE RADIO CAME THE [WIRELESS TELEGRAPH CLUB](https://en.wikipedia.org/wiki/History_of_amateur_radio#Beginnings)...",
