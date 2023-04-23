@@ -68,7 +68,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "quest",
     position: { x: 150, y: 120 },
     data: {
-      title: "Bio-Plastic Membership Card",
+      title:
+        "[Bio-Plastic Membership Card](https://www.notion.so/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4)",
       byLine: "(Deli Potatoes + Homemade Glycerol)",
     },
   },
