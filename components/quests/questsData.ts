@@ -18,22 +18,21 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-00",
     type: "quest",
-    position: { x: 130, y: -235 },
+    position: { x: 140, y: -235 },
     data: {
       title:
-        "[Bio/Chem, Lectures 1-3](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
-      byLine: "@ MIT Opencourseware",
+        "[Introductory Bio/Chem](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
+      byLine: "Lectures 1-3 @ MIT Opencourseware",
       variant: "course",
     },
   },
   {
     id: "resource-01",
     type: "quest",
-    position: { x: 30, y: -160 },
+    position: { x: 30, y: -150 },
     data: {
       title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
       byLine: "@ Genspace",
-      variant: "course",
     },
   },
   {
@@ -43,51 +42,53 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     data: {
       title:
         "[Getting Up to Speed on Bio](https://openlearninglibrary.mit.edu/courses/course-v1:OCW+Pre-7.01+1T2020/course/)",
-      byLine: "@ MIT Opencourseware",
+      byLine: "Lectures 1-3 @ MIT Opencourseware",
       variant: "course",
     },
   },
   {
     id: "start-10",
     type: "section",
-    position: { x: -140, y: -60 },
+    position: { x: -120, y: -60 },
     data: {
-      title: "Biological Machines + Chem",
+      title: "Biological Machines",
+      byLine: "Intro Experiments Pt.1",
     },
   },
   {
     id: "start-20",
     type: "section",
-    position: { x: 175, y: -40 },
+    position: { x: 175, y: -60 },
     data: {
-      title: "Bio-Polymers + Chem",
+      title: "Biological Materials",
+      byLine: "Intro Experiments Pt.2",
     },
   },
   {
     id: "start-01",
     type: "quest",
-    position: { x: 150, y: 120 },
+    position: { x: 160, y: 40 },
     data: {
       title:
         "[Bio-Plastic Membership Card](https://www.notion.so/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4)",
       byLine: "(Deli Potatoes + Homemade Glycerol)",
     },
   },
-  {
-    id: "resource-02",
-    type: "quest",
-    position: { x: -220, y: 0 },
-    data: {
-      title:
-        "[Green Fluorescent Protein(GFP)](https://www.youtube.com/watch?v=d-gUPSVX25U)",
-      byLine: "What is this thing?",
-      variant: "course",
-    },
-  },
+  // {
+  //   id: "resource-02",
+  //   type: "quest",
+  //   position: { x: -220, y: 0 },
+  //   data: {
+  //     title:
+  //       "[Green Fluorescent Protein(GFP)](https://www.youtube.com/watch?v=d-gUPSVX25U)",
+  //     byLine: "What is this thing?",
+  //     variant: "course",
+  //   },
+  // },
   {
     id: "resource-04",
     type: "quest",
-    position: { x: 130, y: 40 },
+    position: { x: 140, y: 120 },
     data: {
       title:
         "[Fundamentals of Materials Structure, Unit 1](https://openlearninglibrary.mit.edu/courses/course-v1:MITx+3.012S.1x+1T2019/course/)",
@@ -98,7 +99,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-02",
     type: "quest",
-    position: { x: -160, y: 80 },
+    position: { x: -170, y: 40 },
     data: {
       title:
         "[Transform Bacteria to Glow Green](https://www.notion.so/Bio-Quest-1-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80)",
@@ -108,7 +109,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-03",
     type: "quest",
-    position: { x: -155, y: 160 },
+    position: { x: -165, y: 130 },
     data: {
       title:
         "[Using Bacteria as Bio-Factories](https://www.notion.so/Bio-Quest-2-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611)",
@@ -118,9 +119,10 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-30",
     type: "section",
-    position: { x: 60, y: 270 },
+    position: { x: 20, y: 240 },
     data: {
-      title: "Dig Deeper",
+      title: "Community Experiments",
+      byLine: "Dig Deeper",
     },
   },
   // --- plant evolution
@@ -368,8 +370,8 @@ export const questEdges: Edge[] = [
     className: "ugc-edge",
   },
   {
-    source: "resource-04",
-    target: "start-01",
+    source: "start-01",
+    target: "resource-04",
   },
   {
     source: "start-01",
