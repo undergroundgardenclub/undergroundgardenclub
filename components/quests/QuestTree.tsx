@@ -17,7 +17,7 @@ import { useMedia } from "react-use";
 
 // TREE
 export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
-  const isWide = useMedia("(min-width: 45em)");
+  const isWide = useMedia("(min-width: 45em)", false);
   const [nodes, setNodes, onNodesChange] = useNodesState(questNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(questEdges);
 
@@ -40,8 +40,8 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         onInit={(inst: ReactFlowInstance) => {
           // console.log(inst);
           // console.log(inst.getZoom());
-          inst.setCenter(110, isWide ? -250 : -150);
-          inst.zoomTo(isWide ? 0.85 : 0.75);
+          inst.setCenter(isWide ? 120 : 110, isWide ? -250 : -100);
+          inst.zoomTo(isWide ? 0.85 : 0.7);
         }}
         edgesUpdatable={false} // still allows for deletion tho?
         nodesConnectable={false}
