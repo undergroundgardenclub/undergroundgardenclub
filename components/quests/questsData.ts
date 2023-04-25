@@ -91,8 +91,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 140, y: 120 },
     data: {
       title:
-        "[Fundamentals of Materials Structure, Unit 1](https://openlearninglibrary.mit.edu/courses/course-v1:MITx+3.012S.1x+1T2019/course/)",
-      byLine: "@ MIT Opencourseware",
+        "[Fundamentals of Materials Structure](https://openlearninglibrary.mit.edu/courses/course-v1:MITx+3.012S.1x+1T2019/course/)",
+      byLine: "Unit 1 @ MIT Opencourseware",
       variant: "course",
     },
   },

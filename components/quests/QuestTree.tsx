@@ -6,15 +6,18 @@ import ReactFlow, {
   ReactFlowInstance,
   Edge,
   Node,
+  Controls,
 } from "reactflow";
 import styled from "styled-components";
 import { TQuest } from "./types";
 import { questEdges, questNodes } from "./questsData";
 import { questsNodeTypes } from "./questsNodeTypes";
 import { useEffect } from "react";
+import { useMedia } from "react-use";
 
 // TREE
 export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
+  const isWide = useMedia("(min-width: 45em)");
   const [nodes, setNodes, onNodesChange] = useNodesState(questNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(questEdges);
 
@@ -37,15 +40,15 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         onInit={(inst: ReactFlowInstance) => {
           // console.log(inst);
           // console.log(inst.getZoom());
-          inst.setCenter(100, -250);
-          inst.zoomTo(0.85);
+          inst.setCenter(110, isWide ? -250 : -150);
+          inst.zoomTo(isWide ? 0.85 : 0.75);
         }}
         edgesUpdatable={false} // still allows for deletion tho?
         nodesConnectable={false}
         proOptions={{ hideAttribution: true }}
       >
         {/* <MiniMap /> */}
-        {/* <Controls showInteractive={false} /> */}
+        <Controls showInteractive={false} />
         <Background
           style={{ background: "#1f1" }}
           color="#00BBFF"
