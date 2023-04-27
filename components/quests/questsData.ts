@@ -323,26 +323,54 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "section",
     position: { x: 660, y: 400 },
     data: {
-      title: "Orange Pigment Bio-Production",
-      byLine: "(Carrots' Beta-Carotene)",
+      title: "Microbe-Brewery Crew",
+      byLine: "Cellular Fermentation of Chemicals & Food",
+    },
+  },
+  {
+    id: "bioPigments-01",
+    type: "quest",
+    position: { x: 500, y: 500 },
+    data: {
+      title: "[DIY Bio-Reactor: Pio-Reactors](https://pioreactor.com/)",
+      byLine: "Don't build your own bio-reactor (yet)",
+      variant: "course",
+    },
+  },
+  {
+    id: "bioPigments-02",
+    type: "quest",
+    position: { x: 640, y: 570 },
+    data: {
+      title: "[Precision Fermentation GFP]()",
+      byLine: "Automating Growth and Activation",
     },
   },
   {
     id: "bioPigments-10",
     type: "section",
-    position: { x: 520, y: 495 },
+    position: { x: 470, y: 680 },
     data: {
-      title: "Bacteria-based Production",
-      byLine: "(E. Coli)",
+      title: "Edible Protein Production",
+      byLine: "Proteins Produced w/ Yeast",
     },
   },
   {
     id: "bioPigments-20",
     type: "section",
-    position: { x: 860, y: 495 },
+    position: { x: 760, y: 680 },
     data: {
-      title: "Enzyme-based Production",
-      byLine: "(aka 'Cell Free')",
+      title: "Bio-based Haber-Bosch",
+      byLine: "Eznymes Produced w/ Bacteria",
+    },
+  },
+  {
+    id: "bioPigments-30",
+    type: "section",
+    position: { x: 1020, y: 680 },
+    data: {
+      title: "Bacteria-based Jet Fuel",
+      byLine: "Produced w/ Bacteria. Seriously.",
     },
   },
   // --- TODO: engineering spider silk
@@ -532,11 +560,23 @@ export const questEdges: Edge[] = [
   // --- pigment bio production
   {
     source: "bioPigments-00",
+    target: "bioPigments-02",
+  },
+  {
+    source: "bioPigments-01",
+    target: "bioPigments-02",
+  },
+  {
+    source: "bioPigments-02",
     target: "bioPigments-10",
   },
   {
-    source: "bioPigments-00",
+    source: "bioPigments-02",
     target: "bioPigments-20",
+  },
+  {
+    source: "bioPigments-02",
+    target: "bioPigments-30",
   },
 ].map((e) => ({
   ...e,
