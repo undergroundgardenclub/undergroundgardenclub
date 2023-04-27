@@ -140,39 +140,60 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "plantEvolution-00",
     type: "section",
-    position: { x: -450, y: 435 },
+    position: { x: -480, y: 435 },
     data: {
       title: "Botanical Pharmacy",
       byLine:
         "ft. [Open Plant @ Genspace](https://www.genspace.org/community-projects)",
     },
   },
-  {
-    id: "plantEvolution-01",
-    type: "quest",
-    position: { x: -600, y: 530 },
-    data: {
-      title: "Growing Marchantia on Soil",
-      byLine: "(From Thallus to Spores/Gemmae)",
-    },
-  },
+  // {
+  //   id: "plantEvolution-01",
+  //   type: "quest",
+  //   position: { x: -600, y: 530 },
+  //   data: {
+  //     title: "Growing Marchantia on Soil",
+  //     byLine: "(From Thallus to Spores/Gemmae)",
+  //   },
+  // },
   {
     id: "plantEvolution-02",
     type: "quest",
-    position: { x: -360, y: 530 },
+    position: { x: -530, y: 530 },
     data: {
-      title: "Growing Marchantia on Media",
-      byLine: "(From Thallus to Spores/Gemmae)",
+      title:
+        "[Growing Marchantia Made Easy](https://www.notion.so/BQ-03-Marchantia-Growing-Propagating-a12fc5a6694843c288961d1637a93e6b?pvs=4)",
+      byLine: "(From Thallus Cliipings or Gemmae)",
     },
   },
   {
     id: "plantEvolution-03",
     type: "quest",
-    position: { x: -540, y: 655 },
+    position: { x: -390, y: 605 },
+    data: {
+      title: "[Backing Up Plant Lines]()",
+      byLine: "(Storing Plants in a Fridge)",
+    },
+  },
+  {
+    id: "plantEvolution-04",
+    type: "quest",
+    position: { x: -630, y: 680 },
     data: {
       title:
-        "[Transforming + Growing Purple Marchantia](https://www.notion.so/BQ-04-Genetically-Modifying-Marchantia-to-be-Purple-Spore-Transformation-using-Aggrobactereum-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
-      byLine: "(Spore Transformation w/ Agrobacterium)",
+        "[Smartphone Florescent Microscope](https://www.nature.com/articles/s41598-023-29182-y)",
+      byLine: "($50 + Smartphone)",
+      variant: "course",
+    },
+  },
+  {
+    id: "plantEvolution-05",
+    type: "quest",
+    position: { x: -540, y: 755 },
+    data: {
+      title:
+        "[Genetically Modifying Marchantia](https://www.notion.so/BQ-04-Genetically-Modifying-Marchantia-to-be-Purple-Spore-Transformation-using-Aggrobactereum-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
+      byLine: "(Plant Cell/Tissue Transformation)",
     },
   },
   {
@@ -202,7 +223,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "plantEvolution-20",
     type: "section",
-    position: { x: -495, y: 760 },
+    position: { x: -525, y: 840 },
     data: {
       title: "Growing Chemicals via Plants",
       byLine: "(Gene Transfer w/ Agrobacterium)",
@@ -211,25 +232,25 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "plantEvolution-21",
     type: "quest",
-    position: { x: -545, y: 850 },
-    data: { title: "Insulin" },
+    position: { x: -575, y: 940 },
+    data: { title: "Insulin", byLine: "TODO" },
   },
   {
     id: "plantEvolution-22",
     type: "quest",
-    position: { x: -440, y: 860 },
-    data: { title: "Testosterone" },
+    position: { x: -470, y: 950 },
+    data: { title: "Testosterone", byLine: "TODO" },
   },
   {
     id: "plantEvolution-23",
     type: "quest",
-    position: { x: -300, y: 850 },
-    data: { title: "Estrogen" },
+    position: { x: -330, y: 940 },
+    data: { title: "Estrogen", byLine: "TODO" },
   },
   {
     id: "plantEvolution-30",
     type: "section",
-    position: { x: -480, y: 940 },
+    position: { x: -515, y: 1040 },
     data: { title: "Processing for Human Use" },
   },
   // --- env monitoring + litigation
@@ -246,7 +267,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-01",
     type: "quest",
-    position: { x: -155, y: 620 },
+    position: { x: -135, y: 620 },
     data: {
       title: "Environmental Data Stewardship",
       byLine: "(Currnet & Past)",
@@ -420,11 +441,19 @@ export const questEdges: Edge[] = [
     target: "plantEvolution-03",
   },
   {
+    source: "plantEvolution-02",
+    target: "plantEvolution-05",
+  },
+  {
+    source: "plantEvolution-04",
+    target: "plantEvolution-05",
+  },
+  {
     source: "start-30",
     target: "plantEvolution-10",
   },
   {
-    source: "plantEvolution-03",
+    source: "plantEvolution-05",
     target: "plantEvolution-20",
   },
   {
