@@ -342,8 +342,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "quest",
     position: { x: 640, y: 570 },
     data: {
-      title: "[Precision Fermentation GFP]()",
-      byLine: "Automating Growth and Activation",
+      title: "[Brewing a Simple Protein]()",
+      byLine: "Automating Yeast Growth + GFP Florescence",
     },
   },
   {
