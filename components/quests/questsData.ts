@@ -183,7 +183,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -390, y: 605 },
     data: {
       title: "[Backing Up Plant Lines]()",
-      byLine: "(Storing Plants in a Fridge)",
+      byLine: "(Storing Plants in a Freezer)",
     },
   },
   {
