@@ -67,7 +67,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-10",
     type: "quest",
-    position: { x: 240, y: 25 },
+    position: { x: 290, y: 25 },
     data: {
       title:
         "[3D Printing Crash Course](https://www.notion.so/SH-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
