@@ -181,7 +181,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -630, y: 680 },
     data: {
       title:
-        "[Smartphone Florescent Microscope](https://www.nature.com/articles/s41598-023-29182-y)",
+        "[Smartphone Florescence Microscope](https://www.nature.com/articles/s41598-023-29182-y)",
       byLine: "($50 + Smartphone)",
       variant: "course",
     },
@@ -370,7 +370,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 1020, y: 680 },
     data: {
       title: "Bacteria-based Jet Fuel",
-      byLine: "Produced w/ Bacteria. Seriously.",
+      byLine:
+        "Produced w/ Bacteria. [Seriously](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6195743/).",
     },
   },
   // --- TODO: engineering spider silk

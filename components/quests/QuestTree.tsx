@@ -1,3 +1,4 @@
+import * as Bowser from "bowser";
 import ReactFlow, {
   Background,
   useNodesState,
@@ -17,7 +18,6 @@ import { useMedia } from "react-use";
 
 // TREE
 export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
-  const isWide = useMedia("(min-width: 45em)", false);
   const [nodes, setNodes, onNodesChange] = useNodesState(questNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(questEdges);
 
@@ -38,10 +38,13 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         // onNodesChange={onNodesChange}
         // onEdgesChange={onEdgesChange}
         onInit={(inst: ReactFlowInstance) => {
+          const browser = Bowser.getParser(window.navigator.userAgent);
+          const isMobile = browser.getPlatformType() !== "desktop";
           // console.log(inst);
           // console.log(inst.getZoom());
-          inst.setCenter(isWide ? 120 : 110, isWide ? -250 : -100);
-          inst.zoomTo(isWide ? 0.85 : 0.7);
+          inst.setCenter(isMobile ? 110 : 100, isMobile ? -100 : -110);
+          inst.zoomTo(isMobile ? 0.7 : 0.9);
+          console.log("!?!?!?");
         }}
         edgesUpdatable={false} // still allows for deletion tho?
         nodesConnectable={false}
