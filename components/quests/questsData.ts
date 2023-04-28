@@ -65,9 +65,20 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
+    id: "resource-10",
+    type: "quest",
+    position: { x: 240, y: 25 },
+    data: {
+      title:
+        "[3D Printing Crash Course](https://www.notion.so/SH-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
+      byLine: "Setup and Overview of How to Print",
+      variant: "course",
+    },
+  },
+  {
     id: "start-01",
     type: "quest",
-    position: { x: 160, y: 40 },
+    position: { x: 160, y: 90 },
     data: {
       title:
         "[Bio-Plastic Membership Card](https://www.notion.so/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4)",
@@ -88,7 +99,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-04",
     type: "quest",
-    position: { x: 140, y: 120 },
+    position: { x: 200, y: 170 },
     data: {
       title:
         "[Fundamentals of Materials Structure](https://openlearninglibrary.mit.edu/courses/course-v1:MITx+3.012S.1x+1T2019/course/)",
@@ -129,7 +140,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-05",
     type: "quest",
-    position: { x: -540, y: 250 },
+    position: { x: -640, y: 250 },
     data: {
       title:
         "[Plant Structures](https://www.enrole.com/nybg/jsp/course.jsp?courseId=204BOT315O&categoryId=ROOT)",
@@ -418,6 +429,10 @@ export const questEdges: Edge[] = [
     source: "resource-01",
     target: "start-20",
     className: "ugc-edge",
+  },
+  {
+    source: "resource-10",
+    target: "start-01",
   },
   {
     source: "start-01",
