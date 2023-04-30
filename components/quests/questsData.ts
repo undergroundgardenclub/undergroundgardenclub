@@ -193,7 +193,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     data: {
       title:
         "[Smartphone Florescence Microscope](https://www.nature.com/articles/s41598-023-29182-y)",
-      byLine: "($50 + Smartphone)",
+      byLine: "Making a $5,000 microscope with $50",
       variant: "course",
     },
   },
@@ -243,8 +243,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "plantEvolution-21",
     type: "quest",
-    position: { x: -575, y: 940 },
-    data: { title: "Insulin", byLine: "TODO" },
+    position: { x: -675, y: 940 },
+    data: { title: "Medical-Grade Insulin", byLine: "TODO" },
   },
   {
     id: "plantEvolution-22",
@@ -310,15 +310,15 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       byLine: "(Collection & Analysis)",
     },
   },
-  // {
-  //   id: "envJustice-13",
-  //   type: "quest",
-  //   position: { x: 180, y: 615 },
-  //   data: {
-  //     title: "Air Sampling",
-  //     byLine: "(Collection & Analysis)",
-  //   },
-  // },
+  {
+    id: "envJustice-13",
+    type: "quest",
+    position: { x: 180, y: 620 },
+    data: {
+      title: "Air Sampling",
+      byLine: "(Collection & Analysis)",
+    },
+  },
   {
     id: "envJustice-20",
     type: "section",
@@ -328,9 +328,9 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       byLine: "(Case Building Strategy)",
     },
   },
-  // --- bio-production of b-carotene pigments
+  // --- fermentation production
   {
-    id: "bioPigments-00",
+    id: "bioFerm-00",
     type: "section",
     position: { x: 660, y: 400 },
     data: {
@@ -339,17 +339,17 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "bioPigments-01",
+    id: "bioFerm-01",
     type: "quest",
     position: { x: 500, y: 500 },
     data: {
-      title: "[DIY Bio-Reactor: Pio-Reactors](https://pioreactor.com/)",
+      title: "[Starter Bio-Reactor = Pio-Reactors](https://pioreactor.com/)",
       byLine: "Don't build your own bio-reactor (yet)",
       variant: "course",
     },
   },
   {
-    id: "bioPigments-02",
+    id: "bioFerm-02",
     type: "quest",
     position: { x: 640, y: 570 },
     data: {
@@ -358,7 +358,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "bioPigments-10",
+    id: "bioFerm-10",
     type: "section",
     position: { x: 470, y: 680 },
     data: {
@@ -367,16 +367,25 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "bioPigments-20",
+    id: "bioFerm-40",
     type: "section",
-    position: { x: 760, y: 680 },
+    position: { x: 1260, y: 680 },
+    data: {
+      title: "Medical-Grade Insulin",
+      byLine: "Proteins Produced w/ Yeast",
+    },
+  },
+  {
+    id: "bioFerm-20",
+    type: "section",
+    position: { x: 1460, y: 680 },
     data: {
       title: "Bio-based Haber-Bosch",
       byLine: "Eznymes Produced w/ Bacteria",
     },
   },
   {
-    id: "bioPigments-30",
+    id: "bioFerm-30",
     type: "section",
     position: { x: 1020, y: 680 },
     data: {
@@ -386,6 +395,16 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   // --- TODO: engineering spider silk
+  {
+    id: "bioFerm-50",
+    type: "section",
+    position: { x: 760, y: 680 },
+    data: {
+      title: "Spider Silk via Yeast",
+      byLine:
+        "ft. [Open Plant @ Genspace](https://www.genspace.org/community-projects)",
+    },
+  },
 ];
 
 // ===============================
@@ -461,7 +480,7 @@ export const questEdges: Edge[] = [
   },
   {
     source: "start-30",
-    target: "bioPigments-00",
+    target: "bioFerm-00",
   },
   // --- plant evol
   {
@@ -575,24 +594,32 @@ export const questEdges: Edge[] = [
   },
   // --- pigment bio production
   {
-    source: "bioPigments-00",
-    target: "bioPigments-02",
+    source: "bioFerm-00",
+    target: "bioFerm-02",
   },
   {
-    source: "bioPigments-01",
-    target: "bioPigments-02",
+    source: "bioFerm-01",
+    target: "bioFerm-02",
   },
   {
-    source: "bioPigments-02",
-    target: "bioPigments-10",
+    source: "bioFerm-02",
+    target: "bioFerm-10",
   },
   {
-    source: "bioPigments-02",
-    target: "bioPigments-20",
+    source: "bioFerm-02",
+    target: "bioFerm-20",
   },
   {
-    source: "bioPigments-02",
-    target: "bioPigments-30",
+    source: "bioFerm-02",
+    target: "bioFerm-30",
+  },
+  {
+    source: "bioFerm-02",
+    target: "bioFerm-40",
+  },
+  {
+    source: "bioFerm-02",
+    target: "bioFerm-50",
   },
 ].map((e) => ({
   ...e,
