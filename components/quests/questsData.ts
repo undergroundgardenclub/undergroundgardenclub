@@ -65,7 +65,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "resource-10",
+    id: "hardware-00",
     type: "quest",
     position: { x: 290, y: 25 },
     data: {
@@ -130,7 +130,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-30",
     type: "section",
-    position: { x: 20, y: 240 },
+    position: { x: 20, y: 280 },
     data: {
       title: "Community Experiments",
       byLine: "Dig Deeper",
@@ -140,7 +140,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-05",
     type: "quest",
-    position: { x: -640, y: 250 },
+    position: { x: -700, y: 290 },
     data: {
       title:
         "[Plant Structures](https://www.enrole.com/nybg/jsp/course.jsp?courseId=204BOT315O&categoryId=ROOT)",
@@ -187,13 +187,13 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "plantEvolution-04",
+    id: "hardware-01",
     type: "quest",
-    position: { x: -630, y: 680 },
+    position: { x: -350, y: 260 },
     data: {
       title:
-        "[Smartphone Florescence Microscope](https://www.nature.com/articles/s41598-023-29182-y)",
-      byLine: "Making a $5,000 microscope with $50",
+        "[Smartphone Florescence Microscope](https://www.notion.so/HQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
+      byLine: "$50 + Smartphone > $5,000+ microscope",
       variant: "course",
     },
   },
@@ -450,8 +450,9 @@ export const questEdges: Edge[] = [
     className: "ugc-edge",
   },
   {
-    source: "resource-10",
+    source: "hardware-00",
     target: "start-01",
+    className: "ugc-edge--resource",
   },
   {
     source: "start-01",
@@ -508,8 +509,19 @@ export const questEdges: Edge[] = [
     target: "plantEvolution-05",
   },
   {
-    source: "plantEvolution-04",
+    source: "start-02",
+    target: "hardware-01",
+    className: "ugc-edge--resource",
+  },
+  {
+    source: "hardware-01",
     target: "plantEvolution-05",
+    className: "ugc-edge--resource",
+  },
+  {
+    source: "hardware-01",
+    target: "bioFerm-02",
+    className: "ugc-edge--resource",
   },
   {
     source: "start-30",
