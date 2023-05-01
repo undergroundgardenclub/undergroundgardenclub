@@ -200,7 +200,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "plantEvolution-05",
     type: "quest",
-    position: { x: -540, y: 755 },
+    position: { x: -540, y: 725 },
     data: {
       title:
         "[Genetically Modifying Marchantia](https://www.notion.so/BQ-04-Genetically-Modifying-Marchantia-to-be-Purple-Spore-Transformation-using-Aggrobactereum-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
