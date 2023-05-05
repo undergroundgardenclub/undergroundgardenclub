@@ -72,7 +72,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       title:
         "[3D Printing Crash Course](https://www.notion.so/SH-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
       byLine: "Setup and Overview of How to Print",
-      variant: "course",
+      variant: "hardware",
     },
   },
   {
@@ -182,8 +182,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "quest",
     position: { x: -390, y: 605 },
     data: {
-      title: "[Backing Up Plant Lines]()",
-      byLine: "(Storing Plants in a Freezer)",
+      title: "[Backing Up Plant Lineages]()",
+      byLine: "AKA Storing Plants in a Freezer",
     },
   },
   {
@@ -194,7 +194,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       title:
         "[Smartphone Florescence Microscope](https://www.notion.so/HQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
       byLine: "$50 + Smartphone > $5,000+ microscope",
-      variant: "course",
+      variant: "hardware",
     },
   },
   {
