@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ViewMode, ugcStore } from "../ugcStore";
 import { useInterval, useMouse } from "react-use";
 import { Flower } from "../styled/Flower";
+import Marquee from "react-fast-marquee";
 
 // for fun bc why not
 const LogoSkewer = () => {
@@ -40,7 +41,11 @@ export const Header = () => {
       <div className="header__logo">
         <LogoSkewer />
       </div>
-      <div className="header__inspo"></div>
+      <div className="header__inspo">
+        <Marquee autoFill>
+          <div>JUST KEEP GROWING&ensp;</div>
+        </Marquee>
+      </div>
       <div className="header__actions">
         {/* TODO: music player */}
         <a href="https://genspace.org" target="_blank" rel="noreferrer">
@@ -78,10 +83,16 @@ const StyledHeader = styled.header`
     }
   }
   .header__inspo {
-    text-align: center;
+    flex-grow: 1;
+    color: blue;
+    font-family: "Stonewall 50";
+    font-size: 24px;
+    overflow: hidden;
   }
   .header__actions {
-    width: 130px;
+    flex-grow: 1;
+    width: 280px;
+    max-width: 280px;
     text-align: right;
   }
 `;
