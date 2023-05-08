@@ -65,17 +65,6 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "hardware-00",
-    type: "quest",
-    position: { x: 290, y: -35 },
-    data: {
-      title:
-        "[3D Printing Crash Course](https://www.notion.so/SH-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
-      byLine: "Setup and Overview of How to Print",
-      variant: "hardware",
-    },
-  },
-  {
     id: "start-01",
     type: "quest",
     position: { x: 160, y: 40 },
@@ -140,7 +129,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-05",
     type: "quest",
-    position: { x: -700, y: 290 },
+    position: { x: -300, y: 250 },
     data: {
       title:
         "[Plant Structures](https://www.enrole.com/nybg/jsp/course.jsp?courseId=204BOT315O&categoryId=ROOT)",
@@ -149,9 +138,9 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "plantEvolution-00",
+    id: "botanicalPharm-00",
     type: "section",
-    position: { x: -480, y: 435 },
+    position: { x: 20, y: 380 },
     data: {
       title: "Botanical Pharmacy",
       byLine:
@@ -159,7 +148,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   // {
-  //   id: "plantEvolution-01",
+  //   id: "botanicalPharm-01",
   //   type: "quest",
   //   position: { x: -600, y: 530 },
   //   data: {
@@ -168,9 +157,9 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   //   },
   // },
   {
-    id: "plantEvolution-02",
+    id: "botanicalPharm-02",
     type: "quest",
-    position: { x: -530, y: 530 },
+    position: { x: -10, y: 460 },
     data: {
       title:
         "[Growing Marchantia Made Easy](https://www.notion.so/BQ-03-Marchantia-Growing-Propagating-a12fc5a6694843c288961d1637a93e6b?pvs=4)",
@@ -178,38 +167,36 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "plantEvolution-03",
+    id: "botanicalPharm-03",
     type: "quest",
-    position: { x: -390, y: 605 },
+    position: { x: 130, y: 535 },
     data: {
       title: "[Backing Up Plant Species]()",
       byLine: "AKA Storing Plants in a Freezer",
     },
   },
   {
-    id: "hardware-01",
-    type: "quest",
-    position: { x: -350, y: 260 },
+    id: "botanicalPharm-40",
+    type: "section",
+    position: { x: -40, y: 600 },
     data: {
-      title:
-        "[Smartphone Florescence Microscope](https://www.notion.so/HQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
-      byLine: "$50 + Smartphone > $5,000+ microscope",
-      variant: "hardware",
+      title: "Genetically Editing Marchantia",
+      byLine: "Turning it Red to know we edited it",
     },
   },
   {
-    id: "plantEvolution-06",
+    id: "botanicalPharm-41",
     type: "quest",
-    position: { x: -710, y: 670 },
+    position: { x: -70, y: 680 },
     data: {
       title: "[Constructing our Plasmid Backbone]()",
       byLine: "DNA construct we'll insert into plants holding extra genes",
     },
   },
   {
-    id: "plantEvolution-05",
+    id: "botanicalPharm-42",
     type: "quest",
-    position: { x: -575, y: 755 },
+    position: { x: -75, y: 755 },
     data: {
       title:
         "[Genetically Modifying Marchantia to be Red](https://www.notion.so/BQ-04-Genetically-Modifying-Marchantia-to-be-Purple-Spore-Transformation-using-Aggrobactereum-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
@@ -217,67 +204,67 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "plantEvolution-10",
+    id: "botanicalPharm-50",
     type: "section",
-    position: { x: -870, y: 420 },
-    data: { title: "Plant Growth Hacking" },
-  },
-  {
-    id: "plantEvolution-11",
-    type: "quest",
-    position: { x: -1020, y: 475 },
-    data: { title: "Speed Breeding Cabinet" },
-  },
-  {
-    id: "plantEvolution-12",
-    type: "quest",
-    position: { x: -915, y: 540 },
-    data: { title: "Repressive Gene Knockout", byLine: "(w/ CRISPR)" },
-  },
-  {
-    id: "plantEvolution-13",
-    type: "quest",
-    position: { x: -770, y: 495 },
-    data: { title: "Polyploiding" },
-  },
-  {
-    id: "plantEvolution-20",
-    type: "section",
-    position: { x: -525, y: 840 },
+    position: { x: -25, y: 840 },
     data: {
       title: "Growing Chemicals via Plants",
       byLine: "(Gene Transfer w/ Agrobacterium)",
     },
   },
   {
-    id: "plantEvolution-21",
+    id: "botanicalPharm-51",
     type: "quest",
-    position: { x: -675, y: 940 },
+    position: { x: -215, y: 940 },
     data: { title: "Medical-Grade Insulin", byLine: "TODO" },
   },
   {
-    id: "plantEvolution-22",
+    id: "botanicalPharm-52",
     type: "quest",
-    position: { x: -470, y: 950 },
-    data: { title: "Testosterone", byLine: "TODO" },
+    position: { x: -20, y: 950 },
+    data: { title: "Medical-Grade Testosterone", byLine: "TODO" },
   },
   {
-    id: "plantEvolution-23",
+    id: "botanicalPharm-53",
     type: "quest",
-    position: { x: -330, y: 940 },
-    data: { title: "Estrogen", byLine: "TODO" },
+    position: { x: 220, y: 940 },
+    data: { title: "Medical-Grade Estrogen", byLine: "TODO" },
   },
   {
-    id: "plantEvolution-30",
+    id: "botanicalPharm-30",
     type: "section",
-    position: { x: -515, y: 1040 },
-    data: { title: "Processing for Human Use" },
+    position: { x: 0, y: 1040 },
+    data: { title: "Processing for Human Use", byLine: "TODO" },
+  },
+  {
+    id: "plantGrowth-10",
+    type: "section",
+    position: { x: -870, y: 420 },
+    data: { title: "Plant Growth Hacking" },
+  },
+  {
+    id: "plantGrowth-11",
+    type: "quest",
+    position: { x: -1020, y: 475 },
+    data: { title: "Speed Breeding Cabinet" },
+  },
+  {
+    id: "plantGrowth-12",
+    type: "quest",
+    position: { x: -915, y: 540 },
+    data: { title: "Repressive Gene Knockout", byLine: "(w/ CRISPR)" },
+  },
+  {
+    id: "plantGrowth-13",
+    type: "quest",
+    position: { x: -770, y: 495 },
+    data: { title: "Polyploiding" },
   },
   // --- env monitoring + litigation
   {
     id: "envJustice-00",
     type: "section",
-    position: { x: 0, y: 400 },
+    position: { x: -460, y: 420 },
     data: {
       title: "Environmental Justice",
       byLine:
@@ -287,7 +274,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-01",
     type: "quest",
-    position: { x: -135, y: 620 },
+    position: { x: -655, y: 620 },
     data: {
       title: "Environmental Data Stewardship",
       byLine: "(Currnet & Past)",
@@ -296,7 +283,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-10",
     type: "section",
-    position: { x: 215, y: 490 },
+    position: { x: -305, y: 490 },
     data: {
       title: "Sampling",
     },
@@ -304,7 +291,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-11",
     type: "quest",
-    position: { x: 85, y: 555 },
+    position: { x: -435, y: 555 },
     data: {
       title: "Soil Sampling",
       byLine: "(Collection & Analysis)",
@@ -313,7 +300,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-12",
     type: "quest",
-    position: { x: 275, y: 555 },
+    position: { x: -245, y: 555 },
     data: {
       title: "Water Sampling",
       byLine: "(Collection & Analysis)",
@@ -322,7 +309,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-13",
     type: "quest",
-    position: { x: 180, y: 620 },
+    position: { x: -340, y: 620 },
     data: {
       title: "Air Sampling",
       byLine: "(Collection & Analysis)",
@@ -331,7 +318,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-20",
     type: "section",
-    position: { x: 25, y: 715 },
+    position: { x: -495, y: 715 },
     data: {
       title: "Environmental Litigation 101",
       byLine: "(Case Building Strategy)",
@@ -341,7 +328,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "bioFerm-00",
     type: "section",
-    position: { x: 660, y: 400 },
+    position: { x: 620, y: 400 },
     data: {
       title: "Microbe-Brewery Crew",
       byLine: "Cellular Fermentation of Chemicals & Food",
@@ -414,6 +401,29 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "ft. [Open Plant @ Genspace](https://www.genspace.org/community-projects)",
     },
   },
+  // --- hardware
+  {
+    id: "hardware-00",
+    type: "quest",
+    position: { x: 290, y: -35 },
+    data: {
+      title:
+        "[3D Printing Crash Course](https://www.notion.so/SH-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
+      byLine: "Setup and Overview of How to Print",
+      variant: "hardware",
+    },
+  },
+  {
+    id: "hardware-01",
+    type: "quest",
+    position: { x: 320, y: 250 },
+    data: {
+      title:
+        "[Smartphone Florescence Microscope](https://www.notion.so/HQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
+      byLine: "$50 + Smartphone > $5,000+ microscope",
+      variant: "hardware",
+    },
+  },
 ];
 
 // ===============================
@@ -482,7 +492,7 @@ export const questEdges: Edge[] = [
   // --- start ->>>> section headers
   {
     source: "start-30",
-    target: "plantEvolution-00",
+    target: "botanicalPharm-00",
   },
   {
     source: "start-30",
@@ -495,31 +505,35 @@ export const questEdges: Edge[] = [
   // --- plant evol
   {
     source: "resource-05",
-    target: "plantEvolution-00",
+    target: "botanicalPharm-00",
   },
   {
-    source: "plantEvolution-00",
-    target: "plantEvolution-01",
+    source: "botanicalPharm-00",
+    target: "botanicalPharm-01",
   },
   {
-    source: "plantEvolution-00",
-    target: "plantEvolution-02",
+    source: "botanicalPharm-00",
+    target: "botanicalPharm-02",
   },
   {
-    source: "plantEvolution-01",
-    target: "plantEvolution-03",
+    source: "botanicalPharm-01",
+    target: "botanicalPharm-03",
   },
   {
-    source: "plantEvolution-02",
-    target: "plantEvolution-03",
+    source: "botanicalPharm-02",
+    target: "botanicalPharm-03",
   },
   {
-    source: "plantEvolution-02",
-    target: "plantEvolution-05",
+    source: "botanicalPharm-02",
+    target: "botanicalPharm-40",
   },
   {
-    source: "plantEvolution-06",
-    target: "plantEvolution-05",
+    source: "botanicalPharm-40",
+    target: "botanicalPharm-41",
+  },
+  {
+    source: "botanicalPharm-41",
+    target: "botanicalPharm-42",
   },
   {
     source: "start-02",
@@ -528,7 +542,7 @@ export const questEdges: Edge[] = [
   },
   {
     source: "hardware-01",
-    target: "plantEvolution-05",
+    target: "botanicalPharm-50",
     className: "ugc-edge--hardware",
   },
   {
@@ -538,47 +552,47 @@ export const questEdges: Edge[] = [
   },
   {
     source: "start-30",
-    target: "plantEvolution-10",
+    target: "plantGrowth-10",
   },
   {
-    source: "plantEvolution-05",
-    target: "plantEvolution-20",
+    source: "botanicalPharm-42",
+    target: "botanicalPharm-50",
   },
   {
-    source: "plantEvolution-10",
-    target: "plantEvolution-11",
+    source: "plantGrowth-10",
+    target: "plantGrowth-11",
   },
   {
-    source: "plantEvolution-10",
-    target: "plantEvolution-12",
+    source: "plantGrowth-10",
+    target: "plantGrowth-12",
   },
   {
-    source: "plantEvolution-10",
-    target: "plantEvolution-13",
+    source: "plantGrowth-10",
+    target: "plantGrowth-13",
   },
   {
-    source: "plantEvolution-20",
-    target: "plantEvolution-21",
+    source: "botanicalPharm-50",
+    target: "botanicalPharm-51",
   },
   {
-    source: "plantEvolution-20",
-    target: "plantEvolution-22",
+    source: "botanicalPharm-50",
+    target: "botanicalPharm-52",
   },
   {
-    source: "plantEvolution-20",
-    target: "plantEvolution-23",
+    source: "botanicalPharm-50",
+    target: "botanicalPharm-53",
   },
   {
-    source: "plantEvolution-21",
-    target: "plantEvolution-30",
+    source: "botanicalPharm-51",
+    target: "botanicalPharm-30",
   },
   {
-    source: "plantEvolution-22",
-    target: "plantEvolution-30",
+    source: "botanicalPharm-52",
+    target: "botanicalPharm-30",
   },
   {
-    source: "plantEvolution-23",
-    target: "plantEvolution-30",
+    source: "botanicalPharm-53",
+    target: "botanicalPharm-30",
   },
   // --- env justice
   {
