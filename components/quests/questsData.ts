@@ -208,7 +208,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "section",
     position: { x: -25, y: 840 },
     data: {
-      title: "Growing Medicine with Marchantia",
+      title: "Home Grown Medicine with Marchantia",
       byLine: "Pt.2 of Gene Editing w/ Agrobacterium",
     },
   },
