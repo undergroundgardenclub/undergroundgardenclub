@@ -35,8 +35,8 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         edges={edges}
         nodeTypes={questsNodeTypes}
         // Not allowing updates makes it a bit easier to navigate on mobile
-        // onNodesChange={onNodesChange}
-        // onEdgesChange={onEdgesChange}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
         onInit={(inst: ReactFlowInstance) => {
           const browser = Bowser.getParser(window.navigator.userAgent);
           const isMobile = browser.getPlatformType() !== "desktop";
