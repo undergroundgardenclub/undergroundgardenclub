@@ -12,13 +12,13 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-00",
     type: "start",
-    position: { x: -55, y: -320 },
+    position: { x: -55, y: -370 },
     data: {},
   },
   {
     id: "resource-00",
     type: "quest",
-    position: { x: 140, y: -235 },
+    position: { x: 140, y: -285 },
     data: {
       title:
         "[Introductory Bio/Chem](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
@@ -29,7 +29,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-01",
     type: "quest",
-    position: { x: 30, y: -150 },
+    position: { x: 30, y: -200 },
     data: {
       title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
       byLine: "@ Genspace",
@@ -38,7 +38,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-03",
     type: "quest",
-    position: { x: -120, y: -235 },
+    position: { x: -120, y: -285 },
     data: {
       title:
         "[Getting Up to Speed on Bio](https://openlearninglibrary.mit.edu/courses/course-v1:OCW+Pre-7.01+1T2020/course/)",
@@ -49,7 +49,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-10",
     type: "section",
-    position: { x: -120, y: -60 },
+    position: { x: -120, y: -110 },
     data: {
       title: "Biological Machines",
       byLine: "Intro Experiments Pt.1",
@@ -58,7 +58,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-20",
     type: "section",
-    position: { x: 175, y: -60 },
+    position: { x: 175, y: -110 },
     data: {
       title: "Biological Materials",
       byLine: "Intro Experiments Pt.2",
@@ -67,7 +67,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "hardware-00",
     type: "quest",
-    position: { x: 290, y: 25 },
+    position: { x: 290, y: -25 },
     data: {
       title:
         "[3D Printing Crash Course](https://www.notion.so/SH-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
@@ -78,7 +78,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-01",
     type: "quest",
-    position: { x: 160, y: 90 },
+    position: { x: 160, y: 40 },
     data: {
       title:
         "[Bio-Plastic Membership Card](https://www.notion.so/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4)",
@@ -99,7 +99,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-04",
     type: "quest",
-    position: { x: 200, y: 170 },
+    position: { x: 200, y: 120 },
     data: {
       title:
         "[Fundamentals of Materials Structure](https://openlearninglibrary.mit.edu/courses/course-v1:MITx+3.012S.1x+1T2019/course/)",
@@ -110,7 +110,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-02",
     type: "quest",
-    position: { x: -170, y: 40 },
+    position: { x: -170, y: -10 },
     data: {
       title:
         "[Transform Bacteria to Glow Green](https://www.notion.so/Bio-Quest-1-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80)",
@@ -120,7 +120,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-03",
     type: "quest",
-    position: { x: -165, y: 130 },
+    position: { x: -165, y: 80 },
     data: {
       title:
         "[Using Bacteria as Bio-Factories](https://www.notion.so/Bio-Quest-2-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611)",
@@ -130,7 +130,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-30",
     type: "section",
-    position: { x: 20, y: 280 },
+    position: { x: 20, y: 230 },
     data: {
       title: "Community Experiments",
       byLine: "Dig Deeper",
@@ -182,7 +182,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "quest",
     position: { x: -390, y: 605 },
     data: {
-      title: "[Backing Up Plant Lineages]()",
+      title: "[Backing Up Plant Species]()",
       byLine: "AKA Storing Plants in a Freezer",
     },
   },
@@ -198,9 +198,18 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
+    id: "plantEvolution-06",
+    type: "quest",
+    position: { x: -710, y: 670 },
+    data: {
+      title: "[Constructing our Plasmid Backbone]()",
+      byLine: "Extra DNA we'll insert that contains RUBY gene",
+    },
+  },
+  {
     id: "plantEvolution-05",
     type: "quest",
-    position: { x: -540, y: 725 },
+    position: { x: -540, y: 755 },
     data: {
       title:
         "[Genetically Modifying Marchantia](https://www.notion.so/BQ-04-Genetically-Modifying-Marchantia-to-be-Purple-Spore-Transformation-using-Aggrobactereum-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
@@ -506,6 +515,10 @@ export const questEdges: Edge[] = [
   },
   {
     source: "plantEvolution-02",
+    target: "plantEvolution-05",
+  },
+  {
+    source: "plantEvolution-06",
     target: "plantEvolution-05",
   },
   {
