@@ -44,6 +44,7 @@ export const Header = () => {
       <div className="header__inspo">
         <Marquee autoFill>
           <div>JUST KEEP GROWING&ensp;</div>
+          {/* <div>JUST GROW IT&ensp;</div> */}
         </Marquee>
       </div>
       <div className="header__actions">
