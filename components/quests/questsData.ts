@@ -178,10 +178,10 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "botanicalPharm-40",
     type: "section",
-    position: { x: -40, y: 600 },
+    position: { x: -40, y: 610 },
     data: {
-      title: "Genetically Editing Marchantia",
-      byLine: "Turning it Red to know we edited it",
+      title: "Genetically Editing Marchantia to be Red",
+      byLine: "Pt.1 of Gene Editing w/ Agrobacterium",
     },
   },
   {
@@ -208,8 +208,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "section",
     position: { x: -25, y: 840 },
     data: {
-      title: "Growing Chemicals via Plants",
-      byLine: "(Gene Transfer w/ Agrobacterium)",
+      title: "Growing Medicine with Marchantia",
+      byLine: "Pt.2 of Gene Editing w/ Agrobacterium",
     },
   },
   {
