@@ -203,7 +203,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -710, y: 670 },
     data: {
       title: "[Constructing our Plasmid Backbone]()",
-      byLine: "Extra DNA we'll insert that contains RUBY gene",
+      byLine: "DNA construct we'll insert into plants holding extra genes",
     },
   },
   {
