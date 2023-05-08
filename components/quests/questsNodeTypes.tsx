@@ -132,13 +132,13 @@ const StyledQuestNodeType = styled(StyledBaseNodeType)`
     }
     if (variant && ["hardware"].includes(variant)) {
       return css`
-        background: #1db233;
+        background: #59ff71;
         &,
         a,
         a:active,
         a:visited,
         a:hover {
-          color: white !important;
+          // color: white !important;
         }
       `;
     }
