@@ -32,7 +32,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 30, y: -200 },
     data: {
       title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
-      byLine: "@ Genspace",
+      byLine: "[@ Genspace](https://www.genspace.org)",
     },
   },
   {

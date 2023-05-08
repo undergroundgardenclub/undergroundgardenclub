@@ -49,7 +49,7 @@ export const Header = () => {
       <div className="header__actions">
         {/* TODO: music player */}
         <a href="https://genspace.org" target="_blank" rel="noreferrer">
-          <StyledButton>JOIN GENSPACE</StyledButton>
+          <StyledButton>@ GENSPACE</StyledButton>
         </a>
       </div>
     </StyledHeader>
@@ -91,8 +91,8 @@ const StyledHeader = styled.header`
   }
   .header__actions {
     flex-grow: 1;
-    width: 280px;
-    max-width: 280px;
+    width: 230px;
+    max-width: 230px;
     text-align: right;
   }
 `;
