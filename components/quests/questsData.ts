@@ -240,8 +240,11 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "glowingPlants-00",
     type: "section",
-    position: { x: 320, y: 410 },
-    data: { title: "Glowing Houseplants", byLine: "TODO" },
+    position: { x: 300, y: 410 },
+    data: {
+      title: "Glowing Houseplants",
+      byLine: "GMO'ing with Synthetic Enzymes",
+    },
   },
   // -- plant growth hacking
   {
