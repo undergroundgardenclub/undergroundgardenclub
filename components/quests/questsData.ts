@@ -236,6 +236,14 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 0, y: 1040 },
     data: { title: "Processing for Human Use", byLine: "TODO" },
   },
+  // -- glowing houseplants
+  {
+    id: "glowingPlants-00",
+    type: "section",
+    position: { x: 320, y: 410 },
+    data: { title: "Glowing Houseplants", byLine: "TODO" },
+  },
+  // -- plant growth hacking
   {
     id: "plantGrowth-10",
     type: "section",
@@ -553,6 +561,10 @@ export const questEdges: Edge[] = [
   {
     source: "start-30",
     target: "plantGrowth-10",
+  },
+  {
+    source: "start-30",
+    target: "glowingPlants-00",
   },
   {
     source: "botanicalPharm-42",
