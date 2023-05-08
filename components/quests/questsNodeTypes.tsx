@@ -130,6 +130,18 @@ const StyledQuestNodeType = styled(StyledBaseNodeType)`
         background: #d8ff85;
       `;
     }
+    if (variant && ["hardware"].includes(variant)) {
+      return css`
+        background: #1db233;
+        &,
+        a,
+        a:active,
+        a:visited,
+        a:hover {
+          color: white !important;
+        }
+      `;
+    }
   }}
 `;
 

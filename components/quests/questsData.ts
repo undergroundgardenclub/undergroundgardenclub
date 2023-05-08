@@ -67,7 +67,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "hardware-00",
     type: "quest",
-    position: { x: 290, y: -25 },
+    position: { x: 290, y: -35 },
     data: {
       title:
         "[3D Printing Crash Course](https://www.notion.so/SH-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
@@ -461,7 +461,7 @@ export const questEdges: Edge[] = [
   {
     source: "hardware-00",
     target: "start-01",
-    className: "ugc-edge--resource",
+    className: "ugc-edge--hardware",
   },
   {
     source: "start-01",
@@ -524,17 +524,17 @@ export const questEdges: Edge[] = [
   {
     source: "start-02",
     target: "hardware-01",
-    className: "ugc-edge--resource",
+    className: "ugc-edge--hardware",
   },
   {
     source: "hardware-01",
     target: "plantEvolution-05",
-    className: "ugc-edge--resource",
+    className: "ugc-edge--hardware",
   },
   {
     source: "hardware-01",
     target: "bioFerm-02",
-    className: "ugc-edge--resource",
+    className: "ugc-edge--hardware",
   },
   {
     source: "start-30",
@@ -654,6 +654,6 @@ export const questEdges: Edge[] = [
     e.className != null
       ? e.className
       : e.source?.includes("resource") || e.target?.includes("resource")
-      ? "ugc-edge--resource"
+      ? "ugc-edge--course"
       : "ugc-edge",
 }));

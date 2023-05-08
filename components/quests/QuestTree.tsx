@@ -79,10 +79,17 @@ const StyledQuestTree = styled.div`
       stroke-width: 5;
     }
   }
-  .ugc-edge--resource {
+  .ugc-edge--course {
     path {
       stroke-width: 3;
       stroke: #d8ff85;
+    }
+  }
+  .ugc-edge--hardware {
+    path {
+      stroke-width: 3;
+      stroke: #1db233;
+      opacity: 0.5;
     }
   }
 `;
