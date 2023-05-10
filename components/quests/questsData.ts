@@ -41,8 +41,9 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -120, y: -285 },
     data: {
       title:
-        "[Getting Up to Speed on Bio](https://openlearninglibrary.mit.edu/courses/course-v1:OCW+Pre-7.01+1T2020/course/)",
-      byLine: "Lectures 1-3 @ MIT Opencourseware",
+        "[Getting Up to Speed on Bio](https://www.youtube.com/playlist?list=PLUl4u3cNGP629Egng0HfgRJfXBNTPw1le)",
+      byLine:
+        "Lectures 1-3 @ [MIT Opencourseware](https://openlearninglibrary.mit.edu/courses/course-v1:OCW+Pre-7.01+1T2020/course/)",
       variant: "course",
     },
   },
@@ -147,15 +148,6 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "ft. [Open Plant @ Genspace](https://www.genspace.org/community-projects)",
     },
   },
-  // {
-  //   id: "botanicalPharm-01",
-  //   type: "quest",
-  //   position: { x: -600, y: 530 },
-  //   data: {
-  //     title: "Growing Marchantia on Soil",
-  //     byLine: "(From Thallus to Spores/Gemmae)",
-  //   },
-  // },
   {
     id: "botanicalPharm-02",
     type: "quest",
@@ -187,26 +179,48 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "botanicalPharm-41",
     type: "quest",
-    position: { x: -70, y: 680 },
+    position: { x: -70, y: 690 },
     data: {
-      title: "[Constructing our Plasmid Backbone]()",
-      byLine: "DNA construct we'll insert into plants holding extra genes",
+      title:
+        "[Designing DNA Parts for Gene Editing Plasmid](https://outstanding-saturday-58e.notion.site/BQ-04-Designing-DNA-Plasmids-for-Gene-Editing-Bacteria-to-Carry-a220e3af73454d43b1c33b790a478a82)",
+      byLine: "Chosing a plasmid, genes, and signaling DNA strands",
     },
   },
   {
     id: "botanicalPharm-42",
     type: "quest",
-    position: { x: -75, y: 755 },
+    position: { x: -90, y: 760 },
     data: {
       title:
-        "[Genetically Modifying Marchantia to be Red](https://www.notion.so/BQ-04-Genetically-Modifying-Marchantia-to-be-Purple-Spore-Transformation-using-Aggrobactereum-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
-      byLine: "Plant Cell/Tissue Transformation",
+        "[Building the Gene Editing Plasmid from DNA Fragments](https://outstanding-saturday-58e.notion.site/BQ-05-Constructing-DNA-Plasmid-from-DNA-Fragments-for-Gene-Editing-Bacteria-to-Carry-ae091cc26fe3491d8f3638992eb38ca6)",
+      byLine:
+        "Processes for Combinging DNA Fragments (PCR, Restriction Digest)",
+    },
+  },
+  {
+    id: "botanicalPharm-43",
+    type: "quest",
+    position: { x: -225, y: 855 },
+    data: {
+      title:
+        "[GMO'ing Marchantia: via Spores](https://www.notion.so/BQ-04-Genetically-Modifying-Marchantia-to-be-Purple-Spore-Transformation-using-Aggrobactereum-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
+      byLine: "Agrobacteria horizontal gene transfer in plant spores",
+    },
+  },
+  {
+    id: "botanicalPharm-44",
+    type: "quest",
+    position: { x: 135, y: 855 },
+    data: {
+      title:
+        "[GMO'ing Marchantia: via Thallus](https://www.notion.so/BQ-06-Option-2-Infecting-Marchantia-with-Gene-Editing-Bacteria-Via-Thallus-cc9adcad905a41439853650cc53b9f3e?pvs=4)",
+      byLine: "Agrobacteria horizontal gene transfer in plant clippings",
     },
   },
   {
     id: "botanicalPharm-50",
     type: "section",
-    position: { x: -25, y: 840 },
+    position: { x: -35, y: 950 },
     data: {
       title: "Home Grown Medicine with Marchantia",
       byLine: "Pt.2 of Gene Editing w/ Agrobacterium",
@@ -215,25 +229,25 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "botanicalPharm-51",
     type: "quest",
-    position: { x: -215, y: 940 },
+    position: { x: -205, y: 1040 },
     data: { title: "Medical-Grade Insulin", byLine: "TODO" },
   },
   {
     id: "botanicalPharm-52",
     type: "quest",
-    position: { x: -20, y: 950 },
+    position: { x: 0, y: 1050 },
     data: { title: "Medical-Grade Testosterone", byLine: "TODO" },
   },
   {
     id: "botanicalPharm-53",
     type: "quest",
-    position: { x: 220, y: 940 },
+    position: { x: 230, y: 1040 },
     data: { title: "Medical-Grade Estrogen", byLine: "TODO" },
   },
   {
     id: "botanicalPharm-30",
     type: "section",
-    position: { x: 0, y: 1040 },
+    position: { x: 10, y: 1140 },
     data: { title: "Processing for Human Use", byLine: "TODO" },
   },
   // -- glowing houseplants
@@ -571,6 +585,18 @@ export const questEdges: Edge[] = [
   },
   {
     source: "botanicalPharm-42",
+    target: "botanicalPharm-43",
+  },
+  {
+    source: "botanicalPharm-42",
+    target: "botanicalPharm-44",
+  },
+  {
+    source: "botanicalPharm-43",
+    target: "botanicalPharm-50",
+  },
+  {
+    source: "botanicalPharm-44",
     target: "botanicalPharm-50",
   },
   {
