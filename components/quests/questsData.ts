@@ -71,7 +71,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 160, y: 40 },
     data: {
       title:
-        "[Bio-Plastic Membership Card](https://www.notion.so/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4)",
+        "[Bio-Plastic Membership Card](https://undergroundgardenclub.notion.site/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4)",
       byLine: "(Deli Potatoes + Homemade Glycerol)",
     },
   },
@@ -103,7 +103,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -170, y: -10 },
     data: {
       title:
-        "[Transform Bacteria to Glow Green](https://www.notion.so/Bio-Quest-1-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80)",
+        "[Transform Bacteria to Glow Green](https://undergroundgardenclub.notion.site/BQ-01-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80?pvs=4)",
       byLine: "(Inserting GFP DNA)",
     },
   },
@@ -113,7 +113,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -165, y: 80 },
     data: {
       title:
-        "[Using Bacteria as Bio-Factories](https://www.notion.so/Bio-Quest-2-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611)",
+        "[Using Bacteria as Bio-Factories](https://undergroundgardenclub.notion.site/BQ-02-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611?pvs=4)",
       byLine: "(Replicating & Harvesting GFP DNA)",
     },
   },
@@ -154,7 +154,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -10, y: 460 },
     data: {
       title:
-        "[Growing Marchantia Made Easy](https://www.notion.so/BQ-03-Marchantia-Growing-Propagating-a12fc5a6694843c288961d1637a93e6b?pvs=4)",
+        "[Growing Marchantia Made Easy](https://undergroundgardenclub.notion.site/BQ-03-Marchantia-Growing-Propagating-in-Sterile-Containers-a12fc5a6694843c288961d1637a93e6b?pvs=4)",
       byLine: "(From Thallus Cliipings or Gemmae)",
     },
   },
@@ -182,7 +182,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -70, y: 690 },
     data: {
       title:
-        "[Designing DNA Parts for Gene Editing Plasmid](https://outstanding-saturday-58e.notion.site/BQ-04-Designing-DNA-Plasmids-for-Gene-Editing-Bacteria-to-Carry-a220e3af73454d43b1c33b790a478a82)",
+        "[Designing DNA Parts for Gene Editing Plasmid](https://undergroundgardenclub.notion.site/BQ-04-Designing-DNA-Plasmids-for-Gene-Editing-Bacteria-to-Carry-a220e3af73454d43b1c33b790a478a82?pvs=4)",
       byLine: "Chosing a plasmid, genes, and signaling DNA strands",
     },
   },
@@ -192,7 +192,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -90, y: 760 },
     data: {
       title:
-        "[Building the Gene Editing Plasmid from DNA Fragments](https://outstanding-saturday-58e.notion.site/BQ-05-Constructing-DNA-Plasmid-from-DNA-Fragments-for-Gene-Editing-Bacteria-to-Carry-ae091cc26fe3491d8f3638992eb38ca6)",
+        "[Building the Gene Editing Plasmid from DNA Fragments](https://undergroundgardenclub.notion.site/BQ-05-Constructing-DNA-Plasmid-from-DNA-Fragments-for-Gene-Editing-Bacteria-to-Carry-ae091cc26fe3491d8f3638992eb38ca6?pvs=4)",
       byLine:
         "Processes for Combinging DNA Fragments (PCR, Restriction Digest)",
     },
@@ -203,7 +203,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -225, y: 855 },
     data: {
       title:
-        "[GMO'ing Marchantia: via Spores](https://www.notion.so/BQ-04-Genetically-Modifying-Marchantia-to-be-Purple-Spore-Transformation-using-Aggrobactereum-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
+        "[GMO'ing Marchantia: via Spores](https://undergroundgardenclub.notion.site/BQ-06-Option-1-Infecting-Marchantia-with-Gene-Editing-Bacteria-Via-Spores-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
       byLine: "Agrobacteria horizontal gene transfer in plant spores",
     },
   },
@@ -213,7 +213,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 135, y: 855 },
     data: {
       title:
-        "[GMO'ing Marchantia: via Thallus](https://www.notion.so/BQ-06-Option-2-Infecting-Marchantia-with-Gene-Editing-Bacteria-Via-Thallus-cc9adcad905a41439853650cc53b9f3e?pvs=4)",
+        "[GMO'ing Marchantia: via Thallus](https://undergroundgardenclub.notion.site/BQ-06-Option-2-Infecting-Marchantia-with-Gene-Editing-Bacteria-Via-Thallus-cc9adcad905a41439853650cc53b9f3e?pvs=4)",
       byLine: "Agrobacteria horizontal gene transfer in plant clippings",
     },
   },
@@ -433,7 +433,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 290, y: -35 },
     data: {
       title:
-        "[3D Printing Crash Course](https://www.notion.so/SH-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
+        "[3D Printing Crash Course](https://undergroundgardenclub.notion.site/TQ-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
       byLine: "Setup and Overview of How to Print",
       variant: "hardware",
     },
@@ -444,7 +444,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 320, y: 250 },
     data: {
       title:
-        "[Smartphone Florescence Microscope](https://www.notion.so/HQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
+        "[Smartphone Florescence Microscope](https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
       byLine: "$50 + Smartphone > $5,000+ microscope",
       variant: "hardware",
     },
