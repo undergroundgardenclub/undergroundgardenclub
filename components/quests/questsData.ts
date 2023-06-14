@@ -292,8 +292,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -460, y: 420 },
     data: {
       title: "Environmental Justice",
-      byLine:
-        "ft. [Soverign Science](https://www.instagram.com/sovereign.science/)",
+      // byLine: "ft. [Soverign Science](https://www.instagram.com/sovereign.science/)",
     },
   },
   {
@@ -302,7 +301,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -655, y: 620 },
     data: {
       title: "Environmental Data Stewardship",
-      byLine: "(Currnet & Past)",
+      byLine: "(TODO)",
     },
   },
   {
@@ -319,7 +318,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -435, y: 555 },
     data: {
       title: "Soil Sampling",
-      byLine: "(Collection & Analysis)",
+      byLine: "(TODO)",
     },
   },
   {
@@ -328,7 +327,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -245, y: 555 },
     data: {
       title: "Water Sampling",
-      byLine: "(Collection & Analysis)",
+      byLine: "(TODO)",
     },
   },
   {
@@ -337,7 +336,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -340, y: 620 },
     data: {
       title: "Air Sampling",
-      byLine: "(Collection & Analysis)",
+      byLine: "(TODO)",
     },
   },
   {
