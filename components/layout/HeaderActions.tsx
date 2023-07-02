@@ -10,14 +10,14 @@ import { StyledButtonAvatar } from "../styled/StyledButton";
 import { LogoSkewer } from "./LogoSkewer";
 import { ProjectCreatorButton } from "../projects/ProjectCreatorButton";
 
-export const Header: React.FC<{ hide?: string[]; invert?: boolean }> = (
+export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
   props
 ) => {
   const modal = useStore(modalStore);
   const { data: user } = useUser();
   // RENDER
   return (
-    <StyledHeader invert={props.invert}>
+    <StyledHeaderActions invert={props.invert}>
       {/* {props.hide?.includes("logo") === false && (
         <div className="header__logo">
           <LogoSkewer />
@@ -53,11 +53,11 @@ export const Header: React.FC<{ hide?: string[]; invert?: boolean }> = (
         )}
       </div>
       {/* TODO: music player */}
-    </StyledHeader>
+    </StyledHeaderActions>
   );
 };
 
-const StyledHeader = styled.header<{ invert?: boolean }>`
+const StyledHeaderActions = styled.header<{ invert?: boolean }>`
   z-index: 5;
   display: flex;
   align-items: center;
