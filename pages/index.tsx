@@ -7,10 +7,8 @@ import { QuestTree } from "../components/quests/QuestTree";
 import { Header } from "../components/layout/Header";
 import { TQuest } from "../components/quests/types";
 import { QuestList } from "../components/quests/QuestList";
-import { ViewMode, ugcStore } from "../components/ugcStore";
 
 export default function HomePage({ quests }: { quests: TQuest[] }) {
-  const { viewMode, setViewMode } = ugcStore();
   // RENDER
   return (
     <>
@@ -19,15 +17,9 @@ export default function HomePage({ quests }: { quests: TQuest[] }) {
       <Header />
       {/* VIEW */}
       <StyledHomePage>
-        {viewMode === ViewMode.diagram ? (
-          <main>
-            <QuestTree quests={quests} />
-          </main>
-        ) : (
-          <main>
-            <QuestList quests={quests} />
-          </main>
-        )}
+        <main>
+          <QuestTree quests={quests} />
+        </main>
       </StyledHomePage>
     </>
   );
