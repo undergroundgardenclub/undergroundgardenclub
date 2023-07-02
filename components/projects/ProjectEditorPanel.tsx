@@ -33,7 +33,7 @@ export const ProjectEditorPanel: React.FC<{
           status: e.target.status.value,
           meeting_schedule: e.target.meeting_schedule.value,
           meeting_location: e.target.meeting_location.value,
-          prerequisites: e.target.prerequisites.value,
+          // prerequisites: e.target.prerequisites.value,
           onboarding_doc_url: e.target.onboarding_doc_url.value,
           num_members: e.target.num_members.value,
         });
@@ -81,10 +81,10 @@ export const ProjectEditorPanel: React.FC<{
           defaultValue={project.meeting_location}
         />
       </label>
-      <label>
+      {/* <label>
         <span>Prerequisites:</span>
         <input name="prerequisites" defaultValue={project.prerequisites} />
-      </label>
+      </label> */}
       <label>
         <span>Onboarding Doc URL:</span>
         <input

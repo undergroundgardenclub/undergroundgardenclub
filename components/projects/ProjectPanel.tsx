@@ -8,6 +8,7 @@ import { ugcTheme } from "../styled/theme";
 import { ProjectEditorPanel } from "./ProjectEditorPanel";
 import { useStore } from "zustand";
 import { modalStore } from "../layout/useModal";
+import { orderBy } from "lodash";
 import {
   CalendarIcon,
   GlobeIcon,
@@ -15,10 +16,11 @@ import {
   TargetIcon,
 } from "@radix-ui/react-icons";
 import ReactMarkdown from "react-markdown";
+import { useLocation } from "react-use";
 import { SSOPanel } from "../users/SSOPanel";
-import { orderBy } from "lodash";
 
 export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
+  const location = useLocation();
   const modal = useStore(modalStore);
   const { data: user } = useUser();
   const { mutateAsync: relateProjectUser } = useProjectUserRelate();
@@ -31,26 +33,28 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
   // RENDER
   return (
     <StyledProjectPanel>
+      {/* {project.status ? (
+        <div className="project-panel__status">
+          {project.status === "idea" ? "Idea: Looking for Interest" : null}
+          {project.status === "active" ? "Active: Join Project" : null}
+        </div>
+      ) : null} */}
       <div className="project-panel__details__view">
-        <p className="project_name">
-          {project.status ? `${project.status}: ` : ""}
-          {project.name}
-        </p>
-        <hr />
+        <p className="project_name">{project.name}</p>
         <p className="project_description goal">
           <TargetIcon />{" "}
           <ReactMarkdown linkTarget="_blank">
             {project.goal ?? ""}
           </ReactMarkdown>
         </p>
-        {project.prerequisites?.length > 0 ? (
+        {/* {project.prerequisites?.length > 0 ? (
           <p className="project_description">
             <LockClosedIcon />{" "}
             <ReactMarkdown linkTarget="_blank">
               {`Requirements: ${project.prerequisites}`}
             </ReactMarkdown>
           </p>
-        ) : null}
+        ) : null} */}
         {project.onboarding_doc_url?.length > 0 ? (
           <p className="project_description">
             <ReactMarkdown linkTarget="_blank">
@@ -58,6 +62,20 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
             </ReactMarkdown>
           </p>
         ) : null}
+        {/* <p className="project_description">
+          <span>
+            <CalendarIcon />{" "}
+            <ReactMarkdown linkTarget="_blank">
+              {project.meeting_schedule ?? ""}
+            </ReactMarkdown>
+          </span>
+          <span>
+            <GlobeIcon />{" "}
+            <ReactMarkdown linkTarget="_blank">
+              {project.meeting_location ?? ""}
+            </ReactMarkdown>
+          </span>
+        </p> */}
         <p className="project_description">
           <span>
             <CalendarIcon />{" "}
@@ -65,6 +83,8 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
               {project.meeting_schedule ?? ""}
             </ReactMarkdown>
           </span>
+        </p>
+        <p className="project_description">
           <span>
             <GlobeIcon />{" "}
             <ReactMarkdown linkTarget="_blank">
@@ -105,7 +125,7 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
           ) : null}
           {!isLead && (
             <StyledButton
-              variant={isMember ? "green" : "transparent"}
+              variant={isMember ? "green" : "white"}
               onClick={() => {
                 // IF NOT LOGGED IN, PROMPT
                 if (user?.id === undefined) {
@@ -113,7 +133,7 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
                     true,
                     <SSOPanel
                       headline={`Create an Account to Get Info About '${project.name}'`}
-                      redirectTo="/projects"
+                      redirectTo={location.pathname}
                     />
                   );
                 } else {
@@ -131,15 +151,14 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
                 }
               }}
             >
-              I'm Interested!
+              {isMember ? "✓" : "I'm Interested!"}
             </StyledButton>
           )}
         </div>
         {!isLead && isMember && isNewInterest && (
           <div className="new-interest">
             <small>
-              Interest received! The club/project lead will send you follow up
-              details.
+              Interest received! The club/project lead will send more info.
             </small>
           </div>
         )}
@@ -163,15 +182,30 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
 const StyledProjectPanel = styled.div`
   background: ${ugcTheme.colors.blue[500]};
   color: white;
-  padding: 1em;
+  .project-panel__status {
+    // background: ${ugcTheme.colors.green[500]};
+    // color: ${ugcTheme.colors.blue[500]};
+    background: #0000aa;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 900;
+    text-align: left;
+    padding: 0.75em 1.25em 0.5em;
+    font-size: 10px;
+  }
   .project-panel__details__view {
+    padding: 0.5em 1em 0;
     .project_name {
       font-size: 16px;
       font-weight: 900;
+      border-bottom: 2px solid ${ugcTheme.colors.blue[100]};
+      margin-bottom: 6px;
+      padding-bottom: 6px;
+      padding-top: 6px;
     }
     .project_description {
       display: flex;
       line-height: 125%;
+      font-size: 11px;
       span {
         flex-grow: 1;
         width: 50%;
@@ -185,8 +219,8 @@ const StyledProjectPanel = styled.div`
       }
       &.goal {
         svg {
-          height: 22px;
-          width: 22px;
+          min-width: 15px;
+          width: 15px;
         }
       }
     }
@@ -206,14 +240,14 @@ const StyledProjectPanel = styled.div`
     }
   }
   .project-panel__members {
-    border-top: 2px solid ${ugcTheme.colors.white[500]};
-    padding-top: 0.5em;
-    margin-top: 0.5em;
+    padding: 0.25em 1em 0.5em;
     & > div.member-row {
       display: flex;
       align-items: center;
       max-height: 40px;
-      margin: 4px 0 0;
+      border-top: 2px solid ${ugcTheme.colors.blue[100]};
+      margin: 4px 0;
+      padding-top: 12px;
       span {
         height: 28px;
         width: auto;
@@ -227,6 +261,7 @@ const StyledProjectPanel = styled.div`
       }
       button {
         margin-left: auto;
+        height: 100%;
       }
     }
     .new-interest {
