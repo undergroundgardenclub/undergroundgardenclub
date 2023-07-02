@@ -8,6 +8,7 @@ import ReactFlow, {
   Edge,
   Node,
   Controls,
+  MiniMap,
 } from "reactflow";
 import styled from "styled-components";
 import { TQuest } from "./types";
@@ -15,6 +16,7 @@ import { questEdges, questNodes } from "./questsData";
 import { questsNodeTypes } from "./questsNodeTypes";
 import { useEffect } from "react";
 import { useMedia } from "react-use";
+import { ugcTheme } from "../styled/theme";
 
 // TREE
 export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
@@ -42,8 +44,8 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
           const isMobile = browser.getPlatformType() !== "desktop";
           // console.log(inst);
           // console.log(inst.getZoom());
-          inst.setCenter(isMobile ? 110 : 100, isMobile ? -100 : -140);
-          inst.zoomTo(isMobile ? 0.7 : 0.9);
+          inst.setCenter(isMobile ? 110 : 100, isMobile ? -100 : -40);
+          inst.zoomTo(isMobile ? 0.7 : 0.75);
         }}
         edgesUpdatable={false} // still allows for deletion tho?
         nodesConnectable={false}
@@ -52,8 +54,8 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         {/* <MiniMap /> */}
         <Controls showInteractive={false} />
         <Background
-          style={{ background: "#1f1" }}
-          color="#00BBFF"
+          style={{ background: ugcTheme.colors.green[500] }}
+          color={ugcTheme.colors.blue[700]}
           variant={BackgroundVariant.Lines}
         />
       </ReactFlow>

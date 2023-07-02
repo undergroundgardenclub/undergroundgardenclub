@@ -12,7 +12,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-00",
     type: "start",
-    position: { x: -55, y: -370 },
+    position: { x: -85, y: -370 },
     data: {},
   },
   {
