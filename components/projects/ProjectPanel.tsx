@@ -56,11 +56,9 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
           </p>
         ) : null} */}
         {project.onboarding_doc_url?.length > 0 ? (
-          <p className="project_description">
-            <ReactMarkdown linkTarget="_blank">
-              {`Onboarding: ${project.onboarding_doc_url}`}
-            </ReactMarkdown>
-          </p>
+          <ReactMarkdown linkTarget="_blank" className="project_description">
+            {`Onboarding: ${project.onboarding_doc_url}`}
+          </ReactMarkdown>
         ) : null}
         {/* <p className="project_description">
           <span>
@@ -114,47 +112,49 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
       </div>
       {/* INTERESTS/MEMBERS */}
       <div className="project-panel__members">
-        <div className="member-row">
-          {project.project_user.map((pu) => (
-            <span key={pu.user.avatar_url}>
-              <img alt={pu.user.name} src={pu.user.avatar_url} />
-            </span>
-          ))}
-          {project.num_members ? (
-            <small>+ {project.num_members} more members</small>
-          ) : null}
-          {!isLead && (
-            <StyledButton
-              variant={isMember ? "green" : "white"}
-              onClick={() => {
-                // IF NOT LOGGED IN, PROMPT
-                if (user?.id === undefined) {
-                  modal.setIsOpen(
-                    true,
-                    <SSOPanel
-                      headline={`Create an Account to Get Info About '${project.name}'`}
-                      redirectTo={location.pathname}
-                    />
-                  );
-                } else {
-                  // ... ELSE LET EM GET INTERESTED/DISINTERESTED
-                  relateProjectUser({
-                    project_id: project.id,
-                    user_id: user.id,
-                    relate: !isMember,
-                  });
-                  // if becoming new member, flash the interest message
-                  if (!isMember) {
-                    setIsNewInterest(true);
-                    setTimeout(() => setIsNewInterest(false), 8_000);
+        {!isLead && (
+          <div className="member-row">
+            {project.project_user.map((pu) => (
+              <span key={pu.user.avatar_url}>
+                <img alt={pu.user.name} src={pu.user.avatar_url} />
+              </span>
+            ))}
+            {project.num_members ? (
+              <small>+ {project.num_members} more members</small>
+            ) : null}
+            {!isLead && (
+              <StyledButton
+                variant={isMember ? "green" : "white"}
+                onClick={() => {
+                  // IF NOT LOGGED IN, PROMPT
+                  if (user?.id === undefined) {
+                    modal.setIsOpen(
+                      true,
+                      <SSOPanel
+                        headline={`Create an Account to Get Info About '${project.name}'`}
+                        redirectTo={location.pathname}
+                      />
+                    );
+                  } else {
+                    // ... ELSE LET EM GET INTERESTED/DISINTERESTED
+                    relateProjectUser({
+                      project_id: project.id,
+                      user_id: user.id,
+                      relate: !isMember,
+                    });
+                    // if becoming new member, flash the interest message
+                    if (!isMember) {
+                      setIsNewInterest(true);
+                      setTimeout(() => setIsNewInterest(false), 8_000);
+                    }
                   }
-                }
-              }}
-            >
-              {isMember ? "✓" : "I'm Interested!"}
-            </StyledButton>
-          )}
-        </div>
+                }}
+              >
+                {isMember ? "✓" : "I'm Interested!"}
+              </StyledButton>
+            )}
+          </div>
+        )}
         {!isLead && isMember && isNewInterest && (
           <div className="new-interest">
             <small>
@@ -274,9 +274,13 @@ const StyledProjectPanel = styled.div`
       }
     }
     .member-email-list {
-      margin-top: 0.5em;
+      border-top: 2px solid ${ugcTheme.colors.blue[100]};
+      margin: 4px 0;
+      padding-top: 12px;
       & > p {
-        padding: 0.5em 0;
+        &:first-of-type {
+          padding-bottom: 0.5em;
+        }
         text-decoration: underline;
       }
     }
