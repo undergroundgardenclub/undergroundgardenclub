@@ -1,8 +1,11 @@
+import { ChevronRightIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useInterval } from "react-use";
 import { Handle, Position } from "reactflow";
 import styled, { css } from "styled-components";
+import { ugcTheme } from "../styled/theme";
+import Link from "next/link";
 
 const StyledBaseNodeType = styled.div<{ variant?: string }>`
   margin: 0;
@@ -82,6 +85,9 @@ const StartNodeType = (props: any) => {
           {inspo ??
             "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)"}
         </ReactMarkdown>
+        <ReactMarkdown linkTarget="_blank" className="byline">
+          Start Here
+        </ReactMarkdown>
       </StyledStartNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
     </>
@@ -89,12 +95,17 @@ const StartNodeType = (props: any) => {
 };
 
 const StyledStartNodeType = styled(StyledSectionNodeType)`
-  min-width: 80px;
+  min-width: 100px;
+  width: 400px;
   background: blue;
   text-align: center;
-  p {
+  .title p {
     color: white;
     font-size: 16px;
+  }
+  .byline p {
+    font-size: 11px;
+    margin-top: 0.2em;
   }
 `;
 
@@ -106,20 +117,62 @@ const QuestNodeType = (props: any) => {
   return (
     <>
       <Handle type="target" position={Position.Top} id={id} />
-      <StyledQuestNodeType variant={data.variant}>
-        <ReactMarkdown linkTarget="_blank" className="title">
-          {data.title}
-        </ReactMarkdown>
-        {data.byLine && (
-          <ReactMarkdown linkTarget="_blank" className="byline">
-            {data.byLine}
+      <StyledNodeWrapper>
+        <StyledQuestNodeType variant={data.variant}>
+          <ReactMarkdown linkTarget="_blank" className="title">
+            {data.title}
           </ReactMarkdown>
+          {data.byLine && (
+            <ReactMarkdown linkTarget="_blank" className="byline">
+              {data.byLine}
+            </ReactMarkdown>
+          )}
+        </StyledQuestNodeType>
+        {data.link && (
+          <StyledNodeChevronLink
+            className="ready"
+            href={data.link}
+            target="_blank"
+            rel="noreferrer"
+            variant={data.variant}
+          >
+            <ChevronRightIcon />
+          </StyledNodeChevronLink>
         )}
-      </StyledQuestNodeType>
+      </StyledNodeWrapper>
       <Handle type="source" position={Position.Bottom} id={id} />
     </>
   );
 };
+
+const StyledNodeWrapper = styled.div`
+  display: flex;
+`;
+
+const StyledNodeChevronLink = styled.a<{ variant: string }>`
+  flex-grow: 1;
+  height: auto;
+  background: ${({ variant }) => {
+    if (variant === "hardware") return ugcTheme.colors.green[300];
+    if (variant === "course") return ugcTheme.colors.yellow[400];
+    return ugcTheme.colors.white[500]; // otherwise quest
+  }};
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  svg {
+    height: 18px;
+    width: 18px;
+    margin: 0 3px;
+    path {
+      fill: ${({ variant }) => {
+        if (variant === "hardware") return ugcTheme.colors.blue[100];
+        if (variant === "course") return ugcTheme.colors.blue[100];
+        return ugcTheme.colors.blue[100]; // otherwise quest
+      }};
+    }
+  }
+`;
 
 const StyledQuestNodeType = styled(StyledBaseNodeType)`
   min-width: 80px;

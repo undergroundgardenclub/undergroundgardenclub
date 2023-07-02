@@ -24,6 +24,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "[Introductory Bio/Chem](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
       byLine: "Lectures 1-3 @ MIT Opencourseware",
       variant: "course",
+      link: "https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/",
     },
   },
   {
@@ -33,18 +34,20 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     data: {
       title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
       byLine: "[@ Genspace](https://www.genspace.org)",
+      link: "https://www.genspace.org/classes",
     },
   },
   {
     id: "resource-03",
     type: "quest",
-    position: { x: -120, y: -285 },
+    position: { x: -140, y: -285 },
     data: {
       title:
         "[Getting Up to Speed on Bio](https://www.youtube.com/playlist?list=PLUl4u3cNGP629Egng0HfgRJfXBNTPw1le)",
       byLine:
         "Lectures 1-3 @ [MIT Opencourseware](https://openlearninglibrary.mit.edu/courses/course-v1:OCW+Pre-7.01+1T2020/course/)",
       variant: "course",
+      link: "https://www.youtube.com/playlist?list=PLUl4u3cNGP629Egng0HfgRJfXBNTPw1le",
     },
   },
   {
@@ -73,6 +76,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       title:
         "[Bio-Plastic Membership Card](https://undergroundgardenclub.notion.site/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4)",
       byLine: "(Deli Potatoes + Homemade Glycerol)",
+      link: "https://undergroundgardenclub.notion.site/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4",
     },
   },
   // {
@@ -95,6 +99,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "[Fundamentals of Materials Structure](https://openlearninglibrary.mit.edu/courses/course-v1:MITx+3.012S.1x+1T2019/course/)",
       byLine: "Unit 1 @ MIT Opencourseware",
       variant: "course",
+      link: "https://openlearninglibrary.mit.edu/courses/course-v1:MITx+3.012S.1x+1T2019/course/",
     },
   },
   {
@@ -105,6 +110,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       title:
         "[Transform Bacteria to Glow Green](https://undergroundgardenclub.notion.site/BQ-01-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80?pvs=4)",
       byLine: "(Inserting GFP DNA)",
+      link: "https://undergroundgardenclub.notion.site/BQ-01-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80?pvs=4",
     },
   },
   {
@@ -115,6 +121,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       title:
         "[Using Bacteria as Bio-Factories](https://undergroundgardenclub.notion.site/BQ-02-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611?pvs=4)",
       byLine: "(Replicating & Harvesting GFP DNA)",
+      link: "https://undergroundgardenclub.notion.site/BQ-02-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611?pvs=4",
     },
   },
   {
@@ -136,6 +143,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "[Plant Structures](https://www.enrole.com/nybg/jsp/course.jsp?courseId=204BOT315O&categoryId=ROOT)",
       byLine: "@ NY Botanical Gardens (Online)",
       variant: "course",
+      link: "https://www.enrole.com/nybg/jsp/course.jsp?courseId=204BOT315O&categoryId=ROOT",
     },
   },
   {
@@ -156,6 +164,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       title:
         "[Growing Marchantia Made Easy](https://undergroundgardenclub.notion.site/BQ-03-Marchantia-Growing-Propagating-in-Sterile-Containers-a12fc5a6694843c288961d1637a93e6b?pvs=4)",
       byLine: "(From Thallus Cliipings or Gemmae)",
+      link: "https://undergroundgardenclub.notion.site/BQ-03-Marchantia-Growing-Propagating-in-Sterile-Containers-a12fc5a6694843c288961d1637a93e6b?pvs=4",
     },
   },
   {
@@ -184,6 +193,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       title:
         "[Designing DNA Parts for Gene Editing Plasmid](https://undergroundgardenclub.notion.site/BQ-04-Designing-DNA-Plasmids-for-Gene-Editing-Bacteria-to-Carry-a220e3af73454d43b1c33b790a478a82?pvs=4)",
       byLine: "Chosing a plasmid, genes, and signaling DNA strands",
+      link: "https://undergroundgardenclub.notion.site/BQ-04-Designing-DNA-Plasmids-for-Gene-Editing-Bacteria-to-Carry-a220e3af73454d43b1c33b790a478a82?pvs=4",
     },
   },
   {
@@ -195,6 +205,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "[Building the Gene Editing Plasmid from DNA Fragments](https://undergroundgardenclub.notion.site/BQ-05-Constructing-DNA-Plasmid-from-DNA-Fragments-for-Gene-Editing-Bacteria-to-Carry-ae091cc26fe3491d8f3638992eb38ca6?pvs=4)",
       byLine:
         "Processes for Combinging DNA Fragments (PCR, Restriction Digest)",
+      link: "https://undergroundgardenclub.notion.site/BQ-05-Constructing-DNA-Plasmid-from-DNA-Fragments-for-Gene-Editing-Bacteria-to-Carry-ae091cc26fe3491d8f3638992eb38ca6?pvs=4",
     },
   },
   {
@@ -205,6 +216,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       title:
         "[GMO'ing Marchantia: via Spores](https://undergroundgardenclub.notion.site/BQ-06-Option-1-Infecting-Marchantia-with-Gene-Editing-Bacteria-Via-Spores-a030bde32c0f4dd3ac5ab660b332156c?pvs=4)",
       byLine: "Agrobacteria horizontal gene transfer in plant spores",
+      // link: "https://undergroundgardenclub.notion.site/BQ-06-Option-1-Infecting-Marchantia-with-Gene-Editing-Bacteria-Via-Spores-a030bde32c0f4dd3ac5ab660b332156c?pvs=4",
     },
   },
   {
@@ -215,6 +227,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       title:
         "[GMO'ing Marchantia: via Thallus](https://undergroundgardenclub.notion.site/BQ-06-Option-2-Infecting-Marchantia-with-Gene-Editing-Bacteria-Via-Thallus-cc9adcad905a41439853650cc53b9f3e?pvs=4)",
       byLine: "Agrobacteria horizontal gene transfer in plant clippings",
+      // link: "https://undergroundgardenclub.notion.site/BQ-06-Option-2-Infecting-Marchantia-with-Gene-Editing-Bacteria-Via-Thallus-cc9adcad905a41439853650cc53b9f3e?pvs=4",
     },
   },
   {
@@ -292,7 +305,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -460, y: 420 },
     data: {
       title: "Environmental Justice",
-      // byLine: "ft. [Soverign Science](https://www.instagram.com/sovereign.science/)",
+      byLine:
+        "ft. [Soverign Science](https://www.instagram.com/sovereign.science/)",
     },
   },
   {
@@ -435,6 +449,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "[3D Printing Crash Course](https://undergroundgardenclub.notion.site/TQ-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
       byLine: "Setup and Overview of How to Print",
       variant: "hardware",
+      link: "(https://undergroundgardenclub.notion.site/TQ-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4",
     },
   },
   {
@@ -446,6 +461,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "[Smartphone Florescence Microscope](https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
       byLine: "$50 + Smartphone > $5,000+ microscope",
       variant: "hardware",
+      link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
     },
   },
 ];

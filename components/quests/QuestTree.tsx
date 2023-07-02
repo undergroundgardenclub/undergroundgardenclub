@@ -5,17 +5,13 @@ import ReactFlow, {
   useEdgesState,
   BackgroundVariant,
   ReactFlowInstance,
-  Edge,
-  Node,
   Controls,
-  MiniMap,
 } from "reactflow";
 import styled from "styled-components";
 import { TQuest } from "./types";
 import { questEdges, questNodes } from "./questsData";
 import { questsNodeTypes } from "./questsNodeTypes";
 import { useEffect } from "react";
-import { useMedia } from "react-use";
 import { ugcTheme } from "../styled/theme";
 
 // TREE
@@ -44,7 +40,7 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
           const isMobile = browser.getPlatformType() !== "desktop";
           // console.log(inst);
           // console.log(inst.getZoom());
-          inst.setCenter(isMobile ? 110 : 100, isMobile ? -100 : -40);
+          inst.setCenter(isMobile ? 110 : 110, isMobile ? -100 : 0);
           inst.zoomTo(isMobile ? 0.7 : 0.75);
         }}
         edgesUpdatable={false} // still allows for deletion tho?
@@ -64,11 +60,8 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
 };
 
 const StyledQuestTree = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   .ugc-node {
     min-width: 280px;
     color: blue;
@@ -84,13 +77,13 @@ const StyledQuestTree = styled.div`
   .ugc-edge--course {
     path {
       stroke-width: 3;
-      stroke: #d8ff85;
+      stroke: ${ugcTheme.colors.yellow[700]};
     }
   }
   .ugc-edge--hardware {
     path {
       stroke-width: 3;
-      stroke: #1db233;
+      stroke: ${ugcTheme.colors.green[100]};
       opacity: 0.5;
     }
   }

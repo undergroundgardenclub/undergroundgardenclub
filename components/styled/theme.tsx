@@ -6,7 +6,13 @@ export const ugcTheme = {
       700: "#00BBFF",
     },
     green: {
+      100: "#1db233",
+      300: "#00e822",
       500: "#1f1",
+    },
+    yellow: {
+      400: "#bdf051",
+      700: "#d8ff85",
     },
     white: {
       500: "#f0f0f0",
