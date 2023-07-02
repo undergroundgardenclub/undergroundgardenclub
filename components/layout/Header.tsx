@@ -1,10 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Logo } from "../styled/Logo";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { ViewMode, ugcStore } from "../ugcStore";
-import { useInterval, useMouse } from "react-use";
 import { Flower } from "../styled/Flower";
 import Marquee from "react-fast-marquee";
+import Link from "next/link";
+import { ugcTheme } from "../styled/theme";
+import { useUser } from "../users/useUser";
+import { ProfilePanel } from "../users/ProfilePanel";
+import { useStore } from "zustand";
+import { modalStore } from "./useModal";
+import { StyledButton, StyledButtonAvatar } from "../styled/StyledButton";
 
 // for fun bc why not
 const LogoSkewer = () => {
@@ -34,50 +38,73 @@ const LogoSkewer = () => {
   );
 };
 
-export const Header = () => {
-  const { viewMode, setViewMode } = ugcStore();
+export const Header: React.FC<{ invert?: boolean }> = (props) => {
+  const modal = useStore(modalStore);
+  const { data: user } = useUser();
+  // RENDER
   return (
-    <StyledHeader>
+    <StyledHeader invert={props.invert}>
       <div className="header__logo">
         <LogoSkewer />
       </div>
       <div className="header__inspo">
         <Marquee autoFill>
           <div>JUST KEEP GROWING&ensp;</div>
+          {/* <div>FUCK AROUND&ensp;BUILD SHIT&ensp;</div> */}
           {/* <div>JUST GROW IT&ensp;</div> */}
+          {/* <div>WE GROW TOGETHER&ensp;</div> */}
         </Marquee>
       </div>
       <div className="header__actions">
-        {/* TODO: music player */}
-        <a href="https://genspace.org" target="_blank" rel="noreferrer">
-          <StyledButton>@ GENSPACE</StyledButton>
-        </a>
+        <Link href="/" passHref>
+          <StyledButton variant={props.invert ? "green" : "blue"}>
+            BIO-QUESTS
+          </StyledButton>
+        </Link>
+        <Link href="/projects" passHref>
+          <StyledButton variant={props.invert ? "green" : "blue"}>
+            JOIN A CLUB
+          </StyledButton>
+        </Link>
+        {user?.id && (
+          <StyledButtonAvatar
+            variant={props.invert ? "green" : "blue"}
+            onClick={() => modal.setIsOpen(true, <ProfilePanel />)}
+          >
+            <img alt="profile" src={user.avatar_url} />
+          </StyledButtonAvatar>
+        )}
       </div>
+      {/* TODO: music player */}
     </StyledHeader>
   );
 };
 
-const StyledHeader = styled.header`
-  position: absolute;
+const StyledHeader = styled.header<{ invert?: boolean }>`
+  position: fixed;
   left: 0;
   right: 0;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75em 1.5em;
+  padding: 0.5em 1.5em;
   pointer-events: none;
+  background: ${ugcTheme.colors.green[100]};
   .header__logo {
-    transform: rotate(180deg);
+    // transform: rotate(180deg);
     svg {
       mix-blend-mode: difference;
       path {
-        fill: blue;
+        fill: ${(props) =>
+          props.invert
+            ? ugcTheme.colors.green[500]
+            : ugcTheme.colors.blue[500]};
       }
     }
     &,
     svg {
-      height: 60px; // 48px
+      height: 48px; // 48px
       @media (max-width: 45em) {
         height: 48px;
       }
@@ -86,27 +113,25 @@ const StyledHeader = styled.header`
   .header__inspo {
     flex-grow: 1;
     color: blue;
-    font-family: "Stonewall 50";
+    font-family: ${ugcTheme.fonts.display};
+    color: ${(props) =>
+      props.invert ? ugcTheme.colors.green[500] : ugcTheme.colors.blue[500]};
     font-size: 24px;
     overflow: hidden;
+    @media (max-width: 45em) {
+      display: none;
+    }
   }
   .header__actions {
     flex-grow: 1;
-    width: 230px;
-    max-width: 230px;
-    text-align: right;
+    display: flex;
+    white-space: nowrap;
+    button {
+      margin-left: 0.5em;
+    }
+    @media (max-width: 45em) {
+      width: 100%;
+      justify-content: right;
+    }
   }
-`;
-
-const StyledButton = styled.button`
-  pointer-events: all;
-  text-transform: uppercase;
-  border: none;
-  background: blue;
-  color: white;
-  font-family: "Stonewall 50";
-  padding: 8px 12px 6px;
-  font-size: 13px;
-  cursor: pointer;
-  transform: skew(-5deg, 0);
 `;
