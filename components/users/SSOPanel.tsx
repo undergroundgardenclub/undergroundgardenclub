@@ -3,16 +3,19 @@ import styled from "styled-components";
 import { useLocation } from "react-use";
 import { useUser, useUserLogin, useUserLogout } from "./useUser";
 import { StyledButton } from "../styled/StyledButton";
+import { useStore } from "zustand";
+import { modalStore } from "../layout/useModal";
 
 export const SSOPanel: React.FC<{ headline?: string; redirectTo?: string }> = (
   props
 ) => {
   const location = useLocation();
+  const modal = useStore(modalStore);
   const { data: user } = useUser();
   const { mutateAsync: login } = useUserLogin();
   const { mutateAsync: logout } = useUserLogout();
   const redirectTo = location.origin + (props.redirectTo ?? "/projects");
-  const [loginSuccess, setLoginSuccess] = useState<boolean>(null);
+  const [loginSuccess, setLoginSuccess] = useState<boolean>();
 
   // RENDER either logout/login
   return (
@@ -41,7 +44,11 @@ export const SSOPanel: React.FC<{ headline?: string; redirectTo?: string }> = (
                 disabled={loginSuccess === true}
               />
             </label>
-            <StyledButton type="submit" disabled={loginSuccess === true}>
+            <StyledButton
+              type="submit"
+              variant="blue"
+              disabled={loginSuccess === true}
+            >
               Login with Email (Magic Link)
             </StyledButton>
             {loginSuccess === true && <p>Check your email for a link!</p>}
@@ -55,6 +62,7 @@ export const SSOPanel: React.FC<{ headline?: string; redirectTo?: string }> = (
             Login with Apple
           </StyledButton> */}
           <StyledButton
+            variant="blue"
             onClick={() => login({ provider: "google", redirectTo })}
           >
             Login with Google
@@ -67,6 +75,10 @@ export const SSOPanel: React.FC<{ headline?: string; redirectTo?: string }> = (
           >
             Login with Twitter
           </StyledButton> */}
+          <hr />
+          <StyledButton onClick={() => modal.setIsOpen(false)}>
+            Nevermind
+          </StyledButton>
         </>
       )}
     </StyledSSOPanel>
