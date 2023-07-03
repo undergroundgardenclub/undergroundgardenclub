@@ -9,6 +9,7 @@ import { modalStore } from "./useModal";
 import { StyledButtonAvatar } from "../styled/StyledButton";
 import { LogoSkewer } from "./LogoSkewer";
 import { ProjectCreatorButton } from "../projects/ProjectCreatorButton";
+import { PersonIcon } from "@radix-ui/react-icons";
 
 export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
   props
@@ -48,7 +49,11 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
             variant={props.invert ? "green" : "blue"}
             onClick={() => modal.setIsOpen(true, <ProfilePanel />)}
           >
-            <img alt="profile" src={user.avatar_url} />
+            {user.avatar_url ? (
+              <img alt="profile" src={user.avatar_url} />
+            ) : (
+              <PersonIcon />
+            )}
           </StyledButtonAvatar>
         )}
       </div>

@@ -29,10 +29,14 @@ export const StyledButton = styled.button<{ variant?: TStyledButtonVariant }>`
   cursor: pointer;
   // transform: skew(-5deg, 0);
   height: 32px;
+  &:disabled {
+    opacity: 0.5;
+  }
 `;
 
 export const StyledButtonAvatar = styled(StyledButton)`
   padding: 0;
+  min-width: 28px;
   img {
     height: 100%;
   }

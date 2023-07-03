@@ -40,13 +40,24 @@ export const useUser = () => {
 // AUTH
 export const useUserLogin = () => {
   return useMutation(
-    async ({ provider, redirectTo }: any): Promise<TUser> => {
-      const { data, error }: any = await supaClient.auth.signInWithOAuth({
-        provider,
-        options: { redirectTo },
-      });
-      if (error) throw error;
-      return data;
+    async ({ provider, redirectTo, email }: any): Promise<TUser> => {
+      // IF MAGIC LINK (https://supabase.com/docs/guides/auth/auth-magic-link)
+      if (provider === "magicLink") {
+        const { data, error }: any = await supaClient.auth.signInWithOtp({
+          email,
+          options: { emailRedirectTo: redirectTo },
+        });
+        if (error) throw error;
+        return data;
+      } else {
+        // IF SOCIAL (https://supabase.com/docs/guides/auth/social-login)
+        const { data, error }: any = await supaClient.auth.signInWithOAuth({
+          provider,
+          options: { redirectTo },
+        });
+        if (error) throw error;
+        return data;
+      }
     },
     {
       onSettled: async () => queryClient.resetQueries(["user"]),

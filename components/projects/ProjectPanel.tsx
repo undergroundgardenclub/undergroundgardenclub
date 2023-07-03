@@ -115,11 +115,13 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
       <div className="project-panel__members">
         {!isLead && (
           <div className="member-row">
-            {project.project_user.map((pu) => (
-              <span key={pu.user.avatar_url}>
-                <img alt={pu.user.name} src={pu.user.avatar_url} />
-              </span>
-            ))}
+            {project.project_user
+              ?.filter((pu) => pu.user.avatar_url != null)
+              ?.map((pu) => (
+                <span key={pu.user.avatar_url}>
+                  <img alt={pu.user.name} src={pu.user.avatar_url} />
+                </span>
+              ))}
             {project.num_members ? (
               <small>+ {project.num_members} more members</small>
             ) : null}
