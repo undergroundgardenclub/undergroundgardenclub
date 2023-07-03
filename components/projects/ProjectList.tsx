@@ -15,7 +15,7 @@ export const ProjectList = () => {
         <MagnifyingGlassIcon />
         <input
           value={searchText}
-          placeholder="Search for projects and groups"
+          placeholder="Search community projects and groups"
           onChange={(e) => setSearchText(e.target.value)}
         />
       </div>

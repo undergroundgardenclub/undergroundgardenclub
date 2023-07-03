@@ -449,7 +449,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "[3D Printing Crash Course](https://undergroundgardenclub.notion.site/TQ-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
       byLine: "Setup and Overview of How to Print",
       variant: "hardware",
-      link: "(https://undergroundgardenclub.notion.site/TQ-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4",
+      link: "https://undergroundgardenclub.notion.site/TQ-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4",
     },
   },
   {
