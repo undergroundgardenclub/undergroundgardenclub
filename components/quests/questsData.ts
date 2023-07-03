@@ -147,6 +147,18 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
+    id: "resource-06",
+    type: "quest",
+    position: { x: -680, y: 270 },
+    data: {
+      title:
+        "[Soil Science 1: Physical Properties](https://www.enrole.com/nybg/jsp/course.jsp?courseId=154HRT301&categoryId=10109)",
+      byLine: "@ NY Botanical Gardens (Online)",
+      variant: "course",
+      link: "https://www.enrole.com/nybg/jsp/course.jsp?courseId=154HRT301&categoryId=10109",
+    },
+  },
+  {
     id: "botanicalPharm-00",
     type: "section",
     position: { x: 20, y: 380 },
@@ -277,32 +289,64 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "plantGrowth-10",
     type: "section",
-    position: { x: -870, y: 420 },
+    position: { x: -320, y: 420 },
     data: { title: "Plant Growth Hacking" },
   },
   {
     id: "plantGrowth-11",
     type: "quest",
-    position: { x: -1020, y: 475 },
-    data: { title: "Speed Breeding Cabinet" },
+    position: { x: -420, y: 475 },
+    data: {
+      title:
+        "[Speed Breeding Cabinet](https://www.biorxiv.org/content/10.1101/369512v1.full.pdf)",
+      byLine: "(Ft. John Innes Institute)",
+    },
   },
   {
     id: "plantGrowth-12",
     type: "quest",
-    position: { x: -915, y: 540 },
+    position: { x: -315, y: 540 },
     data: { title: "Repressive Gene Knockout", byLine: "(w/ CRISPR)" },
   },
   {
     id: "plantGrowth-13",
     type: "quest",
-    position: { x: -770, y: 495 },
+    position: { x: -170, y: 495 },
     data: { title: "Polyploiding" },
+  },
+  // --- nutrition & intro analysis
+  {
+    id: "consciousConsumption-00",
+    type: "section",
+    position: { x: -840, y: 60 },
+    data: {
+      title: "Food Justice",
+      byLine: "Intro Experiments Pt.3",
+    },
+  },
+  {
+    id: "consciousConsumption-10",
+    type: "quest",
+    position: { x: -1020, y: 140 },
+    data: {
+      title: "Checking Food Quality",
+      byLine: "Nutritional Density W/ Refractometers",
+    },
+  },
+  {
+    id: "consciousConsumption-11",
+    type: "quest",
+    position: { x: -750, y: 140 },
+    data: {
+      title: "Urban Herb Gardening",
+      byLine: "Intro to Indoor Plant Cultivation",
+    },
   },
   // --- env monitoring + litigation
   {
     id: "envJustice-00",
     type: "section",
-    position: { x: -460, y: 420 },
+    position: { x: -760, y: 420 },
     data: {
       title: "Environmental Justice",
       byLine:
@@ -312,7 +356,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-01",
     type: "quest",
-    position: { x: -655, y: 620 },
+    position: { x: -955, y: 620 },
     data: {
       title: "Environmental Data Stewardship",
       byLine: "(TODO)",
@@ -321,7 +365,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-10",
     type: "section",
-    position: { x: -305, y: 490 },
+    position: { x: -605, y: 490 },
     data: {
       title: "Sampling",
     },
@@ -329,7 +373,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-11",
     type: "quest",
-    position: { x: -435, y: 555 },
+    position: { x: -735, y: 555 },
     data: {
       title: "Soil Sampling",
       byLine: "(TODO)",
@@ -338,7 +382,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-12",
     type: "quest",
-    position: { x: -245, y: 555 },
+    position: { x: -545, y: 555 },
     data: {
       title: "Water Sampling",
       byLine: "(TODO)",
@@ -347,7 +391,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-13",
     type: "quest",
-    position: { x: -340, y: 620 },
+    position: { x: -640, y: 620 },
     data: {
       title: "Air Sampling",
       byLine: "(TODO)",
@@ -356,7 +400,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "envJustice-20",
     type: "section",
-    position: { x: -495, y: 715 },
+    position: { x: -795, y: 715 },
     data: {
       title: "Environmental Litigation 101",
       byLine: "(Case Building Strategy)",
@@ -403,7 +447,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "bioFerm-40",
     type: "section",
-    position: { x: 1260, y: 680 },
+    position: { x: 1140, y: 680 },
     data: {
       title: "Medical-Grade Insulin",
       byLine: "Proteins Produced w/ Yeast",
@@ -412,7 +456,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "bioFerm-20",
     type: "section",
-    position: { x: 1460, y: 680 },
+    position: { x: 1340, y: 680 },
     data: {
       title: "Bio-based Haber-Bosch",
       byLine: "Eznymes Produced w/ Bacteria",
@@ -421,7 +465,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "bioFerm-30",
     type: "section",
-    position: { x: 1020, y: 680 },
+    position: { x: 910, y: 680 },
     data: {
       title: "Bacteria-based Jet Fuel",
       byLine:
@@ -432,11 +476,40 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "bioFerm-50",
     type: "section",
-    position: { x: 760, y: 680 },
+    position: { x: 710, y: 680 },
     data: {
       title: "Spider Silk via Yeast",
       byLine:
         "ft. [Open Plant @ Genspace](https://www.genspace.org/community-projects)",
+    },
+  },
+  // --- environmental biology
+  {
+    id: "bioProspecting-00",
+    type: "section",
+    position: { x: -1220, y: 420 },
+    data: {
+      title: "Bio-Prospecting",
+      byLine: "Culturing Wild and Exceptional Microbes",
+    },
+  },
+  {
+    id: "bioProspecting-10",
+    type: "quest",
+    position: { x: -1350, y: 490 },
+    data: {
+      title:
+        "Bioluminescent [Fox Fire](https://en.wikipedia.org/wiki/Foxfire) Fungi",
+      byLine: "[Ft. Fungi For the People](https://fungiforthepeople.org/)",
+    },
+  },
+  {
+    id: "bioProspecting-20",
+    type: "quest",
+    position: { x: -1090, y: 490 },
+    data: {
+      title: "Methane Eating Bacteria",
+      byLine: "TODO",
     },
   },
   // --- hardware
@@ -537,6 +610,10 @@ export const questEdges: Edge[] = [
   {
     source: "start-30",
     target: "envJustice-00",
+  },
+  {
+    source: "start-30",
+    target: "bioProspecting-00",
   },
   {
     source: "start-30",
@@ -650,7 +727,30 @@ export const questEdges: Edge[] = [
     source: "botanicalPharm-53",
     target: "botanicalPharm-30",
   },
+  // --- food justice
+  {
+    source: "consciousConsumption-00",
+    target: "consciousConsumption-10",
+  },
+  {
+    source: "consciousConsumption-00",
+    target: "consciousConsumption-11",
+  },
+  {
+    source: "consciousConsumption-10",
+    target: "envJustice-00",
+    className: "ugc-edge--dashed",
+  },
+  {
+    source: "consciousConsumption-11",
+    target: "botanicalPharm-00",
+    className: "ugc-edge--dashed",
+  },
   // --- env justice
+  {
+    source: "resource-06",
+    target: "envJustice-00",
+  },
   {
     source: "envJustice-00",
     target: "envJustice-01",
@@ -715,6 +815,15 @@ export const questEdges: Edge[] = [
   {
     source: "bioFerm-02",
     target: "bioFerm-50",
+  },
+  // bio-prospecting
+  {
+    source: "bioProspecting-00",
+    target: "bioProspecting-10",
+  },
+  {
+    source: "bioProspecting-00",
+    target: "bioProspecting-20",
   },
 ].map((e) => ({
   ...e,

@@ -74,6 +74,13 @@ const StyledQuestTree = styled.div`
       stroke-width: 5;
     }
   }
+  .ugc-edge--dashed {
+    path {
+      stroke: rgba(0, 0, 255, 0.3);
+      stroke-width: 5;
+      stroke-dasharray: 10px;
+    }
+  }
   .ugc-edge--course {
     path {
       stroke-width: 3;
