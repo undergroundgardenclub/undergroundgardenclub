@@ -28,6 +28,7 @@ export const SSOPanel: React.FC<{ headline?: string; redirectTo?: string }> = (
           <form
             onSubmit={async (e) => {
               e.preventDefault();
+              // @ts-expect-error
               const email = e.target.email.value;
               if (email) {
                 await login({ provider: "magicLink", email, redirectTo });
