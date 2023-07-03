@@ -22,9 +22,10 @@ export const useUser = () => {
         .from("user")
         .insert({
           auth_user_id: authedUser.user.id,
-          name: authedUser.user.user_metadata.name,
-          email: authedUser.user.user_metadata.email,
-          avatar_url: authedUser.user.user_metadata.avatar_url,
+          name: authedUser.user?.user_metadata?.name,
+          email:
+            authedUser.user?.user_metadata?.email ?? authedUser.user?.email,
+          avatar_url: authedUser.user?.user_metadata?.avatar_url,
         })
         .select();
       return newProfileUser?.[0];

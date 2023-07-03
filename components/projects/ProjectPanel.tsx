@@ -171,7 +171,8 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
             <ul>
               {orderBy(project.project_user, ["user.name"]).map((pu) => (
                 <li key={pu.user.id}>
-                  {pu.user.name} {pu.user.email ? `(${pu.user.email})` : ""}
+                  {pu.user.name ?? "n/a"}{" "}
+                  {pu.user.email ? `(${pu.user.email})` : "(n/a)"}
                 </li>
               ))}
             </ul>
