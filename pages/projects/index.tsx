@@ -4,11 +4,13 @@ import { ugcTheme } from "../../components/styled/theme";
 import { HeaderActions } from "../../components/layout/HeaderActions";
 import { ProjectCreatorButton } from "../../components/projects/ProjectCreatorButton";
 import { ProjectList } from "../../components/projects/ProjectList";
+import { SEO } from "../../components/seo/SEO";
 
 export default function ProjectsPage() {
   // RENDER
   return (
     <>
+      <SEO title="PROJECTS | UNDERGROUND GARDEN CLUB" />
       <StyledProjectsPage>
         <HeaderActions invert />
         <div className="projects">
