@@ -5,7 +5,7 @@ import { ugcTheme } from "../styled/theme";
 import Link from "next/link";
 import { StyledButton } from "../styled/StyledButton";
 
-export const HeaderNav = (props) => {
+export const HeaderNav: React.FC<{ invert?: string }> = (props) => {
   return (
     <StyledHeaderNav>
       <LogoSkewer />
@@ -18,7 +18,7 @@ export const HeaderNav = (props) => {
   );
 };
 
-const StyledHeaderNav = styled.header`
+const StyledHeaderNav = styled.header<{ invert?: string }>`
   position: absolute;
   z-index: 10;
   top: 0;

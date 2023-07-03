@@ -7,29 +7,31 @@ import { queryClient } from "../query/queryClient";
 export const useUser = () => {
   return useQuery<TUser | null>(["user"], async () => {
     // fetch authed
-    const authedUser = await supaClient.auth.getUser();
+    const { data: authedUser } = await supaClient.auth.getUser();
+    if (!authedUser?.user) return null;
+
     // fetch profile
-    const profileUser = await supaClient
+    const { data: profileUser } = await supaClient
       .from("user")
       .select()
-      .eq("auth_user_id", authedUser.data.user.id);
+      .eq("auth_user_id", authedUser.user.id);
 
     // HACK: if no profile, create one (wrorried about duplication but w/e for now)
-    if (profileUser.data?.length === 0) {
-      const newProfileUser = await supaClient
+    if (profileUser?.length === 0) {
+      const { data: newProfileUser } = await supaClient
         .from("user")
         .insert({
-          auth_user_id: authedUser.data.user.id,
-          name: authedUser.data.user.user_metadata.name,
-          email: authedUser.data.user.user_metadata.email,
-          avatar_url: authedUser.data.user.user_metadata.avatar_url,
+          auth_user_id: authedUser.user.id,
+          name: authedUser.user.user_metadata.name,
+          email: authedUser.user.user_metadata.email,
+          avatar_url: authedUser.user.user_metadata.avatar_url,
         })
         .select();
-      return newProfileUser.data[0];
+      return newProfileUser?.[0];
     }
 
     // return
-    return profileUser.data[0];
+    return profileUser?.[0];
   });
 };
 

@@ -27,14 +27,23 @@ export const ProjectEditorPanel: React.FC<{
         // --- project
         const { data: projectData, error } = await upsertProject({
           id: project.id,
+          // @ts-expect-error
           name: e.target.name.value,
+          // @ts-expect-error
           slug: project.slug ?? kebabCase(e.target.name.value), // only set initially so seo page doesnt change
+          // @ts-expect-error
           goal: e.target.goal.value,
+          // @ts-expect-error
           status: e.target.status.value,
+          // @ts-expect-error
           meeting_schedule: e.target.meeting_schedule.value,
+          // @ts-expect-error
           meeting_location: e.target.meeting_location.value,
-          // prerequisites: e.target.prerequisites.value,
+          // @ts-expect-error
+          prerequisites: e.target.prerequisites.value,
+          // @ts-expect-error
           onboarding_doc_url: e.target.onboarding_doc_url.value,
+          // @ts-expect-error
           num_members: e.target.num_members.value,
         });
         if (error) throw error;
@@ -81,10 +90,10 @@ export const ProjectEditorPanel: React.FC<{
           defaultValue={project.meeting_location}
         />
       </label>
-      {/* <label>
+      <label>
         <span>Prerequisites:</span>
         <input name="prerequisites" defaultValue={project.prerequisites} />
-      </label> */}
+      </label>
       <label>
         <span>Onboarding Doc URL:</span>
         <input
