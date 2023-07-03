@@ -22,20 +22,22 @@ export const SSOPanel: React.FC<{ headline?: string; redirectTo?: string }> = (
         <>
           <h3>{props.headline ?? "Join the Club"}</h3>
           <hr />
-          {/* <button onClick={() => login({ provider: "apple", redirectTo })}>
+          {/* <StyledButton onClick={() => login({ provider: "apple", redirectTo })}>
             Login with Apple
-          </button> */}
+          </StyledButton> */}
           <StyledButton
             onClick={() => login({ provider: "google", redirectTo })}
           >
             Login with Google
           </StyledButton>
-          {/* <button onClick={() => login({ provider: "microsoft", redirectTo })}>
+          {/* <StyledButton onClick={() => login({ provider: "microsoft", redirectTo })}>
             Login with Microsoft
-          </button> */}
-          {/* <button onClick={() => login({ provider: "twitter", redirectTo })}>
+          </StyledButton> */}
+          {/* <StyledButton
+            onClick={() => login({ provider: "twitter", redirectTo })}
+          >
             Login with Twitter
-          </button> */}
+          </StyledButton> */}
         </>
       )}
     </StyledSSOPanel>
@@ -45,4 +47,11 @@ export const SSOPanel: React.FC<{ headline?: string; redirectTo?: string }> = (
 const StyledSSOPanel = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+  button {
+    margin: 0.5em 0;
+    width: 100%;
+  }
 `;
