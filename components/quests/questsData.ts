@@ -486,9 +486,9 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "bioProspecting-00",
     type: "section",
-    position: { x: -1220, y: 420 },
+    position: { x: 1040, y: 50 },
     data: {
-      title: "Culturing Wild and Exceptional Microbes",
+      title: "Finding and Using Exceptional Microbes",
       byLine:
         "[Ft. Two Frontiers Project](https://github.com/two-frontiers-project/fieldwork-tools)",
     },
@@ -496,7 +496,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-07",
     type: "quest",
-    position: { x: -1280, y: 320 },
+    position: { x: 1020, y: 210 },
     data: {
       title:
         "[Bio-Prospecting v. Bio-Piracy](https://e360.yale.edu/features/indigenous-maize-who-owns-the-rights-to-mexicos-wonder-plant)",
@@ -508,7 +508,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "bioProspecting-10",
     type: "quest",
-    position: { x: -1350, y: 490 },
+    position: { x: 920, y: 140 },
     data: {
       title:
         "Bioluminescent [Fox Fire](https://en.wikipedia.org/wiki/Foxfire) Fungi",
@@ -518,7 +518,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "bioProspecting-20",
     type: "quest",
-    position: { x: -1090, y: 490 },
+    position: { x: 1220, y: 140 },
     data: {
       title: "Methane Eating Bacteria",
       byLine: "TODO",
@@ -623,10 +623,6 @@ export const questEdges: Edge[] = [
   {
     source: "start-30",
     target: "envJustice-00",
-  },
-  {
-    source: "start-30",
-    target: "bioProspecting-00",
   },
   {
     source: "start-30",
@@ -839,8 +835,13 @@ export const questEdges: Edge[] = [
     target: "bioProspecting-20",
   },
   {
+    source: "bioProspecting-00",
+    target: "resource-07",
+  },
+  {
     source: "resource-07",
-    target: "bioProspecting-00",
+    target: "bioFerm-00",
+    className: "ugc-edge--dashed",
   },
 ].map((e) => ({
   ...e,
