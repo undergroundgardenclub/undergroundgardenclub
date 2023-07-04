@@ -282,7 +282,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 300, y: 410 },
     data: {
       title: "Glowing Houseplants",
-      byLine: "GMO'ing with Synthetic Enzymes",
+      byLine: "GMO'ing with Synthetic Luciferin",
     },
   },
   // -- plant growth hacking
@@ -338,7 +338,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "quest",
     position: { x: -750, y: 140 },
     data: {
-      title: "Urban Herb Gardening",
+      title: "Kitchen Herb Gardening",
       byLine: "Intro to Indoor Plant Cultivation",
     },
   },
@@ -472,9 +472,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "Produced w/ Bacteria. [Seriously](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6195743/).",
     },
   },
-  // --- TODO: engineering spider silk
   {
-    id: "bioFerm-50",
+    id: "bioFerm-50", // --- TODO: engineering spider silk
     type: "section",
     position: { x: 710, y: 680 },
     data: {
@@ -489,8 +488,21 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "section",
     position: { x: -1220, y: 420 },
     data: {
-      title: "Bio-Prospecting",
-      byLine: "Culturing Wild and Exceptional Microbes",
+      title: "Culturing Wild and Exceptional Microbes",
+      byLine:
+        "[Ft. Two Frontiers Project](https://github.com/two-frontiers-project/fieldwork-tools)",
+    },
+  },
+  {
+    id: "resource-07",
+    type: "quest",
+    position: { x: -1280, y: 320 },
+    data: {
+      title:
+        "[Bio-Prospecting v. Bio-Piracy](https://e360.yale.edu/features/indigenous-maize-who-owns-the-rights-to-mexicos-wonder-plant)",
+      byLine: "Who Owns the Rights to Mexico’s ‘Wonder’ Plant?",
+      variant: "course",
+      link: "https://e360.yale.edu/features/indigenous-maize-who-owns-the-rights-to-mexicos-wonder-plant",
     },
   },
   {
@@ -537,6 +549,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
     },
   },
+  // --- methane
 ];
 
 // ===============================
@@ -824,6 +837,10 @@ export const questEdges: Edge[] = [
   {
     source: "bioProspecting-00",
     target: "bioProspecting-20",
+  },
+  {
+    source: "resource-07",
+    target: "bioProspecting-00",
   },
 ].map((e) => ({
   ...e,
