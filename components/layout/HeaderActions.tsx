@@ -98,7 +98,6 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
     border-left: 2px solid;
     border-right: 2px solid;
     border-color: ${ugcTheme.colors.green[500]};
-    // margin: 0 0.5em;
     align-items: center;
     display: flex;
     padding-top: 0.25em;

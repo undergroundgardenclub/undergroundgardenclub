@@ -4,14 +4,20 @@ import { LogoSkewer } from "./LogoSkewer";
 import { ugcTheme } from "../styled/theme";
 import Link from "next/link";
 import { StyledButton } from "../styled/StyledButton";
+import Marquee from "react-fast-marquee";
 
 export const HeaderNav: React.FC<{ invert?: string }> = (props) => {
   return (
     <StyledHeaderNav>
       <LogoSkewer />
+      <div className="header__inspo">
+        <Marquee autoFill>
+          <div>JUST KEEP GROWING&ensp;</div>
+        </Marquee>
+      </div>
       <Link href="/projects" passHref>
         <StyledButton variant={props.invert ? "green" : "blue"}>
-          Join a Club / Project
+          Community
         </StyledButton>
       </Link>
     </StyledHeaderNav>
@@ -23,7 +29,7 @@ const StyledHeaderNav = styled.header<{ invert?: string }>`
   z-index: 10;
   top: 0;
   left: 0;
-  right: 0;
+  right: 420px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,15 +44,34 @@ const StyledHeaderNav = styled.header<{ invert?: string }>`
   }
   &,
   svg {
-    height: 48px; // 48px
+    height: 28px; // 28px
     @media (max-width: 45em) {
-      height: 48px;
+      height: 28px;
     }
   }
+  .header__inspo {
+    flex-grow: 1;
+    color: blue;
+    font-family: ${ugcTheme.fonts.display};
+    color: ${(props) =>
+      props.invert ? ugcTheme.colors.green[500] : ugcTheme.colors.blue[500]};
+    font-size: 24px;
+    overflow: hidden;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-color: ${ugcTheme.colors.blue[500]};
+    align-items: center;
+    display: flex;
+    padding-top: 0.25em;
+  }
+
   // ONLY SHOW LINK ON MOBILE
   @media (min-width: 45em) {
     & > button {
       display: none;
     }
+  }
+  @media (max-width: 45em) {
+    right: 0;
   }
 `;
