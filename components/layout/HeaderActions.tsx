@@ -39,9 +39,9 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
           </StyledButton>
         </Link> */}
         {/* <ProjectCreatorButton /> */}
-        {/* <Link href="/projects" passHref>
+        {/* <Link href="/community" passHref>
           <StyledButton variant={props.invert ? "green" : "blue"}>
-          JOIN A CLUB
+          COMMUNITY
           </StyledButton>
         </Link> */}
         {user?.id && (

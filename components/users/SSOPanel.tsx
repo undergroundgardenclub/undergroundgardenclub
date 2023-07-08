@@ -14,7 +14,7 @@ export const SSOPanel: React.FC<{ headline?: string; redirectTo?: string }> = (
   const { data: user } = useUser();
   const { mutateAsync: login } = useUserLogin();
   const { mutateAsync: logout } = useUserLogout();
-  const redirectTo = location.origin + (props.redirectTo ?? "/projects");
+  const redirectTo = location.origin + (props.redirectTo ?? "/community");
   const [loginSuccess, setLoginSuccess] = useState<boolean>();
 
   // RENDER either logout/login

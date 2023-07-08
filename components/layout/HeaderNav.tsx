@@ -15,7 +15,7 @@ export const HeaderNav: React.FC<{ invert?: string }> = (props) => {
           <div>JUST KEEP GROWING&ensp;</div>
         </Marquee>
       </div>
-      <Link href="/projects" passHref>
+      <Link href="/community" passHref>
         <StyledButton variant={props.invert ? "green" : "blue"}>
           Community
         </StyledButton>

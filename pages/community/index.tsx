@@ -6,22 +6,22 @@ import { ProjectCreatorButton } from "../../components/projects/ProjectCreatorBu
 import { ProjectList } from "../../components/projects/ProjectList";
 import { SEO } from "../../components/seo/SEO";
 
-export default function ProjectsPage() {
+export default function CommunityPage() {
   // RENDER
   return (
     <>
       <SEO title="PROJECTS | UNDERGROUND GARDEN CLUB" />
-      <StyledProjectsPage>
+      <StyledCommunityPage>
         <HeaderActions invert />
-        <div className="projects">
+        <div className="community">
           <ProjectList />
         </div>
-      </StyledProjectsPage>
+      </StyledCommunityPage>
     </>
   );
 }
 
-const StyledProjectsPage = styled.div`
+const StyledCommunityPage = styled.div`
   background: ${ugcTheme.colors.blue[100]};
   width: 100%;
   max-width: 100vw;
@@ -33,7 +33,7 @@ const StyledProjectsPage = styled.div`
     max-width: 600px;
     margin: 0 auto 1em;
   }
-  & > .projects {
+  & > .community {
     padding: 0.5em;
   }
 `;
