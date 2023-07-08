@@ -6,6 +6,7 @@ import { useProjects } from "./useProjects";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { ProjectCreatorButton } from "./ProjectCreatorButton";
 import { useResources } from "../resources/useResources";
+import { orderBy } from "lodash";
 
 export const ProjectList = () => {
   const { data: projects } = useProjects();
@@ -41,7 +42,7 @@ export const ProjectList = () => {
         Events <hr />
       </div>
       <div className="projects-list">
-        {resources
+        {orderBy(resources, ["name"])
           ?.filter((r) => r.type === "event")
           ?.filter((p) =>
             searchText.length === 0
@@ -57,7 +58,7 @@ export const ProjectList = () => {
         Organizations <hr />
       </div>
       <div className="projects-list">
-        {resources
+        {orderBy(resources, ["name"])
           ?.filter((r) => r.type === "organization")
           ?.filter((p) =>
             searchText.length === 0
