@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ProjectPanel } from "./ProjectPanel";
+import { ResourcePanel } from "../resources/ResourcePanel";
 import { useProjects } from "./useProjects";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { ProjectCreatorButton } from "./ProjectCreatorButton";
+import { useResources } from "../resources/useResources";
 
 export const ProjectList = () => {
   const { data: projects } = useProjects();
+  const { data: resources } = useResources();
   const [searchText, setSearchText] = useState("");
   // RENDER
   return (
@@ -15,23 +18,56 @@ export const ProjectList = () => {
         <MagnifyingGlassIcon />
         <input
           value={searchText}
-          placeholder="Search community projects and groups"
+          placeholder="Search experiments, events, organizations"
           onChange={(e) => setSearchText(e.target.value)}
         />
       </div>
+      <div className="projects-divider">
+        Experiments <hr />
+      </div>
       <div className="projects-list">
         {projects
-          ?.filter((p) => {
-            if (searchText.length === 0) return true;
-            // Crude text search on text values of project
-            return Object.values(p).map(String).join(" ").includes(searchText);
-          })
+          ?.filter((p) =>
+            searchText.length === 0
+              ? true
+              : Object.values(p).map(String).join(" ").includes(searchText)
+          )
           ?.map((project) => (
             <ProjectPanel key={project.id} project={project} />
           ))}
-        {/* <div className="project-add">
-          <ProjectCreatorButton />
-        </div> */}
+        {/* <div className="project-add"><ProjectCreatorButton /></div> */}
+      </div>
+      <div className="projects-divider">
+        Events <hr />
+      </div>
+      <div className="projects-list">
+        {resources
+          ?.filter((r) => r.type === "event")
+          ?.filter((p) =>
+            searchText.length === 0
+              ? true
+              : Object.values(p).map(String).join(" ").includes(searchText)
+          )
+          ?.map((resource) => (
+            <ResourcePanel key={resource.id} resource={resource} />
+          ))}
+        {/* <div className="project-add"><ProjectCreatorButton /></div> */}
+      </div>
+      <div className="projects-divider">
+        Organizations <hr />
+      </div>
+      <div className="projects-list">
+        {resources
+          ?.filter((r) => r.type === "organization")
+          ?.filter((p) =>
+            searchText.length === 0
+              ? true
+              : Object.values(p).map(String).join(" ").includes(searchText)
+          )
+          ?.map((resource) => (
+            <ResourcePanel key={resource.id} resource={resource} />
+          ))}
+        {/* <div className="project-add"><ProjectCreatorButton /></div> */}
       </div>
     </StyledProjectList>
   );
@@ -43,6 +79,7 @@ const StyledProjectList = styled.div`
   max-width: 600px;
   height: 100%;
   overflow-y: scroll;
+  padding-bottom: 36px;
   .project-search {
     display: flex;
     align-items: center;
@@ -65,8 +102,19 @@ const StyledProjectList = styled.div`
       }
     }
   }
+  .projects-divider {
+    display: flex;
+    align-items: center;
+    color: white;
+    opacity: 0.3;
+    font-size: 10px;
+    margin: 4px 0;
+    hr {
+      flex-grow: 1;
+      margin-left: 0.5em;
+    }
+  }
   .projects-list {
-    padding-bottom: 3em;
     & > * {
       margin-bottom: 0.5em;
     }
