@@ -11,6 +11,8 @@ import { modalStore } from "../layout/useModal";
 import { orderBy } from "lodash";
 import {
   CalendarIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
   GlobeIcon,
   LockClosedIcon,
   TargetIcon,
@@ -24,6 +26,7 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
   const modal = useStore(modalStore);
   const { data: user } = useUser();
   const { mutateAsync: relateProjectUser } = useProjectUserRelate();
+  const [showDetails, setShowDetails] = useState(false);
   const [isNewInterest, setIsNewInterest] = useState(false);
   const isMember = project.project_user.some((pu) => pu.user_id === user?.id);
   const isLead = project.project_user.some(
@@ -40,145 +43,171 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
         </div>
       ) : null} */}
       <div className="project-panel__details__view">
-        <p className="project_name">{project.name}</p>
-        <p className="project_description goal">
-          <TargetIcon />{" "}
-          <ReactMarkdown linkTarget="_blank">
-            {project.goal ?? ""}
-          </ReactMarkdown>
+        <p
+          className="project_name"
+          onClick={() => setShowDetails(!showDetails)}
+        >
+          <span>{project.name}</span>
+          {showDetails ? <ChevronUpIcon /> : <ChevronDownIcon />}
         </p>
-        {/* {project.prerequisites?.length > 0 ? (
-          <p className="project_description">
-            <LockClosedIcon />{" "}
-            <ReactMarkdown linkTarget="_blank">
-              {`Requirements: ${project.prerequisites}`}
-            </ReactMarkdown>
-          </p>
-        ) : null} */}
-        {/* @ts-expect-error */}
-        {project?.onboarding_doc_url?.length > 0 ? (
-          <ReactMarkdown linkTarget="_blank" className="project_description">
-            {`Onboarding: ${project.onboarding_doc_url}`}
-          </ReactMarkdown>
-        ) : null}
-        {/* <p className="project_description">
-          <span>
-            <CalendarIcon />{" "}
-            <ReactMarkdown linkTarget="_blank">
-              {project.meeting_schedule ?? ""}
-            </ReactMarkdown>
-          </span>
-          <span>
-            <GlobeIcon />{" "}
-            <ReactMarkdown linkTarget="_blank">
-              {project.meeting_location ?? ""}
-            </ReactMarkdown>
-          </span>
-        </p> */}
-        <p className="project_description">
-          <span>
-            <CalendarIcon />{" "}
-            <ReactMarkdown linkTarget="_blank">
-              {project.meeting_schedule ?? ""}
-            </ReactMarkdown>
-          </span>
-        </p>
-        <p className="project_description">
-          <span>
-            <GlobeIcon />{" "}
-            <ReactMarkdown linkTarget="_blank">
-              {project.meeting_location ?? ""}
-            </ReactMarkdown>
-          </span>
-        </p>
-        {isLead && (
-          <div className="edit-button">
-            <StyledButton
-              variant="white"
-              onClick={() =>
-                modal.setIsOpen(
-                  true,
-                  <ProjectEditorPanel
-                    project={project}
-                    onCancel={() => modal.setIsOpen(false)}
-                    onSave={() => modal.setIsOpen(false)}
-                  />
-                )
-              }
-            >
-              Edit
-            </StyledButton>
-          </div>
+        {showDetails ? (
+          <>
+            <p className="project_description goal">
+              <TargetIcon />{" "}
+              <ReactMarkdown linkTarget="_blank">
+                {project.goal ?? ""}
+              </ReactMarkdown>
+            </p>
+            {/* {project.prerequisites?.length > 0 ? (
+              <p className="project_description">
+                <LockClosedIcon />{" "}
+                <ReactMarkdown linkTarget="_blank">
+                  {`Requirements: ${project.prerequisites}`}
+                </ReactMarkdown>
+              </p>
+            ) : null} */}
+            {/* @ts-expect-error */}
+            {project?.onboarding_doc_url?.length > 0 ? (
+              <ReactMarkdown
+                linkTarget="_blank"
+                className="project_description"
+              >
+                {`Onboarding: ${project.onboarding_doc_url}`}
+              </ReactMarkdown>
+            ) : null}
+            {/* <p className="project_description">
+              <span>
+                <CalendarIcon />{" "}
+                <ReactMarkdown linkTarget="_blank">
+                  {project.meeting_schedule ?? ""}
+                </ReactMarkdown>
+              </span>
+              <span>
+                <GlobeIcon />{" "}
+                <ReactMarkdown linkTarget="_blank">
+                  {project.meeting_location ?? ""}
+                </ReactMarkdown>
+              </span>
+            </p> */}
+            <p className="project_description">
+              <span>
+                <CalendarIcon />{" "}
+                <ReactMarkdown linkTarget="_blank">
+                  {project.meeting_schedule ?? ""}
+                </ReactMarkdown>
+              </span>
+            </p>
+            <p className="project_description">
+              <span>
+                <GlobeIcon />{" "}
+                <ReactMarkdown linkTarget="_blank">
+                  {project.meeting_location ?? ""}
+                </ReactMarkdown>
+              </span>
+            </p>
+            {isLead && (
+              <div className="edit-button">
+                <StyledButton
+                  variant="white"
+                  onClick={() =>
+                    modal.setIsOpen(
+                      true,
+                      <ProjectEditorPanel
+                        project={project}
+                        onCancel={() => modal.setIsOpen(false)}
+                        onSave={() => modal.setIsOpen(false)}
+                      />
+                    )
+                  }
+                >
+                  Edit
+                </StyledButton>
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            <p className="project_description">
+              <span>
+                <GlobeIcon />{" "}
+                <ReactMarkdown linkTarget="_blank">
+                  {project.meeting_location ?? ""}
+                </ReactMarkdown>
+              </span>
+            </p>
+          </>
         )}
       </div>
       {/* INTERESTS/MEMBERS */}
-      <div className="project-panel__members">
-        {!isLead && (
-          <div className="member-row">
-            {project.project_user
-              ?.filter((pu) => pu.user.avatar_url != null)
-              ?.map((pu) => (
-                <span key={pu.user.avatar_url}>
-                  <img alt={pu.user.name} src={pu.user.avatar_url} />
-                </span>
-              ))}
-            {project.num_members ? (
-              <small>+ {project.num_members} more members</small>
-            ) : null}
-            {!isLead && (
-              <StyledButton
-                variant={isMember ? "green" : "white"}
-                onClick={() => {
-                  // IF NOT LOGGED IN, PROMPT
-                  if (user?.id === undefined) {
-                    modal.setIsOpen(
-                      true,
-                      <SSOPanel
-                        headline={`Create an Account to Get Info About '${project.name}'`}
-                        redirectTo={location.pathname}
-                      />
-                    );
-                  } else {
-                    // ... ELSE LET EM GET INTERESTED/DISINTERESTED
-                    relateProjectUser({
-                      project_id: project.id,
-                      user_id: user.id,
-                      relate: !isMember,
-                    });
-                    // if becoming new member, flash the interest message
-                    if (!isMember) {
-                      setIsNewInterest(true);
-                      setTimeout(() => setIsNewInterest(false), 8_000);
+      {showDetails && (
+        <div className="project-panel__members">
+          {!isLead && (
+            <div className="member-row">
+              {project.project_user
+                ?.filter((pu) => pu.user.avatar_url != null)
+                ?.map((pu) => (
+                  <span key={pu.user.avatar_url}>
+                    <img alt={pu.user.name} src={pu.user.avatar_url} />
+                  </span>
+                ))}
+              {project.num_members ? (
+                <small>+ {project.num_members} more members</small>
+              ) : null}
+              {!isLead && (
+                <StyledButton
+                  variant={isMember ? "green" : "white"}
+                  onClick={() => {
+                    // IF NOT LOGGED IN, PROMPT
+                    if (user?.id === undefined) {
+                      modal.setIsOpen(
+                        true,
+                        <SSOPanel
+                          headline={`Create an Account to Get Info About '${project.name}'`}
+                          redirectTo={location.pathname}
+                        />
+                      );
+                    } else {
+                      // ... ELSE LET EM GET INTERESTED/DISINTERESTED
+                      relateProjectUser({
+                        project_id: project.id,
+                        user_id: user.id,
+                        relate: !isMember,
+                      });
+                      // if becoming new member, flash the interest message
+                      if (!isMember) {
+                        setIsNewInterest(true);
+                        setTimeout(() => setIsNewInterest(false), 5_000);
+                      }
                     }
-                  }
-                }}
-              >
-                {isMember ? "✓" : "I'm Interested!"}
-              </StyledButton>
-            )}
-          </div>
-        )}
-        {!isLead && isMember && isNewInterest && (
-          <div className="new-interest">
-            <small>
-              Interest received! The club/project lead will send more info.
-            </small>
-          </div>
-        )}
-        {isLead && (
-          <div className="member-email-list">
-            <p>Roster</p>
-            <ul>
-              {orderBy(project.project_user, ["user.name"]).map((pu) => (
-                <li key={pu.user.id}>
-                  {pu.user.name ?? "n/a"}{" "}
-                  {pu.user.email ? `(${pu.user.email})` : "(n/a)"}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
+                  }}
+                >
+                  {isMember ? "✓ Joined" : "Join"}
+                </StyledButton>
+              )}
+            </div>
+          )}
+          {!isLead && isMember && isNewInterest && (
+            <div className="new-interest">
+              <small>
+                Interest received! The club/project lead will send more info.
+              </small>
+            </div>
+          )}
+          {isLead && (
+            <div className="member-email-list">
+              <p>Roster</p>
+              <ul>
+                {orderBy(project.project_user, ["user.name"]).map((pu) => (
+                  <li key={pu.user.id}>
+                    {pu.user.name ?? "n/a"}{" "}
+                    {pu.user.email ? `(${pu.user.email})` : "(n/a)"}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
     </StyledProjectPanel>
   );
 };
@@ -186,6 +215,11 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
 const StyledProjectPanel = styled.div`
   background: ${ugcTheme.colors.blue[500]};
   color: white;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+
   .project-panel__status {
     // background: ${ugcTheme.colors.green[500]};
     // color: ${ugcTheme.colors.blue[500]};
@@ -197,7 +231,7 @@ const StyledProjectPanel = styled.div`
     font-size: 10px;
   }
   .project-panel__details__view {
-    padding: 0.5em 1em 0;
+    padding: 0.5em 1em;
     .project_name {
       font-size: 16px;
       font-weight: 900;
@@ -205,6 +239,9 @@ const StyledProjectPanel = styled.div`
       margin-bottom: 6px;
       padding-bottom: 6px;
       padding-top: 6px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
     }
     .project_description {
       display: flex;
@@ -248,7 +285,7 @@ const StyledProjectPanel = styled.div`
     & > div.member-row {
       display: flex;
       align-items: center;
-      max-height: 40px;
+      // max-height: 40px;
       border-top: 2px solid ${ugcTheme.colors.blue[100]};
       margin: 4px 0;
       padding-top: 12px;
@@ -265,7 +302,6 @@ const StyledProjectPanel = styled.div`
       }
       button {
         margin-left: auto;
-        height: 100%;
       }
     }
     .new-interest {
