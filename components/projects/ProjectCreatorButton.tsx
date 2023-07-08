@@ -40,7 +40,7 @@ export const ProjectCreatorButton: React.FC = () => {
         }
       }}
     >
-      + Add Idea or Project
+      + Add Community Project or Idea
     </StyledButton>
   );
 };

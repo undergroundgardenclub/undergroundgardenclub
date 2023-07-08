@@ -24,21 +24,21 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
           <LogoSkewer />
         </div>
       )} */}
-      {/* <div className="header__inspo">
+      <div className="header__inspo">
         <Marquee autoFill>
-          <div>JUST KEEP GROWING&ensp;</div>
+          <div>WE GROW TOGETHER&ensp;</div>
         </Marquee>
+        {/* <div>JUST KEEP GROWING&ensp;</div>
         <div>FUCK AROUND&ensp;BUILD SHIT&ensp;</div>
-        <div>JUST GROW IT&ensp;</div>
-        <div>WE GROW TOGETHER&ensp;</div>
-      </div> */}
+        <div>JUST GROW IT&ensp;</div> */}
+      </div>
       <div className="header__actions">
         {/* <Link href="/" passHref>
           <StyledButton variant={props.invert ? "green" : "blue"}>
             BIO-QUESTS
           </StyledButton>
         </Link> */}
-        <ProjectCreatorButton />
+        {/* <ProjectCreatorButton /> */}
         {/* <Link href="/projects" passHref>
           <StyledButton variant={props.invert ? "green" : "blue"}>
           JOIN A CLUB
@@ -98,7 +98,7 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
     border-left: 2px solid;
     border-right: 2px solid;
     border-color: ${ugcTheme.colors.green[500]};
-    margin: 0 0.5em;
+    // margin: 0 0.5em;
     align-items: center;
     display: flex;
     padding-top: 0.25em;

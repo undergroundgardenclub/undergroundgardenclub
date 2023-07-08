@@ -29,10 +29,10 @@ export const ProjectList = () => {
           ?.map((project) => (
             <ProjectPanel key={project.id} project={project} />
           ))}
+        {/* <div className="project-add">
+          <ProjectCreatorButton />
+        </div> */}
       </div>
-      {/* <div className="project-add">
-        <ProjectCreatorButton />
-      </div> */}
     </StyledProjectList>
   );
 };
