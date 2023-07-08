@@ -109,7 +109,6 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
     gap: 4px;
     white-space: nowrap;
     @media (max-width: 45em) {
-      width: 100%;
       justify-content: right;
     }
   }
