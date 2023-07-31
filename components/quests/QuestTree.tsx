@@ -91,7 +91,7 @@ const StyledQuestTree = styled.div`
     path {
       stroke-width: 3;
       stroke: ${ugcTheme.colors.green[100]};
-      opacity: 0.5;
+      opacity: 0.7;
     }
   }
 `;
