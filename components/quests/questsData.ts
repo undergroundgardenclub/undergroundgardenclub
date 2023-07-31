@@ -645,8 +645,8 @@ export const questEdges: Edge[] = [
   },
   {
     source: "hardware-00",
-    target: "resource-04",
-    className: "ugc-edge",
+    target: "start-01",
+    // className: "ugc-edge",
   },
   {
     source: "start-01",
@@ -671,7 +671,7 @@ export const questEdges: Edge[] = [
   {
     source: "resource-04",
     target: "start-01",
-    className: "ugc-edge",
+    // className: "ugc-edge",
   },
   {
     source: "hardware-02",
