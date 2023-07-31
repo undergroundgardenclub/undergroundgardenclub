@@ -161,8 +161,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: 330, y: 70 },
     data: {
       title:
-        "[Smartphone Florescence Microscope](https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
-      byLine: "$50 + Smartphone > $5,000+ microscope",
+        "[Build Smartphone Florescence Microscope](https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
+      byLine: "Intro to Quantum Mechanics + Electrical Work",
       // variant: "hardware",
       link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
     },
