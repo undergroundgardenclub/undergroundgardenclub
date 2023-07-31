@@ -26,8 +26,9 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
       )} */}
       <div className="header__inspo">
         <Marquee autoFill>
-          <div>WE GROW TOGETHER&ensp;</div>
+          <div>FIND YOUR CLUB&ensp;</div>
         </Marquee>
+        {/* <div>WE GROW TOGETHER&ensp;</div> */}
         {/* <div>JUST KEEP GROWING&ensp;</div>
         <div>FUCK AROUND&ensp;BUILD SHIT&ensp;</div>
         <div>JUST GROW IT&ensp;</div> */}
