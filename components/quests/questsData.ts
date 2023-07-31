@@ -83,7 +83,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-01",
     type: "quest",
-    position: { x: 10, y: 60 },
+    position: { x: 0, y: 140 },
     data: {
       title:
         "[Bio-Plastic Membership Card](https://undergroundgardenclub.notion.site/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4)",
@@ -105,7 +105,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-04",
     type: "quest",
-    position: { x: 0, y: 140 },
+    position: { x: -10, y: 60 },
     data: {
       title:
         "[Fundamentals of Materials Structure](https://openlearninglibrary.mit.edu/courses/course-v1:MITx+3.012S.1x+1T2019/course/)",
@@ -614,7 +614,6 @@ export const questEdges: Edge[] = [
   {
     source: "start-20",
     target: "hardware-00",
-    className: "ugc-edge",
   },
   {
     source: "resource-02",
@@ -645,8 +644,9 @@ export const questEdges: Edge[] = [
     className: "ugc-edge",
   },
   {
-    source: "start-01",
+    source: "hardware-00",
     target: "resource-04",
+    className: "ugc-edge",
   },
   {
     source: "start-01",
@@ -669,8 +669,9 @@ export const questEdges: Edge[] = [
     target: "communityIntro-00",
   },
   {
-    source: "hardware-00",
+    source: "resource-04",
     target: "start-01",
+    className: "ugc-edge",
   },
   {
     source: "hardware-02",
