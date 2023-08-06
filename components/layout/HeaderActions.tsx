@@ -120,7 +120,7 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
     display: flex;
     & > button {
       flex: 1;
-      margin: 0 0.5em;
+      margin: 0 0.25em;
       font-size: 18px;
       &:first-of-type {
         margin-left: 0;
