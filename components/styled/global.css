@@ -1,11 +1,11 @@
 /* Fonts */
 @font-face {
-  font-family: 'Stonewall 50';
-  src: url('/fonts/Stonewall_50-Medium-web.woff2') format('woff2');
+  font-family: "Stonewall 50";
+  src: url("/fonts/Stonewall_50-Medium-web.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'CoFo Rax';
-  src: url('/fonts/CoFo_Rax_V0.1.woff') format('woff');
+  font-family: "CoFo Rax";
+  src: url("/fonts/CoFo_Rax_V0.1.woff") format("woff");
 }
 
 /* Scroll bars */
@@ -23,19 +23,25 @@
 html {
   line-height: 105%;
   font-size: 13px;
-  font-family: 'CoFo Rax', sans-serif;
+  font-family: "CoFo Rax", sans-serif;
   font-weight: 200;
 }
 body {
   margin: 0;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 ul {
   list-style-type: none;
 }
-ul, ol {
+ul,
+ol {
   padding: 0;
 }
 a {
@@ -45,8 +51,11 @@ a {
 a:hover {
   text-decoration: underline;
 }
-input, select, option, textarea {
-  font-family: 'CoFo Rax', sans-serif;
+input,
+select,
+option,
+textarea {
+  font-family: "CoFo Rax", sans-serif;
 }
 
 /* Utils */
@@ -54,12 +63,12 @@ input, select, option, textarea {
   display: none;
 }
 
-@media(max-width: 25em) {
+@media (max-width: 25em) {
   .hide-xs {
     display: none;
   }
 }
-@media(max-width: 45em) {
+@media (max-width: 720px) {
   .show-sm {
     display: initial;
   }

@@ -15,11 +15,6 @@ export const HeaderNav: React.FC<{ invert?: string }> = (props) => {
           <div>JUST KEEP GROWING&ensp;</div>
         </Marquee>
       </div>
-      <Link href="/community" passHref>
-        <StyledButton variant={props.invert ? "green" : "blue"}>
-          Community
-        </StyledButton>
-      </Link>
     </StyledHeaderNav>
   );
 };
@@ -45,7 +40,7 @@ const StyledHeaderNav = styled.header<{ invert?: string }>`
   &,
   svg {
     height: 28px; // 28px
-    @media (max-width: 45em) {
+    @media (max-width: 720px) {
       height: 28px;
     }
   }
@@ -65,13 +60,8 @@ const StyledHeaderNav = styled.header<{ invert?: string }>`
     padding-top: 0.25em;
   }
 
-  // ONLY SHOW LINK ON MOBILE
-  @media (min-width: 45em) {
-    & > button {
-      display: none;
-    }
-  }
-  @media (max-width: 45em) {
+  // navbar goes flush with right edge of screen when on mobile
+  @media (max-width: 720px) {
     right: 0;
   }
 `;

@@ -1,64 +1,65 @@
 import React from "react";
 import styled from "styled-components";
+import { PersonIcon } from "@radix-ui/react-icons";
 import Marquee from "react-fast-marquee";
+import { useRouter } from "next/router";
+import { useStore } from "zustand";
 import { ugcTheme } from "../styled/theme";
 import { useUser } from "../users/useUser";
 import { ProfilePanel } from "../users/ProfilePanel";
-import { useStore } from "zustand";
 import { modalStore } from "./useModal";
 import { StyledButton, StyledButtonAvatar } from "../styled/StyledButton";
 import { LogoSkewer } from "./LogoSkewer";
 import { ProjectCreatorButton } from "../projects/ProjectCreatorButton";
-import { PersonIcon } from "@radix-ui/react-icons";
 import { sidebarStore } from "./useSidebar";
+import { mobileBreakpoint } from "./useBreakpoints";
 
+// COMPONENT
 export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
   props
 ) => {
+  const router = useRouter();
   const modal = useStore(modalStore);
   const sidebar = useStore(sidebarStore);
   const { data: user } = useUser();
+  const breakpoint = mobileBreakpoint();
+  const isMobile = breakpoint === "mobile";
+  const isQuesting = router.pathname === "/";
+
   // RENDER
   return (
-    <StyledHeaderActions invert={props.invert}>
-      {/* {props.hide?.includes("logo") === false && (
-        <div className="header__logo">
-          <LogoSkewer />
-        </div>
-      )} */}
+    <StyledHeaderActions>
       <div className="header__inspo">
         <StyledButton
-          variant={sidebar.viewType === "projects" ? "green" : "blue"}
-          onClick={() => sidebar.setViewType("projects")}
+          variant={
+            sidebar.viewType === "projects" && (!isMobile || !isQuesting)
+              ? "green"
+              : "blue"
+          }
+          onClick={() => {
+            sidebar.setViewType("projects");
+            // if questing and on mobile go to community route for full view
+            if (isQuesting && isMobile) router.push("/community");
+          }}
         >
           FIND YOUR PEOPLE
         </StyledButton>
         <StyledButton
-          variant={sidebar.viewType === "equipment" ? "green" : "blue"}
-          onClick={() => sidebar.setViewType("equipment")}
+          variant={
+            sidebar.viewType === "equipment" && (!isMobile || !isQuesting)
+              ? "green"
+              : "blue"
+          }
+          onClick={() => {
+            sidebar.setViewType("equipment");
+            // if questing and on mobile go to community route for full view
+            if (isQuesting && isMobile) router.push("/community");
+          }}
         >
           BUILD YOUR LAB
         </StyledButton>
-        {/* <Marquee autoFill>
-          <div>FIND YOUR CLUB&ensp;</div>
-        </Marquee> */}
-        {/* <div>WE GROW TOGETHER&ensp;</div> */}
-        {/* <div>JUST KEEP GROWING&ensp;</div>
-        <div>FUCK AROUND&ensp;BUILD SHIT&ensp;</div>
-        <div>JUST GROW IT&ensp;</div> */}
       </div>
       <div className="header__actions">
-        {/* <Link href="/" passHref>
-          <StyledButton variant={props.invert ? "green" : "blue"}>
-            BIO-QUESTS
-          </StyledButton>
-        </Link> */}
-        {/* <ProjectCreatorButton /> */}
-        {/* <Link href="/community" passHref>
-          <StyledButton variant={props.invert ? "green" : "blue"}>
-          COMMUNITY
-          </StyledButton>
-        </Link> */}
         {user?.id && (
           <StyledButtonAvatar
             variant={props.invert ? "green" : "blue"}
@@ -83,7 +84,6 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
   align-items: center;
   justify-content: space-between;
   pointer-events: none;
-  padding-bottom: 0.5em;
   .header__logo {
     // transform: rotate(180deg);
     svg {
@@ -98,7 +98,7 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
     &,
     svg {
       height: 32px; // 32px
-      @media (max-width: 45em) {
+      @media (max-width: 720px) {
         height: 32px;
       }
     }
@@ -128,6 +128,9 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
       &:last-of-type {
         margin-right: 0;
       }
+      @media (max-width: 720px) {
+        font-size: 15px;
+      }
     }
   }
   .header__actions {
@@ -135,7 +138,7 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
     display: flex;
     margin-left: 0.5em;
     white-space: nowrap;
-    @media (max-width: 45em) {
+    @media (max-width: 720px) {
       justify-content: right;
     }
   }

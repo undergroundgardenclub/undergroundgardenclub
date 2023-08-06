@@ -48,7 +48,7 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         proOptions={{ hideAttribution: true }}
       >
         {/* <MiniMap /> */}
-        <Controls showInteractive={false} />
+        {/* <Controls showInteractive={false} /> */}
         <Background
           style={{ background: ugcTheme.colors.green[500] }}
           color={ugcTheme.colors.blue[700]}

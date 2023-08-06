@@ -5,6 +5,7 @@ import { HeaderActions } from "../../components/layout/HeaderActions";
 import { ProjectCreatorButton } from "../../components/projects/ProjectCreatorButton";
 import { ProjectList } from "../../components/projects/ProjectList";
 import { SEO } from "../../components/seo/SEO";
+import { Sidebar } from "../../components/layout/Sidebar";
 
 export default function CommunityPage() {
   // RENDER
@@ -12,9 +13,8 @@ export default function CommunityPage() {
     <>
       <SEO title="PROJECTS | UNDERGROUND GARDEN CLUB" />
       <StyledCommunityPage>
-        <HeaderActions invert />
         <div className="community">
-          <ProjectList />
+          <Sidebar alwaysShowLists />
         </div>
       </StyledCommunityPage>
     </>

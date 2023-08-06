@@ -27,7 +27,6 @@ export default function HomePage({ quests }: { quests: TQuest[] }) {
 }
 
 const StyledHomePage = styled.div`
-  min-height: 100vh;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -43,15 +42,21 @@ const StyledHomePage = styled.div`
     height: 100%;
   }
   aside {
-    width: 420px;
+    max-width: 420px;
+    width: 100%;
     padding: 0.75em;
     background: ${ugcTheme.colors.blue[100]};
     overflow: hidden;
-    & > header {
-      margin-bottom: 0.5em;
+  }
+
+  // on mobile, stack the quest tree + sidebar buttons
+  @media (max-width: 720px) {
+    flex-direction: column;
+    main {
+      height: 90%;
     }
-    @media (max-width: 45em) {
-      display: none;
+    aside {
+      max-width: 100%;
     }
   }
 `;
