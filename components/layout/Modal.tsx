@@ -23,7 +23,6 @@ export const StyledModal = styled.div<{ css?: any }>`
   flex-direction: column;
   justify-content: space-between;
   @media (max-width: 720px) {
-    height: 100%;
     border-radius: 0;
   }
   ${(props) => {

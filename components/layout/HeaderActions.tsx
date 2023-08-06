@@ -136,8 +136,10 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
   .header__actions {
     flex-grow: 1;
     display: flex;
-    margin-left: 0.5em;
     white-space: nowrap;
+    & > button {
+      margin-left: 0.5em;
+    }
     @media (max-width: 720px) {
       justify-content: right;
     }
