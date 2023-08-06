@@ -46,7 +46,7 @@ const StyledHomePage = styled.div`
     width: 100%;
     padding: 0.75em;
     background: ${ugcTheme.colors.blue[100]};
-    overflow: hidden;
+    overflow-y: scroll;
   }
 
   // on mobile, stack the quest tree + sidebar buttons
