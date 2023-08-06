@@ -6,15 +6,17 @@ import { useUser } from "../users/useUser";
 import { ProfilePanel } from "../users/ProfilePanel";
 import { useStore } from "zustand";
 import { modalStore } from "./useModal";
-import { StyledButtonAvatar } from "../styled/StyledButton";
+import { StyledButton, StyledButtonAvatar } from "../styled/StyledButton";
 import { LogoSkewer } from "./LogoSkewer";
 import { ProjectCreatorButton } from "../projects/ProjectCreatorButton";
 import { PersonIcon } from "@radix-ui/react-icons";
+import { sidebarStore } from "./useSidebar";
 
 export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
   props
 ) => {
   const modal = useStore(modalStore);
+  const sidebar = useStore(sidebarStore);
   const { data: user } = useUser();
   // RENDER
   return (
@@ -25,9 +27,21 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
         </div>
       )} */}
       <div className="header__inspo">
-        <Marquee autoFill>
+        <StyledButton
+          variant={sidebar.viewType === "projects" ? "green" : "blue"}
+          onClick={() => sidebar.setViewType("projects")}
+        >
+          FIND YOUR PEOPLE
+        </StyledButton>
+        <StyledButton
+          variant={sidebar.viewType === "equipment" ? "green" : "blue"}
+          onClick={() => sidebar.setViewType("equipment")}
+        >
+          BUILD YOUR LAB
+        </StyledButton>
+        {/* <Marquee autoFill>
           <div>FIND YOUR CLUB&ensp;</div>
-        </Marquee>
+        </Marquee> */}
         {/* <div>WE GROW TOGETHER&ensp;</div> */}
         {/* <div>JUST KEEP GROWING&ensp;</div>
         <div>FUCK AROUND&ensp;BUILD SHIT&ensp;</div>
@@ -69,6 +83,7 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
   align-items: center;
   justify-content: space-between;
   pointer-events: none;
+  padding-bottom: 0.5em;
   .header__logo {
     // transform: rotate(180deg);
     svg {
@@ -96,17 +111,29 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
       props.invert ? ugcTheme.colors.green[500] : ugcTheme.colors.blue[500]};
     font-size: 24px;
     overflow: hidden;
-    border-left: 2px solid;
-    border-right: 2px solid;
-    border-color: ${ugcTheme.colors.green[500]};
+    width: 100%;
+    // padding-top: 0.25em;
+    // border-left: 2px solid;
+    // border-right: 2px solid;
+    // border-color: ${ugcTheme.colors.green[500]};
     align-items: center;
     display: flex;
-    padding-top: 0.25em;
+    & > button {
+      flex: 1;
+      margin: 0 0.5em;
+      font-size: 18px;
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
   }
   .header__actions {
     flex-grow: 1;
     display: flex;
-    gap: 4px;
+    margin-left: 0.5em;
     white-space: nowrap;
     @media (max-width: 45em) {
       justify-content: right;

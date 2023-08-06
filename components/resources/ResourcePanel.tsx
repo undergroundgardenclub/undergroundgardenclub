@@ -11,7 +11,7 @@ export const ResourcePanel: React.FC<{ resource: TResource }> = ({
     <StyledResourcePanel>
       <div className="resource-panel__details__view">
         <a
-          className="resource_name"
+          className="resource-panel__name"
           href={resource.url ?? ""}
           target="_blank"
           rel="noreferrer"
@@ -20,7 +20,9 @@ export const ResourcePanel: React.FC<{ resource: TResource }> = ({
           <ArrowRightIcon />
         </a>
         {resource.description ? (
-          <span className="resource_description">{resource.description}</span>
+          <span className="resource-panel__description">
+            {resource.description}
+          </span>
         ) : null}
       </div>
     </StyledResourcePanel>
@@ -37,7 +39,7 @@ const StyledResourcePanel = styled.div`
 
   .resource-panel__details__view {
     padding: 0.5em 1em;
-    .resource_name {
+    .resource-panel__name {
       font-size: 16px;
       font-weight: 900;
       padding: 6px 0;
@@ -45,7 +47,7 @@ const StyledResourcePanel = styled.div`
       display: flex;
       justify-content: space-between;
     }
-    .resource_description {
+    .resource-panel__description {
       margin-top: 6px;
       font-size: 11px;
     }

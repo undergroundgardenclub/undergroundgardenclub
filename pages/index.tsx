@@ -1,15 +1,14 @@
-import type { GetStaticProps } from "next";
-import { Client } from "@notionhq/client";
 import React from "react";
 import styled from "styled-components";
 import { SEO } from "../components/seo/SEO";
 import { QuestTree } from "../components/quests/QuestTree";
 import { HeaderActions } from "../components/layout/HeaderActions";
 import { TQuest } from "../components/quests/types";
-import { QuestList } from "../components/quests/QuestList";
 import { ProjectList } from "../components/projects/ProjectList";
 import { ugcTheme } from "../components/styled/theme";
 import { HeaderNav } from "../components/layout/HeaderNav";
+import { EquipmentList } from "../components/equipment/EquipmentList";
+import { Sidebar } from "../components/layout/Sidebar";
 
 export default function HomePage({ quests }: { quests: TQuest[] }) {
   // RENDER
@@ -21,10 +20,7 @@ export default function HomePage({ quests }: { quests: TQuest[] }) {
         <main>
           <QuestTree quests={quests} />
         </main>
-        <aside>
-          <HeaderActions invert />
-          <ProjectList />
-        </aside>
+        <Sidebar />
       </StyledHomePage>
     </>
   );
