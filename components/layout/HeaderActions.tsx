@@ -30,6 +30,15 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
   return (
     <StyledHeaderActions>
       <div className="header__inspo">
+        {!isQuesting && (
+          <StyledButton
+            className="learning-btn"
+            variant="blue"
+            onClick={() => router.push("/")}
+          >
+            ⚘
+          </StyledButton>
+        )}
         <StyledButton
           variant={
             sidebar.viewType === "projects" && (!isMobile || !isQuesting)
@@ -129,7 +138,15 @@ const StyledHeaderActions = styled.header<{ invert?: boolean }>`
         margin-right: 0;
       }
       @media (max-width: 720px) {
-        font-size: 15px;
+        font-size: 13px;
+      }
+    }
+    & > button.learning-btn {
+      max-width: 32px;
+      font-size: 16px;
+      display: none;
+      @media (max-width: 720px) {
+        display: initial;
       }
     }
   }
