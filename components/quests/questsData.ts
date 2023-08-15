@@ -121,7 +121,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     data: {
       title:
         "[Transform Bacteria to Glow Green](https://undergroundgardenclub.notion.site/BQ-01-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80?pvs=4)",
-      byLine: "(Inserting GFP DNA)",
+      byLine: "Inserting GFP DNA",
       link: "https://undergroundgardenclub.notion.site/BQ-01-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80?pvs=4",
     },
   },
@@ -132,7 +132,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     data: {
       title:
         "[Using Bacteria as Bio-Factories](https://undergroundgardenclub.notion.site/BQ-02-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611?pvs=4)",
-      byLine: "(Replicating & Harvesting GFP DNA)",
+      byLine: "Replicating & Harvesting GFP DNA",
       link: "https://undergroundgardenclub.notion.site/BQ-02-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611?pvs=4",
     },
   },
@@ -298,26 +298,26 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     id: "botanicalPharm-51",
     type: "quest",
     position: { x: -205, y: 1040 },
-    data: { title: "Medical-Grade Insulin", byLine: "TODO" },
+    data: { title: "Home Grown Insulin", byLine: "Coming Soon" },
   },
   {
     id: "botanicalPharm-52",
     type: "quest",
     position: { x: 0, y: 1050 },
-    data: { title: "Medical-Grade Testosterone", byLine: "TODO" },
+    data: { title: "Home Grown Testosterone", byLine: "Coming Soon" },
   },
   {
     id: "botanicalPharm-53",
     type: "quest",
     position: { x: 230, y: 1040 },
-    data: { title: "Medical-Grade Estrogen", byLine: "TODO" },
+    data: { title: "Home Grown Estrogen", byLine: "Coming Soon" },
   },
-  {
-    id: "botanicalPharm-30",
-    type: "section",
-    position: { x: 10, y: 1140 },
-    data: { title: "Processing for Human Use", byLine: "TODO" },
-  },
+  // {
+  //   id: "botanicalPharm-30",
+  //   type: "section",
+  //   position: { x: 10, y: 1140 },
+  //   data: { title: "Processing for Human Use", byLine: "Cp,omg" },
+  // },
   // -- glowing houseplants
   {
     id: "glowingPlants-00",
@@ -472,8 +472,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "section",
     position: { x: -665, y: 915 },
     data: {
-      title: "Environmental Litigation 101",
-      byLine: "(Case Building Strategy)",
+      title: "Environmental Defense and Case Building",
+      byLine: "How to Leverage Federal Laws/Regulations",
     },
   },
   // --- fermentation production

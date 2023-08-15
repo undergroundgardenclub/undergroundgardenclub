@@ -86,7 +86,7 @@ const StartNodeType = (props: any) => {
             "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)"}
         </ReactMarkdown>
         <ReactMarkdown linkTarget="_blank" className="byline">
-          Start Experimenting Here
+          Start Experimenting Here!
         </ReactMarkdown>
       </StyledStartNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
