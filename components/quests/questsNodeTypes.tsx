@@ -1,19 +1,11 @@
-import {
-  ArrowRightIcon,
-  ChevronRightIcon,
-  Link1Icon,
-  Link2Icon,
-  OpenInNewWindowIcon,
-} from "@radix-ui/react-icons";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useInterval } from "react-use";
 import { Handle, Position } from "reactflow";
 import styled, { css } from "styled-components";
 import { ugcTheme } from "../styled/theme";
-import Link from "next/link";
 import ReactPlayer from "react-player";
-import Image from "next/image";
 
 const StyledBaseNodeType = styled.div<{ padding?: boolean; variant?: string }>`
   margin: 0;

@@ -211,7 +211,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       thumbnailAlt: "Overhead photo of garden",
       thumbnailUrl: "/downthecarrothole.jpeg",
       variant: "course",
-      videoUrl: "https://player.vimeo.com/video/787489765",
+      videoUrl:
+        "https://v2.kickstarter.com/1692300996-GyYtwQnXLGSk8PRooOoNXvcvFae%2BUxBZ9dsTmWLNxuY%3D/projects/4381903/video-1171035-hls_playlist.m3u8",
     },
   },
 
