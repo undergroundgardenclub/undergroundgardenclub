@@ -1,4 +1,10 @@
-import { ChevronRightIcon } from "@radix-ui/react-icons";
+import {
+  ArrowRightIcon,
+  ChevronRightIcon,
+  Link1Icon,
+  Link2Icon,
+  OpenInNewWindowIcon,
+} from "@radix-ui/react-icons";
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useInterval } from "react-use";
@@ -6,10 +12,12 @@ import { Handle, Position } from "reactflow";
 import styled, { css } from "styled-components";
 import { ugcTheme } from "../styled/theme";
 import Link from "next/link";
+import ReactPlayer from "react-player";
+import Image from "next/image";
 
-const StyledBaseNodeType = styled.div<{ variant?: string }>`
+const StyledBaseNodeType = styled.div<{ padding?: boolean; variant?: string }>`
   margin: 0;
-  padding: 0.5em 1em;
+  padding: ${({ padding }) => (padding !== false ? "0.5em 1em" : "0.5em 0 0")};
   display: flex;
   flex-direction: column;
   p {
@@ -25,10 +33,45 @@ const StyledBaseNodeType = styled.div<{ variant?: string }>`
   }
   .title {
     font-size: 13px;
+    padding: 0 0.5em;
   }
   .byline {
     font-size: 10px;
   }
+  .quest-node__video-player {
+    width: 100%;
+    min-width: 250px;
+    height: 150px;
+  }
+  .quest-node__thumbnail {
+    display: flex;
+    width: 100%;
+    min-width: 250px;
+    height: 150px;
+  }
+  .quest-node__audio-player {
+    &,
+    & > div {
+      width: 100%;
+    }
+    audio::-webkit-media-controls-enclosure {
+      border-radius: 0;
+      // background-color: #00f;
+    }
+    audio::-webkit-media-controls-panel {
+      // filter: invert(1);
+    }
+  }
+`;
+
+const StyledDivImage = styled.div<{ alt?: string; src: string }>`
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  background-image: ${({ src }) => `url("${src}")`};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 // ===============================
@@ -39,7 +82,7 @@ const SectionNodeType = (props: any) => {
   return (
     <>
       <Handle type="target" position={Position.Top} id={id} />
-      <StyledSectionNodeType variant={data.variant}>
+      <StyledSectionNodeType padding={data.padding} variant={data.variant}>
         <ReactMarkdown linkTarget="_blank" className="title">
           {data.title}
         </ReactMarkdown>
@@ -86,7 +129,8 @@ const StartNodeType = (props: any) => {
             "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)"}
         </ReactMarkdown>
         <ReactMarkdown linkTarget="_blank" className="byline">
-          Start Experimenting Here!
+          {/* Start Experimenting Here! */}
+          What are you curious about?
         </ReactMarkdown>
       </StyledStartNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
@@ -96,7 +140,7 @@ const StartNodeType = (props: any) => {
 
 const StyledStartNodeType = styled(StyledSectionNodeType)`
   min-width: 100px;
-  width: 400px;
+  width: 440px;
   background: blue;
   text-align: center;
   .title p {
@@ -118,7 +162,7 @@ const QuestNodeType = (props: any) => {
     <>
       <Handle type="target" position={Position.Top} id={id} />
       <StyledNodeWrapper>
-        <StyledQuestNodeType variant={data.variant}>
+        <StyledQuestNodeType padding={data.padding} variant={data.variant}>
           <ReactMarkdown linkTarget="_blank" className="title">
             {data.title}
           </ReactMarkdown>
@@ -127,6 +171,54 @@ const QuestNodeType = (props: any) => {
               {data.byLine}
             </ReactMarkdown>
           )}
+          {data.audioUrl && (
+            <div className="quest-node__audio-player">
+              <audio controls>
+                <source src={data.audioUrl} />
+              </audio>
+            </div>
+          )}
+          {data.videoUrl && (
+            <div className="quest-node__video-player">
+              <ReactPlayer
+                url={data.videoUrl}
+                light={
+                  data.thumbnailUrl ? (
+                    <div className="quest-node__thumbnail">
+                      <StyledDivImage
+                        src={data.thumbnailUrl}
+                        alt={data.thumbnailAlt}
+                      />
+                      {/* <img src={data.thumbnailUrl} alt={data.thumbnailAlt} /> */}
+                    </div>
+                  ) : (
+                    true
+                  )
+                }
+                controls
+                config={{
+                  youtube: {
+                    playerVars: { controls: 1, showinfo: 1 },
+                  },
+                  vimeo: {
+                    playerOptions: {
+                      controls: true,
+                      byline: false,
+                      title: false,
+                    },
+                  },
+                }}
+                height="100%"
+                width="100%"
+              />
+            </div>
+          )}
+          {data.thumbnailUrl && !data.videoUrl ? (
+            <div className="quest-node__thumbnail">
+              <StyledDivImage src={data.thumbnailUrl} alt={data.thumbnailAlt} />
+              {/* <img src={data.thumbnailUrl} alt={data.thumbnailAlt} /> */}
+            </div>
+          ) : null}
         </StyledQuestNodeType>
         {data.link && (
           <StyledNodeChevronLink
@@ -136,7 +228,8 @@ const QuestNodeType = (props: any) => {
             rel="noreferrer"
             variant={data.variant}
           >
-            <ChevronRightIcon />
+            {/* <ChevronRightIcon /> */}
+            <ArrowRightIcon />
           </StyledNodeChevronLink>
         )}
       </StyledNodeWrapper>
@@ -162,7 +255,7 @@ const StyledNodeChevronLink = styled.a<{ variant: string }>`
   cursor: pointer;
   svg {
     height: 18px;
-    width: 18px;
+    width: 14px;
     margin: 0 3px;
     path {
       fill: ${({ variant }) => {
@@ -170,6 +263,12 @@ const StyledNodeChevronLink = styled.a<{ variant: string }>`
         if (variant === "course") return ugcTheme.colors.blue[100];
         return ugcTheme.colors.blue[100]; // otherwise quest
       }};
+      stroke: ${({ variant }) => {
+        if (variant === "hardware") return ugcTheme.colors.blue[100];
+        if (variant === "course") return ugcTheme.colors.blue[100];
+        return ugcTheme.colors.blue[100]; // otherwise quest
+      }};
+      stroke-width: 0.5px;
     }
   }
 `;

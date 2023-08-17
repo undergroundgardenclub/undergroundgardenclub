@@ -33,6 +33,7 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         edges={edges}
         nodeTypes={questsNodeTypes}
         // Not allowing updates makes it a bit easier to navigate on mobile
+        onNodeDragStop={(ev, node) => console.log(node.position)}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onInit={(inst: ReactFlowInstance) => {
@@ -40,7 +41,7 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
           const isMobile = browser.getPlatformType() !== "desktop";
           // console.log(inst);
           // console.log(inst.getZoom());
-          inst.setCenter(isMobile ? 110 : 110, isMobile ? -100 : 0);
+          inst.setCenter(isMobile ? 110 : 110, isMobile ? -800 : -750);
           inst.zoomTo(isMobile ? 0.7 : 0.75);
         }}
         edgesUpdatable={false} // still allows for deletion tho?
@@ -48,7 +49,7 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         proOptions={{ hideAttribution: true }}
       >
         {/* <MiniMap /> */}
-        {/* <Controls showInteractive={false} /> */}
+        <Controls showInteractive={false} />
         <Background
           style={{ background: ugcTheme.colors.green[500] }}
           color={ugcTheme.colors.blue[700]}

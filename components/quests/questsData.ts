@@ -1,4 +1,5 @@
 import { Edge, Node } from "reactflow";
+import ThumbnailNatureFynd from "../../public/naturefynd.png";
 
 type TNodeDataExtras = {
   data: { title?: string; byLine?: string; variant?: string };
@@ -8,12 +9,221 @@ type TNodeDataExtras = {
 // NODES
 // ===============================
 export const questNodes: (Node & TNodeDataExtras)[] = [
-  // --- litigation
+  // --- welcome content/ideas
+  {
+    id: "welcome-00",
+    type: "start",
+    position: { x: -83, y: -1060 },
+    data: {},
+  },
+  {
+    id: "welcomePaths-10",
+    type: "section",
+    position: { x: -616, y: -917 },
+    data: {
+      title: "Microbe-based Proteins",
+      byLine: "Alternatives to Plant & Animal Proteins",
+    },
+  },
+  {
+    id: "welcomePaths-11",
+    type: "quest",
+    position: { x: -660, y: -624 },
+    data: {
+      title:
+        "[Gyser Microbes that Make Edible Protein](https://www.naturesfynd.com/yellowstone)",
+      link: "https://www.naturesfynd.com/yellowstone",
+      padding: false,
+      thumbnailAlt: "Yellowstone National Park Gyser",
+      thumbnailUrl: "/naturefynd.png",
+      variant: "course",
+      videoUrl: "https://www.youtube.com/watch?v=sodONlWRiE0",
+    },
+  },
+  {
+    id: "welcomePaths-12",
+    type: "quest",
+    position: { x: -656, y: -828 },
+    data: {
+      title: "[Fungi Flour for Protein Rich Bread](https://hyfe.tech/)",
+      link: "https://hyfe.tech/",
+      padding: false,
+      thumbnailAlt: "Hyfe Foods Cofounders",
+      thumbnailUrl: "/hyfefoods.jpeg",
+      variant: "course",
+      videoUrl: "https://youtu.be/Qv-4bUTi3js?t=1005",
+    },
+  },
+  {
+    id: "welcomePaths-20",
+    type: "section",
+    position: { x: -299, y: -942 },
+    data: {
+      title: "Plant Anatomy Engineering",
+      byLine: "Drought Resistance to Capturing Carbon",
+    },
+  },
+  {
+    id: "welcomePaths-21",
+    type: "quest",
+    position: { x: -309, y: -645 },
+    data: {
+      title:
+        "[Helping Plants Survive Droughts](https://youtu.be/tAG3VRV-sY0?t=130)",
+      byLine: "Ft. Prof. Jenn Brophy",
+      link: "https://youtu.be/tAG3VRV-sY0?t=130",
+      padding: false,
+      variant: "course",
+      videoUrl: "https://youtu.be/tAG3VRV-sY0?t=130",
+    },
+  },
+  {
+    id: "welcomePaths-22",
+    type: "quest",
+    position: { x: -335, y: -856 },
+    data: {
+      title:
+        "[Enhanced CO2 Capturing Trees](https://www.youtube.com/watch?v=6OknnFuDQE8)",
+      link: "https://www.youtube.com/watch?v=6OknnFuDQE8",
+      padding: false,
+      thumbnailAlt: "Living Carbon Cofounders",
+      thumbnailUrl: "/livingcarbon3.png",
+      variant: "course",
+      videoUrl: "https://www.youtube.com/watch?v=6OknnFuDQE8",
+    },
+  },
+  {
+    id: "welcomePaths-30",
+    type: "section",
+    position: { x: 36, y: -929 },
+    data: {
+      title: "Green House Gas Removal",
+      byLine: "CO2, Methane (CH4), and NO2",
+    },
+  },
+  {
+    id: "welcomePaths-31",
+    type: "quest",
+    position: { x: -14, y: -835 },
+    data: {
+      title:
+        "[CO2 Mineralizing Bacteria in Crop Fields](https://youtu.be/Dw5pzPIG5es?t=238)",
+      link: "https://youtu.be/Dw5pzPIG5es?t=238",
+      padding: false,
+      thumbnailAlt: "Aerial photo of farm",
+      thumbnailUrl: "/andes.jpeg",
+      variant: "course",
+      videoUrl: "https://youtu.be/Dw5pzPIG5es?t=238",
+    },
+  },
+  {
+    id: "welcomePaths-32",
+    type: "quest",
+    position: { x: 8, y: -627 },
+    data: {
+      title:
+        "[Atmospheric Methane Eating Bacteria](https://www.youtube.com/watch?v=k3KZDcpD9Bs)",
+      byLine: "FYI LOTS OF WORK STILL TO BE DONE HERE",
+      link: "https://www.youtube.com/watch?v=k3KZDcpD9Bs",
+      padding: false,
+      thumbnailAlt: "Photo of methanotrophs",
+      thumbnailUrl: "/methanotrophs.png",
+      variant: "course",
+      videoUrl: "https://www.youtube.com/watch?v=k3KZDcpD9Bs",
+    },
+  },
+  {
+    id: "welcomePaths-40",
+    type: "section",
+    position: { x: 355, y: -941 },
+    data: {
+      title: "Bio-Materials",
+      byLine: "Rethinking Fashion and Function",
+    },
+  },
+  {
+    id: "welcomePaths-41",
+    type: "quest",
+    position: { x: 359, y: -850 },
+    data: {
+      title:
+        "[Bio-Luminescent Embelshiments](https://aradhitaparasrampuria.net/work-1/bioembellishments-298zt)",
+      link: "https://aradhitaparasrampuria.net/work-1/bioembellishments-298zt",
+      padding: false,
+      thumbnailAlt: "Photo of methanotrophs",
+      thumbnailUrl: "/biobeads3.png",
+      variant: "course",
+      // videoUrl:
+      //   "https://aradhitaparasrampuria.net/work-1/bioembellishments-298zt",
+    },
+  },
+  {
+    id: "welcomePaths-42",
+    type: "quest",
+    position: { x: 338, y: -634 },
+    data: {
+      title:
+        "[Affordable Caskets using Fungi/Mycellium](https://www.youtube.com/watch?v=AurhO4Lf1Is)",
+      link: "https://www.youtube.com/watch?v=AurhO4Lf1Is",
+      padding: false,
+      thumbnailAlt: "Photo of mycellium casket",
+      thumbnailUrl: "/loopbiotech.jpeg",
+      variant: "course",
+      videoUrl: "https://www.youtube.com/watch?v=AurhO4Lf1Is",
+    },
+  },
+  {
+    id: "welcomePaths-50",
+    type: "section",
+    position: { x: 635, y: -933 },
+    data: {
+      title: "Environmental Stewardship & Healing",
+      byLine: "Observing and Rejuvinating",
+    },
+  },
+  {
+    id: "welcomePaths-51",
+    type: "quest",
+    position: { x: 683, y: -835 },
+    data: {
+      title:
+        "[Soil, Air, and Water Stewardship](https://mediahub.unl.edu/media/19127)",
+      byLine:
+        "Ft. [Soverign Science](https://www.instagram.com/sovereign.science/)",
+      link: "https://www.instagram.com/sovereign.science/",
+      padding: false,
+      thumbnailAlt: "Photo of water sample reading",
+      thumbnailUrl: "/soverignscience.png",
+      variant: "course",
+      videoUrl:
+        "https://mediahub.unl.edu/uploads/c6ce8a16-c0ed-11ec-85b2-005056832e99/media.mp4",
+    },
+  },
+  {
+    id: "welcomePaths-52",
+    type: "quest",
+    position: { x: 690, y: -621 },
+    data: {
+      title:
+        "[Permaculture and Health](https://vimeo.com/ondemand/downthecarrothole)",
+      byLine: "Ft. Down the Carrot Hole Documentary",
+      link: "https://vimeo.com/ondemand/downthecarrothole",
+      padding: false,
+      thumbnailAlt: "Overhead photo of garden",
+      thumbnailUrl: "/downthecarrothole.png",
+      variant: "course",
+      videoUrl: "https://player.vimeo.com/video/787489765",
+    },
+  },
+
+  // --- start experimenting
   {
     id: "start-00",
-    type: "start",
-    position: { x: -85, y: -370 },
-    data: {},
+    type: "section",
+    position: { x: -35, y: -350 },
+    data: {
+      title: "Alright! Let's Start Learning and Doing!",
+    },
   },
   {
     id: "resource-00",
@@ -601,6 +811,129 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
 // EDGES
 // ===============================
 export const questEdges: Edge[] = [
+  // --- welcome/paths
+  {
+    source: "welcome-00",
+    target: "welcomePaths-10",
+  },
+  {
+    source: "welcome-00",
+    target: "welcomePaths-20",
+  },
+  {
+    source: "welcome-00",
+    target: "welcomePaths-30",
+  },
+  {
+    source: "welcome-00",
+    target: "welcomePaths-40",
+  },
+  {
+    source: "welcome-00",
+    target: "welcomePaths-50",
+  },
+  {
+    source: "welcomePaths-10",
+    target: "welcomePaths-11",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-10",
+    target: "welcomePaths-12",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-20",
+    target: "welcomePaths-21",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-20",
+    target: "welcomePaths-22",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-30",
+    target: "welcomePaths-31",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-30",
+    target: "welcomePaths-32",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-40",
+    target: "welcomePaths-41",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-40",
+    target: "welcomePaths-42",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-50",
+    target: "welcomePaths-51",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-50",
+    target: "welcomePaths-52",
+    className: "ugc-edge--course",
+  },
+
+  {
+    source: "welcomePaths-11",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-12",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-21",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-22",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-31",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-32",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-41",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-42",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-51",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+  {
+    source: "welcomePaths-52",
+    target: "start-00",
+    className: "ugc-edge--course",
+  },
+
   // --- start
   {
     source: "start-00",
