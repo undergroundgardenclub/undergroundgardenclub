@@ -94,7 +94,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-30",
     type: "section",
-    position: { x: 36, y: -929 },
+    position: { x: 635, y: -933 },
+
     data: {
       title: "Green House Gas Removal",
       byLine: "CO2, Methane (CH4), and NO2",
@@ -103,7 +104,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-31",
     type: "quest",
-    position: { x: -14, y: -835 },
+    position: { x: 673, y: -856 },
+
     data: {
       title:
         "[CO2 Mineralizing Bacteria in Crop Fields](https://youtu.be/Dw5pzPIG5es?t=238)",
@@ -118,7 +120,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-32",
     type: "quest",
-    position: { x: 8, y: -627 },
+    position: { x: 692, y: -653 },
     data: {
       title:
         "[Atmospheric Methane Eating Bacteria](https://www.youtube.com/watch?v=k3KZDcpD9Bs)",
@@ -174,7 +176,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-50",
     type: "section",
-    position: { x: 635, y: -933 },
+    position: { x: 5, y: -935 },
+
     data: {
       title: "Environmental Stewardship & Healing",
       byLine: "Observing and Rejuvinating",
@@ -183,7 +186,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-51",
     type: "quest",
-    position: { x: 683, y: -835 },
+    position: { x: 8, y: -853 },
+
     data: {
       title:
         "[Soil, Air, and Water Stewardship](https://mediahub.unl.edu/media/19127)",
@@ -201,7 +205,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-52",
     type: "quest",
-    position: { x: 690, y: -621 },
+    position: { x: 24, y: -633 },
     data: {
       title:
         "[Permaculture and Health](https://vimeo.com/ondemand/downthecarrothole)",
