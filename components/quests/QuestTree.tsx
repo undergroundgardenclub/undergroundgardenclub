@@ -41,8 +41,8 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
           const isMobile = browser.getPlatformType() !== "desktop";
           // console.log(inst);
           // console.log(inst.getZoom());
-          inst.setCenter(isMobile ? 110 : 110, isMobile ? -800 : -750);
-          inst.zoomTo(isMobile ? 0.7 : 0.75);
+          inst.setCenter(isMobile ? 130 : 110, isMobile ? -750 : -750);
+          inst.zoomTo(isMobile ? 0.65 : 0.75);
         }}
         edgesUpdatable={false} // still allows for deletion tho?
         nodesConnectable={false}
