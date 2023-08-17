@@ -220,9 +220,10 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-00",
     type: "section",
-    position: { x: -35, y: -350 },
+    position: { x: 5, y: -355 },
     data: {
-      title: "Alright! Let's Start Learning and Doing!",
+      title: "Ready to take the first step?",
+      byLine: "Let's start experimenting!",
     },
   },
   {
