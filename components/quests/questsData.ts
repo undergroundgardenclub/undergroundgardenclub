@@ -149,6 +149,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     data: {
       title:
         "[Bio-Luminescent Embelshiments](https://aradhitaparasrampuria.net/work-1/bioembellishments-298zt)",
+      byLine:
+        "Ft. [Aradhita Parasrampuria](https://aradhitaparasrampuria.net/work-1/bioembellishments-298zt)",
       link: "https://aradhitaparasrampuria.net/work-1/bioembellishments-298zt",
       padding: false,
       thumbnailAlt: "Photo of methanotrophs",
@@ -224,7 +226,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-00",
     type: "section",
-    position: { x: 5, y: -355 },
+    position: { x: 5, y: -385 },
     data: {
       title: "Ready to take the first step?",
       byLine: "Let's start experimenting!",
@@ -1255,6 +1257,8 @@ export const questEdges: Edge[] = [
 ].map((e) => ({
   ...e,
   id: `e--${e.source}--${e.target}`,
+  updatable: false,
+  // type: "smoothstep",
   // @ts-ignore
   className:
     e.className != null
