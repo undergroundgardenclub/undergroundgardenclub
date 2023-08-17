@@ -1,5 +1,4 @@
 import { Edge, Node } from "reactflow";
-import ThumbnailNatureFynd from "../../public/naturefynd.png";
 
 type TNodeDataExtras = {
   data: { title?: string; byLine?: string; variant?: string };
@@ -151,7 +150,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       link: "https://aradhitaparasrampuria.net/work-1/bioembellishments-298zt",
       padding: false,
       thumbnailAlt: "Photo of methanotrophs",
-      thumbnailUrl: "/biobeads3.png",
+      thumbnailUrl: "/biobeads3.jpeg",
       variant: "course",
       // videoUrl:
       //   "https://aradhitaparasrampuria.net/work-1/bioembellishments-298zt",
@@ -210,7 +209,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       link: "https://vimeo.com/ondemand/downthecarrothole",
       padding: false,
       thumbnailAlt: "Overhead photo of garden",
-      thumbnailUrl: "/downthecarrothole.png",
+      thumbnailUrl: "/downthecarrothole.jpeg",
       variant: "course",
       videoUrl: "https://player.vimeo.com/video/787489765",
     },
