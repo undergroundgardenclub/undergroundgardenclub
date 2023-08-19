@@ -139,7 +139,7 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
         )}
       </div>
       {/* INTERESTS/MEMBERS */}
-      {showDetails && (
+      {/* {showDetails && (
         <div className="project-panel__members">
           {!isLead && (
             <div className="member-row">
@@ -207,7 +207,7 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
             </div>
           )}
         </div>
-      )}
+      )} */}
     </StyledProjectPanel>
   );
 };
