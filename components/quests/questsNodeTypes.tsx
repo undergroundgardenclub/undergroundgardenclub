@@ -7,7 +7,11 @@ import styled, { css } from "styled-components";
 import { ugcTheme } from "../styled/theme";
 import ReactPlayer from "react-player";
 
-const StyledBaseNodeType = styled.div<{ padding?: boolean; variant?: string }>`
+const StyledBaseNodeType = styled.div<{
+  minWidth?: string;
+  padding?: boolean;
+  variant?: string;
+}>`
   margin: 0;
   padding: ${({ padding }) => (padding !== false ? "0.5em 1em" : "0.5em 0 0")};
   display: flex;
@@ -116,7 +120,7 @@ const StartNodeType = (props: any) => {
   return (
     <>
       <Handle type="target" position={Position.Top} id={id} />
-      <StyledStartNodeType variant={data.variant}>
+      <StyledStartNodeType minWidth={data.minWidth} variant={data.variant}>
         <ReactMarkdown linkTarget="_blank" className="title">
           {data.title}
         </ReactMarkdown>
@@ -132,7 +136,7 @@ const StartNodeType = (props: any) => {
 };
 
 const StyledStartNodeType = styled(StyledSectionNodeType)`
-  min-width: 320px;
+  min-width: ${({ minWidth }) => minWidth ?? "320px"};
   background: blue;
   text-align: center;
   .title p {

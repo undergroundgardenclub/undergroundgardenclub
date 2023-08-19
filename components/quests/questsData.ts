@@ -12,11 +12,12 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcome-00",
     type: "start",
-    position: { x: -83, y: -1560 },
+    position: { x: -95, y: -1560 },
     data: {
       title:
         "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)",
       byLine: "Let's Get Growing",
+      minWidth: "440px;",
     },
   },
   {
