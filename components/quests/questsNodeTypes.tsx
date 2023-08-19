@@ -115,14 +115,15 @@ const StartNodeType = (props: any) => {
   useInterval(() => setInspoIndex(inspoIndex + 1), !!inspo ? 1000 * 5 : null);
   return (
     <>
+      <Handle type="target" position={Position.Top} id={id} />
       <StyledStartNodeType variant={data.variant}>
         <ReactMarkdown linkTarget="_blank" className="title">
-          {inspo ??
-            "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)"}
+          {data.title}
         </ReactMarkdown>
         <ReactMarkdown linkTarget="_blank" className="byline">
           {/* Start Experimenting Here! */}
-          What are you curious about?
+          {/* What are you curious about? */}
+          {data.byLine}
         </ReactMarkdown>
       </StyledStartNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
@@ -131,8 +132,7 @@ const StartNodeType = (props: any) => {
 };
 
 const StyledStartNodeType = styled(StyledSectionNodeType)`
-  min-width: 100px;
-  width: 440px;
+  min-width: 320px;
   background: blue;
   text-align: center;
   .title p {

@@ -12,13 +12,17 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcome-00",
     type: "start",
-    position: { x: -83, y: -1060 },
-    data: {},
+    position: { x: -83, y: -1560 },
+    data: {
+      title:
+        "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)",
+      byLine: "Let's Get Growing",
+    },
   },
   {
     id: "welcomePaths-10",
     type: "section",
-    position: { x: -616, y: -917 },
+    position: { x: -616, y: -1117 },
     data: {
       title: "Microbe-based Proteins",
       byLine: "Alternatives to Plant & Animal Proteins",
@@ -27,7 +31,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-11",
     type: "quest",
-    position: { x: -660, y: -624 },
+    position: { x: -660, y: -824 },
     data: {
       title:
         "[Gyser Microbes that Make Edible Protein](https://www.naturesfynd.com/yellowstone)",
@@ -42,7 +46,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-12",
     type: "quest",
-    position: { x: -656, y: -828 },
+    position: { x: -656, y: -1028 },
     data: {
       title: "[Fungi Flour for Protein Rich Bread](https://hyfe.tech/)",
       link: "https://hyfe.tech/",
@@ -56,7 +60,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-20",
     type: "section",
-    position: { x: -299, y: -942 },
+    position: { x: -299, y: -1142 },
     data: {
       title: "Plant Anatomy Engineering",
       byLine: "Drought Resistance to Capturing Carbon",
@@ -65,7 +69,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-21",
     type: "quest",
-    position: { x: -309, y: -645 },
+    position: { x: -309, y: -845 },
     data: {
       title:
         "[Helping Plants Survive Droughts](https://youtu.be/tAG3VRV-sY0?t=130)",
@@ -79,7 +83,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-22",
     type: "quest",
-    position: { x: -335, y: -856 },
+    position: { x: -335, y: -1056 },
     data: {
       title:
         "[Enhanced CO2 Capturing Trees](https://www.youtube.com/watch?v=6OknnFuDQE8)",
@@ -94,7 +98,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-30",
     type: "section",
-    position: { x: 635, y: -933 },
+    position: { x: 635, y: -1133 },
 
     data: {
       title: "Green House Gas Removal",
@@ -104,7 +108,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-31",
     type: "quest",
-    position: { x: 673, y: -856 },
+    position: { x: 673, y: -1056 },
 
     data: {
       title:
@@ -120,7 +124,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-32",
     type: "quest",
-    position: { x: 692, y: -653 },
+    position: { x: 692, y: -853 },
     data: {
       title:
         "[Atmospheric Methane Eating Bacteria](https://www.youtube.com/watch?v=k3KZDcpD9Bs)",
@@ -136,16 +140,16 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-40",
     type: "section",
-    position: { x: 355, y: -941 },
+    position: { x: 355, y: -1141 },
     data: {
-      title: "Bio-Materials",
+      title: "Frontier Materials",
       byLine: "Rethinking Fashion and Function",
     },
   },
   {
     id: "welcomePaths-41",
     type: "quest",
-    position: { x: 359, y: -850 },
+    position: { x: 359, y: -1050 },
     data: {
       title:
         "[Bio-Luminescent Embelshiments](https://aradhitaparasrampuria.net/work-1/bioembellishments-298zt)",
@@ -163,7 +167,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-42",
     type: "quest",
-    position: { x: 338, y: -634 },
+    position: { x: 338, y: -834 },
     data: {
       title:
         "[Affordable Caskets using Fungi/Mycellium](https://www.youtube.com/watch?v=AurhO4Lf1Is)",
@@ -178,7 +182,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-50",
     type: "section",
-    position: { x: 5, y: -935 },
+    position: { x: 5, y: -1135 },
 
     data: {
       title: "Environmental Stewardship & Healing",
@@ -188,7 +192,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-51",
     type: "quest",
-    position: { x: 8, y: -853 },
+    position: { x: 8, y: -1053 },
 
     data: {
       title:
@@ -207,7 +211,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcomePaths-52",
     type: "quest",
-    position: { x: 24, y: -633 },
+    position: { x: 24, y: -833 },
     data: {
       title:
         "[Permaculture and Health](https://vimeo.com/ondemand/downthecarrothole)",
@@ -225,17 +229,17 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   // --- start experimenting
   {
     id: "start-00",
-    type: "section",
-    position: { x: 5, y: -385 },
+    type: "start",
+    position: { x: -28, y: -425 },
     data: {
-      title: "Ready to take the first step?",
-      byLine: "Let's start experimenting!",
+      title: "Let's Start Experimenting",
+      byLine: "Learning the Basics, Building Intuition",
     },
   },
   {
     id: "resource-00",
     type: "quest",
-    position: { x: 140, y: -285 },
+    position: { x: 151, y: -354 },
     data: {
       title:
         "[Introductory Bio/Chem](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
@@ -247,7 +251,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-01",
     type: "quest",
-    position: { x: 30, y: -200 },
+    position: { x: 21, y: -281 },
     data: {
       title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
       byLine: "[@ Genspace](https://www.genspace.org)",
@@ -257,7 +261,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-03",
     type: "quest",
-    position: { x: -140, y: -285 },
+    position: { x: -147, y: -356 },
     data: {
       title:
         "[Getting Up to Speed on Bio](https://www.youtube.com/playlist?list=PLUl4u3cNGP629Egng0HfgRJfXBNTPw1le)",
@@ -270,7 +274,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-10",
     type: "section",
-    position: { x: -220, y: -110 },
+    position: { x: -262, y: -185 },
     data: {
       title: "Biological Machines",
       byLine: "Intro Experiments Pt.1",
@@ -279,7 +283,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-20",
     type: "section",
-    position: { x: 50, y: -110 },
+    position: { x: 32, y: -194 },
     data: {
       title: "Biological Materials",
       byLine: "Intro Experiments Pt.2",
@@ -288,7 +292,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "hardware-00",
     type: "quest",
-    position: { x: 30, y: -25 },
+    position: { x: 7, y: -120 },
     data: {
       title:
         "[3D Printing Crash Course](https://undergroundgardenclub.notion.site/TQ-00-3D-Mold-Modeling-Printing-1e3dafc3be414c54ab6eb16deb730541?pvs=4)",
@@ -300,7 +304,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-01",
     type: "quest",
-    position: { x: 0, y: 140 },
+    position: { x: -15, y: 21 },
     data: {
       title:
         "[Bio-Plastic Membership Card](https://undergroundgardenclub.notion.site/BQ-00-Bio-Plastic-Member-Card-d41d6259d586492fa3a7c9d880367099?pvs=4)",
@@ -322,7 +326,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-04",
     type: "quest",
-    position: { x: -10, y: 60 },
+    position: { x: -28, y: -46 },
     data: {
       title:
         "[Fundamentals of Materials Structure](https://openlearninglibrary.mit.edu/courses/course-v1:MITx+3.012S.1x+1T2019/course/)",
@@ -334,7 +338,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-02",
     type: "quest",
-    position: { x: -320, y: -10 },
+    position: { x: -334, y: -115 },
     data: {
       title:
         "[Transform Bacteria to Glow Green](https://undergroundgardenclub.notion.site/BQ-01-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80?pvs=4)",
@@ -345,7 +349,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-03",
     type: "quest",
-    position: { x: -315, y: 80 },
+    position: { x: -337, y: -42 },
     data: {
       title:
         "[Using Bacteria as Bio-Factories](https://undergroundgardenclub.notion.site/BQ-02-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611?pvs=4)",
@@ -356,7 +360,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-30",
     type: "section",
-    position: { x: 300, y: -110 },
+    position: { x: 318, y: -188 },
     data: {
       title: "Tools for Transformation",
       byLine: "Intro Experiments Pt.3",
@@ -365,7 +369,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "hardware-01",
     type: "quest",
-    position: { x: 360, y: -15 },
+    position: { x: 351, y: -117 },
     data: {
       title: "[Siri + GPT4](https://github.com/Yue-Yang/ChatGPT-Siri)",
       byLine: "Audio-Based AI Assistance",
@@ -375,7 +379,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "hardware-02",
     type: "quest",
-    position: { x: 330, y: 70 },
+    position: { x: 302, y: -48 },
     data: {
       title:
         "[Build Smartphone Florescence Microscope](https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
@@ -386,18 +390,18 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   },
   {
     id: "communityIntro-00",
-    type: "section",
-    position: { x: 20, y: 230 },
+    type: "start",
+    position: { x: -46, y: 239 },
     data: {
       title: "Community Experiments",
-      byLine: "Dig Deeper",
+      byLine: "Dig Deeper, Build Your Club",
     },
   },
   // --- plant evolution
   {
     id: "resource-05",
     type: "quest",
-    position: { x: -270, y: 250 },
+    position: { x: -297, y: 273 },
     data: {
       title:
         "[Plant Structures](https://www.enrole.com/nybg/jsp/course.jsp?courseId=204BOT315O&categoryId=ROOT)",
@@ -409,7 +413,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-06",
     type: "quest",
-    position: { x: -630, y: 270 },
+    position: { x: -650, y: 307 },
     data: {
       title:
         "[Soil Science 1: Physical Properties](https://www.enrole.com/nybg/jsp/course.jsp?courseId=154HRT301&categoryId=10109)",
