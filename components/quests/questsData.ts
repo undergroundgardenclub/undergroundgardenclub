@@ -16,7 +16,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     data: {
       title:
         "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)",
-      byLine: "Choose a Path, Start Experimenting, Reinvent Yourself",
+      byLine: "Choose a Path, Experiment, Reinvent Yourself",
       minWidth: "440px;",
     },
   },
@@ -231,7 +231,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-00",
     type: "start",
-    position: { x: -97, y: -529 },
+    position: { x: -105, y: -478 },
     data: {
       title: "Start Experimenting Here",
       byLine: "Connect with Community and Grow Together",
