@@ -16,7 +16,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     data: {
       title:
         "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)",
-      byLine: "Choose a Path, Experiment, Reinvent Yourself",
+      byLine: "Get In, We Have a Garden to Grow",
       minWidth: "440px;",
     },
   },
@@ -233,8 +233,8 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     type: "start",
     position: { x: -105, y: -478 },
     data: {
-      title: "Start Experimenting Here",
-      byLine: "Connect with Community and Grow Together",
+      title: "Introductory Experiments",
+      byLine: "Building Intuition with Biological and Physical Worlds",
       minWidth: "440px",
       variant: "joinClub",
     },
@@ -407,7 +407,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -54, y: 191 },
     data: {
       title: "Community Experiments",
-      byLine: "Dig Deeper, Show Others the Way",
+      byLine: "Dig Deeper and Create New Paths",
     },
   },
   // --- plant evolution
