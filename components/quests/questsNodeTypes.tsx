@@ -188,7 +188,6 @@ const StyledStartNodeType = styled(StyledSectionNodeType)`
     font-size: 16px;
   }
   .byline p {
-    font-size: 11px;
     margin-top: 0.2em;
   }
 `;
