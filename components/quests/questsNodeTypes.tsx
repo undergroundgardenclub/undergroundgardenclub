@@ -6,6 +6,11 @@ import { Handle, Position } from "reactflow";
 import styled, { css } from "styled-components";
 import { ugcTheme } from "../styled/theme";
 import ReactPlayer from "react-player";
+import { StyledButton } from "../styled/StyledButton";
+import { useUser } from "../users/useUser";
+import { SSOPanel } from "../users/SSOPanel";
+import { useStore } from "zustand";
+import { modalStore } from "../layout/useModal";
 
 const StyledBaseNodeType = styled.div<{
   minWidth?: string;
@@ -33,6 +38,16 @@ const StyledBaseNodeType = styled.div<{
   }
   .byline {
     font-size: 10px;
+  }
+  .actions {
+    width: 100%;
+    margin-top: 4px;
+    display: flex;
+    a,
+    button {
+      width: 100%;
+      font-size: 16px;
+    }
   }
   .quest-node__video-player {
     width: 100%;
@@ -70,6 +85,41 @@ const StyledDivImage = styled.div<{ alt?: string; src: string }>`
   background-repeat: no-repeat;
 `;
 
+const ActionsJoinLearningCircle = () => {
+  // const modal = useStore(modalStore);
+  // const { data: user } = useUser();
+  // RENDER
+  return (
+    <div className="actions">
+      {/* <StyledButton
+        variant={true ? "green" : "blue"}
+        onClick={() => {
+          // IF NOT LOGGED IN, PROMPT
+          if (user?.id === undefined) {
+            modal.setIsOpen(
+              true,
+              <SSOPanel
+                headline={`Create an Account to Get Info About '${project.name}'`}
+                redirectTo={location.pathname}
+              />
+            );
+          }
+        }}
+      >
+        Join the Learning Club
+      </StyledButton> */}
+      <StyledButton
+        as="a"
+        variant="green"
+        href="https://airtable.com/app35mfgElk9BL3ov/shrBrDRNiPoLZPojH"
+        target="_blank"
+      >
+        Join the Learning Club
+      </StyledButton>
+    </div>
+  );
+};
+
 // ===============================
 // SECTION HEADER
 // ===============================
@@ -106,17 +156,9 @@ const StyledSectionNodeType = styled(StyledBaseNodeType)`
 // START
 // ===============================
 const StartNodeType = (props: any) => {
+  // SETUP
   const { data, id } = props;
-  const inspos: string[] = [
-    // "BEFORE AIRPLANES CAME [MOTORCYCLE MECHANICS](https://en.wikipedia.org/wiki/History_of_aviation#Wright_brothers)...",
-    // "BEFORE APPLE CAME THE [HOMEBREW COMPUTER CLUB](https://en.wikipedia.org/wiki/Homebrew_Computer_Club)...",
-    // "BEFORE RADIO CAME THE [WIRELESS TELEGRAPH CLUB](https://en.wikipedia.org/wiki/History_of_amateur_radio#Beginnings)...",
-    // "BEFORE NASA CAME THE [PACIFIC ROCKET SOCIETY](https://en.wikipedia.org/wiki/Amateur_rocketry#History)...",
-    // "BEFORE GOOGLE EARTH CAME [THE CHAOS COMPUTER CLUB](https://en.wikipedia.org/wiki/Terravision_(computer_program))",
-  ];
-  const [inspoIndex, setInspoIndex] = useState(0);
-  const inspo = inspos[inspoIndex];
-  useInterval(() => setInspoIndex(inspoIndex + 1), !!inspo ? 1000 * 5 : null);
+  // RENDER
   return (
     <>
       <Handle type="target" position={Position.Top} id={id} />
@@ -129,6 +171,8 @@ const StartNodeType = (props: any) => {
           {/* What are you curious about? */}
           {data.byLine}
         </ReactMarkdown>
+        {/* {data.variant === "joinClub" && <ActionsJoinLearningCircle />} */}
+        <ActionsJoinLearningCircle />
       </StyledStartNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
     </>

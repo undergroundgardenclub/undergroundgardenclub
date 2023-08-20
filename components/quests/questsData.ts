@@ -12,11 +12,11 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "welcome-00",
     type: "start",
-    position: { x: -95, y: -1560 },
+    position: { x: -83, y: -1379 },
     data: {
       title:
         "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)",
-      byLine: "Let's Get Growing",
+      byLine: "Choose a Path, Start Experimenting, Reinvent Yourself",
       minWidth: "440px;",
     },
   },
@@ -55,7 +55,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       thumbnailAlt: "Hyfe Foods Cofounders",
       thumbnailUrl: "/hyfefoods.jpeg",
       variant: "course",
-      videoUrl: "https://youtu.be/Qv-4bUTi3js?t=1005",
+      videoUrl: "https://www.youtube.com/watch?v=Qv-4bUTi3js&t=1005s",
     },
   },
   {
@@ -73,12 +73,12 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     position: { x: -309, y: -845 },
     data: {
       title:
-        "[Helping Plants Survive Droughts](https://youtu.be/tAG3VRV-sY0?t=130)",
+        "[Helping Plants Survive Droughts](https://www.youtube.com/watch?v=tAG3VRV-sY0&t=130s)",
       byLine: "Ft. Prof. Jenn Brophy",
-      link: "https://youtu.be/tAG3VRV-sY0?t=130",
+      link: "https://www.youtube.com/watch?v=tAG3VRV-sY0&t=130s",
       padding: false,
       variant: "course",
-      videoUrl: "https://youtu.be/tAG3VRV-sY0?t=130",
+      videoUrl: "https://www.youtube.com/watch?v=tAG3VRV-sY0&t=130s",
     },
   },
   {
@@ -231,10 +231,12 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "start-00",
     type: "start",
-    position: { x: -28, y: -425 },
+    position: { x: -97, y: -529 },
     data: {
-      title: "Let's Start Experimenting",
-      byLine: "Learning the Basics, Building Intuition",
+      title: "Start Experimenting Here",
+      byLine: "Connect with Community and Grow Together",
+      minWidth: "440px",
+      variant: "joinClub",
     },
   },
   {
@@ -389,13 +391,23 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
     },
   },
+  // TODO: come up w/ experiment to exemplify this
+  // {
+  //   id: "start-40",
+  //   type: "section",
+  //   position: { x: -862, y: -185 },
+  //   data: {
+  //     title: "Safety & Ethics",
+  //     byLine: "Intro Experiments Pt.4",
+  //   },
+  // },
   {
     id: "communityIntro-00",
     type: "start",
-    position: { x: -46, y: 239 },
+    position: { x: -54, y: 191 },
     data: {
       title: "Community Experiments",
-      byLine: "Dig Deeper, Build Your Club",
+      byLine: "Dig Deeper, Show Others the Way",
     },
   },
   // --- plant evolution
