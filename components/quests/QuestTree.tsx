@@ -39,7 +39,7 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
         onInit={(inst: ReactFlowInstance) => {
           const browser = Bowser.getParser(window.navigator.userAgent);
           const isMobile = browser.getPlatformType() !== "desktop";
-          inst.setCenter(isMobile ? 130 : 90, isMobile ? -1100 : -1250);
+          inst.setCenter(isMobile ? 130 : 90, isMobile ? -1250 : -1250);
           inst.zoomTo(isMobile ? 0.65 : 0.75);
         }}
         edgesUpdatable={false} // still allows for deletion tho?
