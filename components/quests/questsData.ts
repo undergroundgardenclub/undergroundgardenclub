@@ -513,6 +513,7 @@ const questNodesDeepDives = [
     data: {
       title: "Deep Dive Experiments",
       byLine: "Dig Deeper and Create New Paths",
+      variant: "contributing",
     },
   },
   {

@@ -102,7 +102,7 @@ const ActionsJoinLearningCircle = () => (
     <StyledButton
       as="a"
       variant="green"
-      href="https://airtable.com/app35mfgElk9BL3ov/shrBrDRNiPoLZPojH"
+      href={AIRTABLE_FORM_LEARNING_GROUP_URL}
       target="_blank"
     >
       Join the Learning Club
@@ -115,10 +115,10 @@ const ActionsContribute = () => (
     <StyledButton
       as="a"
       variant="green"
-      href="https://airtable.com/app35mfgElk9BL3ov/shrBrDRNiPoLZPojH"
+      href={AIRTABLE_FORM_CONTRIBUTION_URL}
       target="_blank"
     >
-      Contribute to the Learning
+      Contribute Quests & Learning
     </StyledButton>
   </div>
 );
@@ -209,6 +209,7 @@ const StartNodeType = (props: any) => {
           {data.byLine}
         </ReactMarkdown>
         {data.variant === "joinClub" && <ActionsJoinLearningCircle />}
+        {data.variant === "contributing" && <ActionsContribute />}
       </StyledStartNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
     </>
