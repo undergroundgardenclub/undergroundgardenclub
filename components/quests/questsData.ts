@@ -1,4 +1,5 @@
 import { Edge, Node } from "reactflow";
+import { AIRTABLE_FORM_CONTRIBUTION_URL } from "./questsNodeTypes";
 
 // Setup
 type TNodeDataExtras = {
@@ -317,7 +318,13 @@ const questNodesGetStartedBuildLab = [
     position: { x: 222, y: -275 },
     data: {
       title: "...Or Start Your Own Lab",
-      byLine: "Coming Soon",
+      _byLine: `[Contribute This Section](${AIRTABLE_FORM_CONTRIBUTION_URL})`,
+      get byLine() {
+        return this._byLine;
+      },
+      set byLine(value) {
+        this._byLine = value;
+      },
     },
   },
   {
@@ -632,19 +639,28 @@ const questNodesDeepDivesBotanicalPharm = [
     id: "botanicalPharm-51",
     type: "quest",
     position: { x: -205, y: 1040 },
-    data: { title: "Home Grown Insulin", byLine: "Coming Soon" },
+    data: {
+      title: "Home Grown Insulin",
+      byLine: `[Contribute This Section](${AIRTABLE_FORM_CONTRIBUTION_URL})`,
+    },
   },
   {
     id: "botanicalPharm-52",
     type: "quest",
     position: { x: 0, y: 1050 },
-    data: { title: "Home Grown Testosterone", byLine: "Coming Soon" },
+    data: {
+      title: "Home Grown Testosterone",
+      byLine: `[Contribute This Section](${AIRTABLE_FORM_CONTRIBUTION_URL})`,
+    },
   },
   {
     id: "botanicalPharm-53",
     type: "quest",
     position: { x: 230, y: 1040 },
-    data: { title: "Home Grown Estrogen", byLine: "Coming Soon" },
+    data: {
+      title: "Home Grown Estrogen",
+      byLine: `[Contribute This Section](${AIRTABLE_FORM_CONTRIBUTION_URL})`,
+    },
   },
   // {
   //   id: "botanicalPharm-30",
@@ -752,7 +768,7 @@ const questNodesDeepDivesFoodEnvJustice = [
     position: { x: -785, y: 680 },
     data: {
       title: "Environmental Data Stewardship",
-      byLine: "Coming Soon",
+      byLine: `[Contribute This Section](${AIRTABLE_FORM_CONTRIBUTION_URL})`,
     },
   },
   {
@@ -769,7 +785,7 @@ const questNodesDeepDivesFoodEnvJustice = [
     position: { x: -585, y: 755 },
     data: {
       title: "Soil Sampling",
-      byLine: "Coming Soon",
+      byLine: `[Contribute This Section](${AIRTABLE_FORM_CONTRIBUTION_URL})`,
     },
   },
   {
@@ -778,7 +794,7 @@ const questNodesDeepDivesFoodEnvJustice = [
     position: { x: -415, y: 755 },
     data: {
       title: "Water Sampling",
-      byLine: "Coming Soon",
+      byLine: `[Contribute This Section](${AIRTABLE_FORM_CONTRIBUTION_URL})`,
     },
   },
   {
@@ -787,7 +803,7 @@ const questNodesDeepDivesFoodEnvJustice = [
     position: { x: -510, y: 820 },
     data: {
       title: "Air Sampling",
-      byLine: "Coming Soon",
+      byLine: `[Contribute This Section](${AIRTABLE_FORM_CONTRIBUTION_URL})`,
     },
   },
   {

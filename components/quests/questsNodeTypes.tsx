@@ -12,6 +12,11 @@ import { SSOPanel } from "../users/SSOPanel";
 import { useStore } from "zustand";
 import { modalStore } from "../layout/useModal";
 
+export const AIRTABLE_FORM_LEARNING_GROUP_URL =
+  "https://airtable.com/app35mfgElk9BL3ov/shrBrDRNiPoLZPojH";
+export const AIRTABLE_FORM_CONTRIBUTION_URL =
+  "https://airtable.com/app35mfgElk9BL3ov/shrqYH8gLQJHsDApm";
+
 const StyledBaseNodeType = styled.div<{
   minWidth?: string;
   padding?: boolean;
@@ -119,36 +124,35 @@ const ActionsContribute = () => (
 );
 
 const ActionsBootCamps = () => (
-  <div className="actions column">
-    <StyledButton
-      as="a"
-      variant="blue"
-      inverted
-      href="https://www.genspace.org/classes"
-      target="_blank"
-    >
-      Genspace (NYC)
-    </StyledButton>
-    <StyledButton
-      as="a"
-      variant="blue"
-      inverted
-      href="https://biotechwithoutborders.org/events/"
-      target="_blank"
-    >
-      Biotech Without Borders (NYC)
-    </StyledButton>
-    <StyledButton
-      as="a"
-      variant="blue"
-      inverted
-      href="https://www.meetup.com/Counter-Culture-Labs/"
-      target="_blank"
-    >
-      Counter Culture Labs (Oakland)
-    </StyledButton>
-    <small>+ Search for community bio labs near you!</small>
-  </div>
+  <>
+    <div className="actions column">
+      <StyledButton
+        as="a"
+        variant="green"
+        href="https://www.genspace.org/classes"
+        target="_blank"
+      >
+        Genspace (NYC) →
+      </StyledButton>
+      <StyledButton
+        as="a"
+        variant="green"
+        href="https://biotechwithoutborders.org/events/"
+        target="_blank"
+      >
+        Biotech Without Borders (NYC) →
+      </StyledButton>
+      <StyledButton
+        as="a"
+        variant="green"
+        href="https://www.meetup.com/Counter-Culture-Labs/"
+        target="_blank"
+      >
+        Counter Culture Labs (Oakland) →
+      </StyledButton>
+    </div>
+    <small>Search for community bio labs near you!</small>
+  </>
 );
 
 // ===============================
@@ -204,8 +208,7 @@ const StartNodeType = (props: any) => {
           {/* What are you curious about? */}
           {data.byLine}
         </ReactMarkdown>
-        {/* {data.variant === "joinClub" && <ActionsJoinLearningCircle />} */}
-        <ActionsJoinLearningCircle />
+        {data.variant === "joinClub" && <ActionsJoinLearningCircle />}
       </StyledStartNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
     </>
