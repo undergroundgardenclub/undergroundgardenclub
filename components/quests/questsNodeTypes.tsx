@@ -43,10 +43,17 @@ const StyledBaseNodeType = styled.div<{
     width: 100%;
     margin-top: 4px;
     display: flex;
+    &.column {
+      flex-direction: column;
+      a {
+        margin-bottom: 6px;
+      }
+    }
     a,
     button {
       width: 100%;
       font-size: 16px;
+      text-align: center;
     }
   }
   .quest-node__video-player {
@@ -85,44 +92,69 @@ const StyledDivImage = styled.div<{ alt?: string; src: string }>`
   background-repeat: no-repeat;
 `;
 
-const ActionsJoinLearningCircle = () => {
-  // const modal = useStore(modalStore);
-  // const { data: user } = useUser();
-  // RENDER
-  return (
-    <div className="actions">
-      {/* <StyledButton
-        variant={true ? "green" : "blue"}
-        onClick={() => {
-          // IF NOT LOGGED IN, PROMPT
-          if (user?.id === undefined) {
-            modal.setIsOpen(
-              true,
-              <SSOPanel
-                headline={`Create an Account to Get Info About '${project.name}'`}
-                redirectTo={location.pathname}
-              />
-            );
-          }
-        }}
-      >
-        Join the Learning Club
-      </StyledButton> */}
-      <StyledButton
-        as="a"
-        variant="green"
-        href="https://airtable.com/app35mfgElk9BL3ov/shrBrDRNiPoLZPojH"
-        target="_blank"
-      >
-        Join the Learning Club
-      </StyledButton>
-    </div>
-  );
-};
+const ActionsJoinLearningCircle = () => (
+  <div className="actions">
+    <StyledButton
+      as="a"
+      variant="green"
+      href="https://airtable.com/app35mfgElk9BL3ov/shrBrDRNiPoLZPojH"
+      target="_blank"
+    >
+      Join the Learning Club
+    </StyledButton>
+  </div>
+);
+
+const ActionsContribute = () => (
+  <div className="actions">
+    <StyledButton
+      as="a"
+      variant="green"
+      href="https://airtable.com/app35mfgElk9BL3ov/shrBrDRNiPoLZPojH"
+      target="_blank"
+    >
+      Contribute to the Learning
+    </StyledButton>
+  </div>
+);
+
+const ActionsBootCamps = () => (
+  <div className="actions column">
+    <StyledButton
+      as="a"
+      variant="blue"
+      inverted
+      href="https://www.genspace.org/classes"
+      target="_blank"
+    >
+      Genspace (NYC)
+    </StyledButton>
+    <StyledButton
+      as="a"
+      variant="blue"
+      inverted
+      href="https://biotechwithoutborders.org/events/"
+      target="_blank"
+    >
+      Biotech Without Borders (NYC)
+    </StyledButton>
+    <StyledButton
+      as="a"
+      variant="blue"
+      inverted
+      href="https://www.meetup.com/Counter-Culture-Labs/"
+      target="_blank"
+    >
+      Counter Culture Labs (Oakland)
+    </StyledButton>
+    <small>+ Search for community bio labs near you!</small>
+  </div>
+);
 
 // ===============================
 // SECTION HEADER
 // ===============================
+
 const SectionNodeType = (props: any) => {
   const { data, id } = props;
   return (
@@ -155,6 +187,7 @@ const StyledSectionNodeType = styled(StyledBaseNodeType)`
 // ===============================
 // START
 // ===============================
+
 const StartNodeType = (props: any) => {
   // SETUP
   const { data, id } = props;
@@ -193,8 +226,35 @@ const StyledStartNodeType = styled(StyledSectionNodeType)`
 `;
 
 // ===============================
+// BOOTCAMP NODE TYPE
+// ===============================
+
+const BootcampNodeType = (props: any) => {
+  const { data, id } = props;
+  return (
+    <>
+      <Handle type="target" position={Position.Top} id={id} />
+      <StyledQuestNodeType minWidth={data.minWidth} variant={data.variant}>
+        <ReactMarkdown linkTarget="_blank" className="title">
+          {data.title}
+        </ReactMarkdown>
+        <ReactMarkdown linkTarget="_blank" className="byline">
+          {/* Start Experimenting Here! */}
+          {/* What are you curious about? */}
+          {data.byLine}
+        </ReactMarkdown>
+        {/* {data.variant === "joinClub" && <ActionsJoinLearningCircle />} */}
+        <ActionsBootCamps />
+      </StyledQuestNodeType>
+      <Handle type="source" position={Position.Bottom} id={id} />
+    </>
+  );
+};
+
+// ===============================
 // QUEST TILE
 // ===============================
+
 const QuestNodeType = (props: any) => {
   const { data, id } = props;
   return (
@@ -350,6 +410,7 @@ const StyledQuestNodeType = styled(StyledBaseNodeType)`
 // https://reactflow.dev/docs/api/nodes/custom-nodes/
 // https://reactflow.dev/docs/guides/custom-nodes/
 export const questsNodeTypes = {
+  bootcamp: BootcampNodeType,
   section: SectionNodeType,
   start: StartNodeType,
   quest: QuestNodeType,

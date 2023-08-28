@@ -1,14 +1,24 @@
 import { Edge, Node } from "reactflow";
 
+// Setup
 type TNodeDataExtras = {
   data: { title?: string; byLine?: string; variant?: string };
 };
 
+const relativeNodeGroupPositioniner = (
+  { offsetX, offsetY }: { offsetX: number; offsetY: number },
+  nodes: (Node & TNodeDataExtras)[]
+) =>
+  nodes.map((n) => ({
+    ...n,
+    position: { x: n.position.x + offsetX, y: n.position.y + offsetY },
+  }));
+
 // ===============================
-// NODES
+// NODE GROUP - WELCOME
 // ===============================
-export const questNodes: (Node & TNodeDataExtras)[] = [
-  // --- welcome content/ideas
+
+const questNodesWelcome = [
   {
     id: "welcome-00",
     type: "start",
@@ -226,15 +236,20 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
         "https://v2.kickstarter.com/1692300996-GyYtwQnXLGSk8PRooOoNXvcvFae%2BUxBZ9dsTmWLNxuY%3D/projects/4381903/video-1171035-hls_playlist.m3u8",
     },
   },
+];
 
-  // --- start experimenting
+// ===============================
+// NODE GROUP - GETTING STARTED
+// ===============================
+
+const questNodesGetStarted = [
   {
     id: "start-00",
     type: "start",
     position: { x: -105, y: -478 },
     data: {
-      title: "Introductory Experiments",
-      byLine: "Building Intuition with Biological and Physical Worlds",
+      title: "Starting Your Journey",
+      byLine: "A First Step and Setting Up",
       minWidth: "440px",
       variant: "joinClub",
     },
@@ -242,7 +257,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-00",
     type: "quest",
-    position: { x: 151, y: -354 },
+    position: { x: 141, y: -364 },
     data: {
       title:
         "[Introductory Bio/Chem](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
@@ -254,17 +269,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   {
     id: "resource-01",
     type: "quest",
-    position: { x: 21, y: -281 },
-    data: {
-      title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
-      byLine: "[@ Genspace](https://www.genspace.org)",
-      link: "https://www.genspace.org/classes",
-    },
-  },
-  {
-    id: "resource-03",
-    type: "quest",
-    position: { x: -147, y: -356 },
+    position: { x: -137, y: -366 },
     data: {
       title:
         "[Getting Up to Speed on Bio](https://www.youtube.com/playlist?list=PLUl4u3cNGP629Egng0HfgRJfXBNTPw1le)",
@@ -274,8 +279,94 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       link: "https://www.youtube.com/playlist?list=PLUl4u3cNGP629Egng0HfgRJfXBNTPw1le",
     },
   },
+  // --- community lab
   {
     id: "start-10",
+    type: "section",
+    position: { x: 0, y: -275 },
+    data: {
+      title: "Start with a Community Lab",
+      byLine: "Intro Education/Connections",
+    },
+  },
+  // {
+  //   id: "start-11",
+  //   type: "quest",
+  //   position: { x: 15, y: -200 },
+  //   data: {
+  //     title: "[Bio-Hacker Bootcamp](https://www.genspace.org/classes)",
+  //     byLine: "[@ Genspace](https://www.genspace.org)",
+  //     link: "https://www.genspace.org/classes",
+  //   },
+  // },
+  {
+    id: "start-11",
+    type: "bootcamp",
+    position: { x: -50, y: -190 },
+    data: {
+      title: "Intro Lab Learning/Bootcamps",
+      byLine: "@ Your Nearest Community Bio-Lab",
+    },
+  },
+];
+
+const questNodesGetStartedBuildLab = [
+  {
+    id: "start-20",
+    type: "section",
+    position: { x: 222, y: -275 },
+    data: {
+      title: "...Or Start Your Own Lab",
+      byLine: "Coming Soon",
+    },
+  },
+  {
+    id: "start-21",
+    type: "quest",
+    position: { x: 110, y: -205 },
+    data: {
+      title: "Prepping a WorkTable",
+      byLine: "Using Epoxy to Encase a Surface",
+    },
+  },
+  {
+    id: "start-22",
+    type: "quest",
+    position: { x: 370, y: -210 },
+    data: {
+      title: "Airflow and Filteration",
+      byLine: "Crash Course in Contamination",
+    },
+  },
+  {
+    id: "start-23",
+    type: "quest",
+    position: { x: 250, y: -140 },
+    data: {
+      title: "Lab Setup",
+      byLine: "Minimal Reagents and Equipments",
+    },
+  },
+];
+
+// ===============================
+// NODE GROUP - INTRO EXPERIMENTS
+// ===============================
+
+const questNodesIntroExperiments = [
+  {
+    id: "intro-00",
+    type: "start",
+    position: { x: -105, y: -328 },
+    data: {
+      title: "Introductory Experiments",
+      byLine: "Building Intuition with Biological and Physical Worlds",
+      minWidth: "440px",
+      variant: "joinClub",
+    },
+  },
+  {
+    id: "intro-10",
     type: "section",
     position: { x: -262, y: -185 },
     data: {
@@ -284,7 +375,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "start-20",
+    id: "intro-20",
     type: "section",
     position: { x: 32, y: -194 },
     data: {
@@ -305,7 +396,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "start-01",
+    id: "intro-01",
     type: "quest",
     position: { x: -15, y: 21 },
     data: {
@@ -339,7 +430,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "start-02",
+    id: "intro-02",
     type: "quest",
     position: { x: -334, y: -115 },
     data: {
@@ -350,7 +441,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "start-03",
+    id: "intro-03",
     type: "quest",
     position: { x: -337, y: -42 },
     data: {
@@ -361,7 +452,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
     },
   },
   {
-    id: "start-30",
+    id: "intro-30",
     type: "section",
     position: { x: 318, y: -188 },
     data: {
@@ -393,7 +484,7 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   },
   // TODO: come up w/ experiment to exemplify this
   // {
-  //   id: "start-40",
+  //   id: "intro-40",
   //   type: "section",
   //   position: { x: -862, y: -185 },
   //   data: {
@@ -401,16 +492,22 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   //     byLine: "Intro Experiments Pt.4",
   //   },
   // },
+];
+
+// ===============================
+// NODE GROUP - DEEP DIVES
+// ===============================
+
+const questNodesDeepDives = [
   {
     id: "communityIntro-00",
     type: "start",
     position: { x: -54, y: 191 },
     data: {
-      title: "Community Experiments",
+      title: "Deep Dive Experiments",
       byLine: "Dig Deeper and Create New Paths",
     },
   },
-  // --- plant evolution
   {
     id: "resource-05",
     type: "quest",
@@ -435,6 +532,9 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       link: "https://www.enrole.com/nybg/jsp/course.jsp?courseId=154HRT301&categoryId=10109",
     },
   },
+];
+
+const questNodesDeepDivesBotanicalPharm = [
   {
     id: "botanicalPharm-00",
     type: "section",
@@ -552,54 +652,43 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   //   position: { x: 10, y: 1140 },
   //   data: { title: "Processing for Human Use", byLine: "Cp,omg" },
   // },
-  // -- glowing houseplants
-  {
-    id: "glowingPlants-00",
-    type: "section",
-    position: { x: 300, y: 410 },
-    data: {
-      title: "Next Up",
-      byLine: "GMO'ing with Synthetic Luciferin",
-    },
-  },
-  // {
-  //   id: "glowingPlants-00",
-  //   type: "section",
-  //   position: { x: 300, y: 410 },
-  //   data: {
-  //     title: "Glowing Houseplants",
-  //     byLine: "GMO'ing with Synthetic Luciferin",
-  //   },
-  // },
-  // -- plant growth hacking
+];
+
+const questNodesDeepDivesPlantAnatonmyEng = [
   {
     id: "plantGrowth-10",
     type: "section",
     position: { x: -320, y: 420 },
-    data: { title: "Next Up", byLine: "GMO'ing Massive Mutant Plants" },
+    data: {
+      title: "Plant Anatomy Engineering",
+      byLine: "GMO'ing Massive Mutant Plants",
+    },
   },
-  // {
-  //   id: "plantGrowth-11",
-  //   type: "quest",
-  //   position: { x: -420, y: 475 },
-  //   data: {
-  //     title:
-  //       "[Speed Breeding Cabinet](https://www.biorxiv.org/content/10.1101/369512v1.full.pdf)",
-  //     byLine: "(Ft. John Innes Institute)",
-  //   },
-  // },
-  // {
-  //   id: "plantGrowth-12",
-  //   type: "quest",
-  //   position: { x: -315, y: 540 },
-  //   data: { title: "Repressive Gene Knockout", byLine: "(w/ CRISPR)" },
-  // },
-  // {
-  //   id: "plantGrowth-13",
-  //   type: "quest",
-  //   position: { x: -170, y: 495 },
-  //   data: { title: "Polyploiding" },
-  // },
+  {
+    id: "plantGrowth-11",
+    type: "quest",
+    position: { x: -420, y: 495 },
+    data: {
+      title:
+        "[Speed Breeding Cabinet](https://www.biorxiv.org/content/10.1101/369512v1.full.pdf)",
+      byLine: "(Ft. John Innes Institute)",
+    },
+  },
+  {
+    id: "plantGrowth-12",
+    type: "quest",
+    position: { x: -310, y: 550 },
+    data: { title: "Repressive Gene Knockout", byLine: "(w/ CRISPR)" },
+  },
+  {
+    id: "plantGrowth-13",
+    type: "quest",
+    position: { x: -170, y: 495 },
+    data: { title: "Polyploiding" },
+  },
+];
+
+const questNodesDeepDivesFoodEnvJustice = [
   // // --- conspeicious consumption
   // {
   //   id: "consciousConsumption-00",
@@ -710,7 +799,9 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       byLine: "How to Leverage Federal Laws/Regulations",
     },
   },
-  // --- fermentation production
+];
+
+const questNodesDeepDivesFermentation = [
   {
     id: "bioFerm-00",
     type: "section",
@@ -786,6 +877,9 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
       byLine: "Turning 55 Gallon Oil Drums into Bio-Reactors",
     },
   },
+];
+
+const questNodesDeepDivesBioProspecting = [
   // --- bioProspecting
   // {
   //   id: "bioProspecting-00",
@@ -828,7 +922,72 @@ export const questNodes: (Node & TNodeDataExtras)[] = [
   //     byLine: "TODO",
   //   },
   // },
-  // --- methane
+];
+
+const questNodesDeepDivesSequestration = [
+  {
+    id: "sequestration-00",
+    type: "section",
+    position: { x: 320, y: 410 },
+    data: {
+      title: "Sequestration",
+      byLine: "Atmoshperic CO2, CH4, N2O Removal",
+    },
+  },
+];
+
+// ===============================
+// NODES
+// ===============================
+export const questNodes: (Node & TNodeDataExtras)[] = [
+  // --- welcome content/ideas
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 0, offsetY: -200 },
+    questNodesWelcome
+  ),
+  // --- get started
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 0, offsetY: -270 },
+    questNodesGetStarted
+  ),
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 250, offsetY: -210 },
+    questNodesGetStartedBuildLab
+  ),
+  // --- start experimenting
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 0, offsetY: 120 },
+    questNodesIntroExperiments
+  ),
+  // --- deep dives
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 0, offsetY: 160 },
+    questNodesDeepDives
+  ),
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 0, offsetY: 160 },
+    questNodesDeepDivesBotanicalPharm
+  ),
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 0, offsetY: 160 },
+    questNodesDeepDivesPlantAnatonmyEng
+  ),
+  ...relativeNodeGroupPositioniner(
+    { offsetX: -50, offsetY: 160 },
+    questNodesDeepDivesFoodEnvJustice
+  ),
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 40, offsetY: 160 },
+    questNodesDeepDivesFermentation
+  ),
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 0, offsetY: 160 },
+    questNodesDeepDivesBioProspecting
+  ),
+  ...relativeNodeGroupPositioniner(
+    { offsetX: 0, offsetY: 160 },
+    questNodesDeepDivesSequestration
+  ),
 ];
 
 // ===============================
@@ -961,60 +1120,92 @@ export const questEdges: Edge[] = [
   // --- start
   {
     source: "start-00",
+    target: "resource-00",
+  },
+  {
+    source: "start-00",
     target: "resource-01",
-    className: "ugc-edge",
   },
   {
     source: "resource-00",
-    target: "resource-01",
+    target: "start-20",
   },
   {
-    source: "start-20",
-    target: "hardware-00",
+    source: "resource-01",
+    target: "start-20",
   },
   {
-    source: "resource-02",
-    target: "start-02",
-  },
-  {
-    source: "resource-03",
-    target: "resource-01",
+    source: "resource-00",
+    target: "start-10",
+    className: "ugc-edge",
   },
   {
     source: "resource-01",
     target: "start-10",
     className: "ugc-edge",
   },
+  // --- start: community labs
   {
     source: "start-10",
-    target: "start-02",
+    target: "start-11",
+  },
+  {
+    source: "start-11",
+    target: "intro-00",
+  },
+  // --- start: lab
+  {
+    source: "start-20",
+    target: "start-21",
+  },
+  {
+    source: "start-20",
+    target: "start-22",
+  },
+  {
+    source: "start-20",
+    target: "start-23",
+  },
+  // --- ddeep dives
+  {
+    source: "intro-20",
+    target: "hardware-00",
+  },
+  {
+    source: "intro-00",
+    target: "intro-10",
     className: "ugc-edge",
   },
   {
-    source: "resource-01",
-    target: "start-20",
+    source: "intro-10",
+    target: "intro-02",
     className: "ugc-edge",
   },
   {
-    source: "resource-01",
-    target: "start-30",
+    source: "intro-00",
+    target: "intro-20",
+    className: "ugc-edge",
+  },
+  {
+    source: "intro-00",
+    target: "intro-30",
     className: "ugc-edge",
   },
   {
     source: "hardware-00",
-    target: "start-01",
+    target: "intro-01",
     // className: "ugc-edge",
   },
   {
-    source: "start-01",
+    source: "intro-01",
     target: "communityIntro-00",
   },
   {
-    source: "start-02",
-    target: "start-03",
+    source: "intro-02",
+    target: "intro-03",
   },
   {
-    source: "start-30",
+    source: "intro-30",
     target: "hardware-01",
   },
   {
@@ -1027,7 +1218,7 @@ export const questEdges: Edge[] = [
   },
   {
     source: "resource-04",
-    target: "start-01",
+    target: "intro-01",
     // className: "ugc-edge",
   },
   {
@@ -1041,7 +1232,7 @@ export const questEdges: Edge[] = [
     className: "ugc-edge--dashed",
   },
   {
-    source: "start-03",
+    source: "intro-03",
     target: "communityIntro-00",
   },
   // --- start ->>>> section headers
@@ -1258,7 +1449,7 @@ export const questEdges: Edge[] = [
   //   target: "bioProspecting-20",
   // },
   // {
-  //   source: "bioProspecting-00",
+  //   source: start-00",
   //   target: "resource-07",
   // },
   {
@@ -1270,6 +1461,11 @@ export const questEdges: Edge[] = [
     source: "resource-07",
     target: "bioFerm-00",
     // className: "ugc-edge--dashed",
+  },
+  // sequestration
+  {
+    source: "communityIntro-00",
+    target: "sequestration-00",
   },
 ].map((e) => ({
   ...e,

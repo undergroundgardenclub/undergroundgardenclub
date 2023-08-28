@@ -1,13 +1,20 @@
 import styled from "styled-components";
 import { ugcTheme } from "./theme";
 
-type TStyledButtonProps = { variant?: TStyledButtonVariant };
+type TStyledButtonProps = {
+  inverted?: boolean;
+  variant?: TStyledButtonVariant;
+};
 type TStyledButtonVariant = "green" | "blue" | "white" | "transparent";
 
 export const StyledButton = styled.button<TStyledButtonProps>`
   background: ${(props) => {
     if (props.variant === "green") return ugcTheme.colors.green[500];
-    if (props.variant === "blue") return ugcTheme.colors.blue[500];
+    if (props.variant === "blue") {
+      return props.inverted === true
+        ? "transparent"
+        : ugcTheme.colors.blue[500];
+    }
     return "transparent";
   }};
   color: ${(props) => {
@@ -18,7 +25,9 @@ export const StyledButton = styled.button<TStyledButtonProps>`
   }};
   border: ${(props) => {
     if (props.variant === "green") return "none";
-    if (props.variant === "blue") return "none";
+    if (props.variant === "blue") {
+      return props.inverted === true ? "solid 2px blue" : "none";
+    }
     if (props.variant === "white") return "solid 2px white";
     return "solid 2px black";
   }};
