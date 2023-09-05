@@ -205,7 +205,6 @@ const questNodesWelcome = [
     id: "welcomePaths-51",
     type: "quest",
     position: { x: 8, y: -1053 },
-
     data: {
       title:
         "[Soil, Air, and Water Stewardship](https://mediahub.unl.edu/media/19127)",
@@ -319,6 +318,12 @@ const questNodesGetStarted = [
       title: "Intro Lab Learning/Bootcamps",
       byLine: "@ Your Nearest Community Bio-Lab",
     },
+  },
+  {
+    id: "media-00",
+    type: "radio",
+    position: { x: -23, y: -1579 },
+    data: {},
   },
 ];
 

@@ -230,7 +230,7 @@ const StyledStartNodeType = styled(StyledSectionNodeType)`
 `;
 
 // ===============================
-// BOOTCAMP NODE TYPE
+// SPECIAL NODE TYPES
 // ===============================
 
 const BootcampNodeType = (props: any) => {
@@ -249,6 +249,29 @@ const BootcampNodeType = (props: any) => {
         </ReactMarkdown>
         {/* {data.variant === "joinClub" && <ActionsJoinLearningCircle />} */}
         <ActionsBootCamps />
+      </StyledQuestNodeType>
+      <Handle type="source" position={Position.Bottom} id={id} />
+    </>
+  );
+};
+
+const RadioNodeType = (props: any) => {
+  const { data, id } = props;
+  return (
+    <>
+      <Handle type="target" position={Position.Top} id={id} />
+      <StyledQuestNodeType variant="media">
+        <iframe
+          src="https://open.spotify.com/embed/playlist/0NxybLGdBjs4AL4vv1YdIb?utm_source=generator&theme=1"
+          width="100%"
+          height="152"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          style={{ borderRadius: "0px" }}
+        />
+        <ReactMarkdown linkTarget="_blank" className="title">
+          GARDEN CLUB RADIO
+        </ReactMarkdown>
       </StyledQuestNodeType>
       <Handle type="source" position={Position.Bottom} id={id} />
     </>
@@ -395,6 +418,15 @@ const StyledQuestNodeType = styled(StyledBaseNodeType)`
         background: #d8ff85;
       `;
     }
+    if (variant && ["media"].includes(variant)) {
+      return css`
+        background: blue;
+        p {
+          color: white !important;
+          margin-top: 4px;
+        }
+      `;
+    }
     if (variant && ["hardware"].includes(variant)) {
       return css`
         background: #59ff71;
@@ -418,4 +450,5 @@ export const questsNodeTypes = {
   section: SectionNodeType,
   start: StartNodeType,
   quest: QuestNodeType,
+  radio: RadioNodeType,
 };
