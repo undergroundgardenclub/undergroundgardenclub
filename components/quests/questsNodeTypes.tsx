@@ -267,7 +267,6 @@ const RadioNodeType = (props: any) => {
           height="152"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
-          style={{ borderRadius: "0px" }}
         />
         <ReactMarkdown linkTarget="_blank" className="title">
           GARDEN CLUB RADIO

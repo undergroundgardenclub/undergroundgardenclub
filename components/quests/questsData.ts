@@ -513,7 +513,7 @@ const questNodesIntroExperiments = [
       title: "[Build Horizontal Laminar Flow Hood]()",
       byLine: "Sterilized Airflow for Workspace",
       // variant: "hardware",
-      link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
+      // link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
     },
   },
   // TODO: come up w/ experiment to exemplify this
