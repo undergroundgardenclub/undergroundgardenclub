@@ -359,7 +359,7 @@ const questNodesGetStartedBuildLab = [
   {
     id: "start-23",
     type: "quest",
-    position: { x: 210, y: -140 },
+    position: { x: 185, y: -135 },
     data: {
       title: "Minimal Reagents and Equipments",
       byLine: "Just enough for Intro Experiments",
@@ -368,7 +368,7 @@ const questNodesGetStartedBuildLab = [
   {
     id: "start-24",
     type: "quest",
-    position: { x: 180, y: -55 },
+    position: { x: 140, y: -60 },
     data: {
       title: "Accessing Biologicals & Chemicals",
       byLine:
@@ -491,11 +491,22 @@ const questNodesIntroExperiments = [
   {
     id: "hardware-02",
     type: "quest",
-    position: { x: 302, y: -78 },
+    position: { x: 302, y: -88 },
     data: {
       title:
         "[Build Smartphone Florescence Microscope](https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
       byLine: "Intro to Quantum Mechanics + Electrical Work",
+      // variant: "hardware",
+      link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
+    },
+  },
+  {
+    id: "hardware-03",
+    type: "quest",
+    position: { x: 520, y: -0 },
+    data: {
+      title: "[Build Horizontal Laminar Flow Hood]()",
+      byLine: "Sterilized Airflow for Workspace",
       // variant: "hardware",
       link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
     },
@@ -1252,6 +1263,15 @@ export const questEdges: Edge[] = [
   {
     source: "intro-02",
     target: "intro-03",
+  },
+  {
+    source: "hardware-02",
+    target: "hardware-03",
+  },
+  {
+    source: "start-22",
+    target: "hardware-03",
+    className: "ugc-edge--dashed",
   },
   {
     source: "hardware-02",
