@@ -256,21 +256,20 @@ const questNodesGetStarted = [
     },
   },
   {
-    id: "resource-00",
+    id: "hardware-01",
     type: "quest",
-    position: { x: 141, y: -364 },
+    position: { x: -280, y: -364 },
     data: {
       title:
-        "[Introductory Bio/Chem](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
-      byLine: "Lectures 1-3 @ MIT Opencourseware",
-      variant: "course",
-      link: "https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/",
+        "[GPT4 Science Tutor + Siri](https://github.com/Yue-Yang/ChatGPT-Siri)",
+      byLine: "Audio-Based AI Assistance",
+      link: "https://github.com/Yue-Yang/ChatGPT-Siri",
     },
   },
   {
     id: "resource-01",
     type: "quest",
-    position: { x: -137, y: -366 },
+    position: { x: -10, y: -366 },
     data: {
       title:
         "[Getting Up to Speed on Bio](https://www.youtube.com/playlist?list=PLUl4u3cNGP629Egng0HfgRJfXBNTPw1le)",
@@ -278,6 +277,18 @@ const questNodesGetStarted = [
         "Lectures 1-3 @ [MIT Opencourseware](https://openlearninglibrary.mit.edu/courses/course-v1:OCW+Pre-7.01+1T2020/course/)",
       variant: "course",
       link: "https://www.youtube.com/playlist?list=PLUl4u3cNGP629Egng0HfgRJfXBNTPw1le",
+    },
+  },
+  {
+    id: "resource-00",
+    type: "quest",
+    position: { x: 251, y: -364 },
+    data: {
+      title:
+        "[Introductory Bio/Chem](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/)",
+      byLine: "Lectures 1-3 @ MIT Opencourseware",
+      variant: "course",
+      link: "https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/video_galleries/lecture-videos/",
     },
   },
   // --- community lab
@@ -348,10 +359,20 @@ const questNodesGetStartedBuildLab = [
   {
     id: "start-23",
     type: "quest",
-    position: { x: 250, y: -140 },
+    position: { x: 210, y: -140 },
     data: {
-      title: "Lab Setup",
-      byLine: "Minimal Reagents and Equipments",
+      title: "Minimal Reagents and Equipments",
+      byLine: "Just enough for Intro Experiments",
+    },
+  },
+  {
+    id: "start-24",
+    type: "quest",
+    position: { x: 180, y: -55 },
+    data: {
+      title: "Accessing Biologicals & Chemicals",
+      byLine:
+        "How to Buy from [New England Bioscience](https://www.neb.com/) and [Addgene](https://www.addgene.org/)",
     },
   },
 ];
@@ -468,19 +489,9 @@ const questNodesIntroExperiments = [
     },
   },
   {
-    id: "hardware-01",
-    type: "quest",
-    position: { x: 351, y: -117 },
-    data: {
-      title: "[Siri + GPT4](https://github.com/Yue-Yang/ChatGPT-Siri)",
-      byLine: "Audio-Based AI Assistance",
-      link: "https://github.com/Yue-Yang/ChatGPT-Siri",
-    },
-  },
-  {
     id: "hardware-02",
     type: "quest",
-    position: { x: 302, y: -48 },
+    position: { x: 302, y: -78 },
     data: {
       title:
         "[Build Smartphone Florescence Microscope](https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
@@ -1137,19 +1148,23 @@ export const questEdges: Edge[] = [
   // --- start
   {
     source: "start-00",
+    target: "hardware-01",
+    className: "ugc-edge",
+  },
+  {
+    source: "start-00",
     target: "resource-00",
+    className: "ugc-edge",
   },
   {
     source: "start-00",
     target: "resource-01",
+    className: "ugc-edge",
   },
   {
-    source: "resource-00",
-    target: "start-20",
-  },
-  {
-    source: "resource-01",
-    target: "start-20",
+    source: "hardware-01",
+    target: "start-10",
+    className: "ugc-edge",
   },
   {
     source: "resource-00",
@@ -1160,6 +1175,14 @@ export const questEdges: Edge[] = [
     source: "resource-01",
     target: "start-10",
     className: "ugc-edge",
+  },
+  {
+    source: "resource-00",
+    target: "start-20",
+  },
+  {
+    source: "resource-01",
+    target: "start-20",
   },
   // --- start: community labs
   {
@@ -1182,6 +1205,10 @@ export const questEdges: Edge[] = [
   {
     source: "start-20",
     target: "start-23",
+  },
+  {
+    source: "start-23",
+    target: "start-24",
   },
   // --- ddeep dives
   {
@@ -1209,6 +1236,11 @@ export const questEdges: Edge[] = [
     className: "ugc-edge",
   },
   {
+    source: "intro-30",
+    target: "hardware-02",
+    className: "ugc-edge",
+  },
+  {
     source: "hardware-00",
     target: "intro-01",
     // className: "ugc-edge",
@@ -1220,14 +1252,6 @@ export const questEdges: Edge[] = [
   {
     source: "intro-02",
     target: "intro-03",
-  },
-  {
-    source: "intro-30",
-    target: "hardware-01",
-  },
-  {
-    source: "hardware-01",
-    target: "hardware-02",
   },
   {
     source: "hardware-02",
