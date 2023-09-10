@@ -465,7 +465,7 @@ const questNodesIntroExperiments = [
   {
     id: "intro-02",
     type: "quest",
-    position: { x: -334, y: -115 },
+    position: { x: -344, y: -95 },
     data: {
       title:
         "[Transform Bacteria to Glow Green](https://undergroundgardenclub.notion.site/BQ-01-Transforming-E-Coli-to-Have-Plasmids-Containing-GFP-1039a40e1891435289dd4426fba93e80?pvs=4)",
@@ -476,7 +476,7 @@ const questNodesIntroExperiments = [
   {
     id: "intro-03",
     type: "quest",
-    position: { x: -337, y: -42 },
+    position: { x: -347, y: -22 },
     data: {
       title:
         "[Using Bacteria as Bio-Factories](https://undergroundgardenclub.notion.site/BQ-02-Harvesting-Our-E-Coli-for-Plasmids-with-GFP-genes-38e61bf4635341049efef2e4810bd611?pvs=4)",
@@ -496,7 +496,20 @@ const questNodesIntroExperiments = [
   {
     id: "hardware-02",
     type: "quest",
-    position: { x: 302, y: -88 },
+    position: { x: 322, y: -98 },
+    data: {
+      title:
+        "[Build a Still Air Box Workspace](https://www.youtube.com/watch?v=g8pso7WOKtQ)",
+      byLine: "Cheap Semi-Sterilized Workspace",
+      // variant: "hardware",
+      link: "https://www.youtube.com/watch?v=g8pso7WOKtQ",
+    },
+  },
+  {
+    id: "hardware-03",
+    type: "quest",
+    position: { x: 310, y: -20 },
+
     data: {
       title:
         "[Build Smartphone Florescence Microscope](https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4)",
@@ -505,17 +518,17 @@ const questNodesIntroExperiments = [
       link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
     },
   },
-  {
-    id: "hardware-03",
-    type: "quest",
-    position: { x: 520, y: -0 },
-    data: {
-      title: "[Build Horizontal Laminar Flow Hood]()",
-      byLine: "Sterilized Airflow for Workspace",
-      // variant: "hardware",
-      // link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
-    },
-  },
+  // {
+  //   id: "hardware-04",
+  //   type: "quest",
+  //   position: { x: 520, y: 60 },
+  //   data: {
+  //     title: "[Build Horizontal Laminar Flow Hood]()",
+  //     byLine: "Sterilized Airflow for Workspace",
+  //     // variant: "hardware",
+  //     // link: "https://undergroundgardenclub.notion.site/TQ-01-DIY-Florescence-Microscopy-827063aa9b7f456b8764c5c2c3af3fd4?pvs=4",
+  //   },
+  // },
   // TODO: come up w/ experiment to exemplify this
   // {
   //   id: "intro-40",
@@ -1275,11 +1288,11 @@ export const questEdges: Edge[] = [
   },
   {
     source: "start-22",
-    target: "hardware-03",
+    target: "hardware-02",
     className: "ugc-edge--dashed",
   },
   {
-    source: "hardware-02",
+    source: "hardware-03",
     target: "communityIntro-00",
   },
   {
@@ -1288,12 +1301,12 @@ export const questEdges: Edge[] = [
     // className: "ugc-edge",
   },
   {
-    source: "hardware-02",
+    source: "hardware-03",
     target: "botanicalPharm-40",
     className: "ugc-edge--dashed",
   },
   {
-    source: "hardware-02",
+    source: "hardware-03",
     target: "bioFerm-02",
     className: "ugc-edge--dashed",
   },
