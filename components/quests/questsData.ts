@@ -27,7 +27,7 @@ const questNodesWelcome = [
     data: {
       title:
         "WELCOME TO THE [⚘ UNDERGROUND GARDEN CLUB ⚘](https://undergroundgarden.club)",
-      byLine: "Get In, We Have a Garden to Grow",
+      byLine: "Let's Get Growing",
       minWidth: "440px;",
     },
   },
@@ -246,10 +246,10 @@ const questNodesGetStarted = [
   {
     id: "start-00",
     type: "start",
-    position: { x: -105, y: -478 },
+    position: { x: -105, y: -488 },
     data: {
       title: "Starting Your Journey",
-      byLine: "A First Step and Setting Up",
+      byLine: "Introductory Learning and Setup",
       minWidth: "440px",
       variant: "joinClub",
     },
