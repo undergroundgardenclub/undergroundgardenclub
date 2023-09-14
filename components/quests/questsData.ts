@@ -319,12 +319,12 @@ const questNodesGetStarted = [
       byLine: "@ Your Nearest Community Bio-Lab",
     },
   },
-  {
-    id: "media-00",
-    type: "radio",
-    position: { x: -23, y: -1579 },
-    data: {},
-  },
+  // {
+  //   id: "media-00",
+  //   type: "radio",
+  //   position: { x: -23, y: -1579 },
+  //   data: {},
+  // },
 ];
 
 const questNodesGetStartedBuildLab = [
