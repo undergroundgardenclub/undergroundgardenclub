@@ -23,7 +23,7 @@ export const QuestTree = ({ quests }: { quests: TQuest[] }) => {
   useEffect(() => {
     setNodes(questNodes);
     setEdges(questEdges);
-  }, [questNodes, questEdges]);
+  }, [setNodes, setEdges]);
 
   // RENDER THE JOURNEY
   return (

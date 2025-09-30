@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { TResource } from "./types";
-import { supaClient } from "../query/supaClient";
+// import { supaClient } from "../query/supaClient";
 import { queryClient } from "../query/queryClient";
 import { omit } from "lodash";
 

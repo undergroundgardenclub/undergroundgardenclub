@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { TProject } from "./types";
-import { supaClient } from "../query/supaClient";
+// import { supaClient } from "../query/supaClient";
 import { queryClient } from "../query/queryClient";
 import { omit } from "lodash";
 
@@ -68,13 +68,13 @@ export const useProjects = () => {
 export const useProject = (projectId: number) => {
   return useQuery<TProject>({
     queryKey: ["projects", projectId],
-    queryFn: async () =>
-      supaClient
-        .from("project")
-        .select()
-        .eq("id", projectId)
-        .limit(1)
-        .then((res) => res.data?.[0]),
+    queryFn: async () => null,
+    // supaClient
+    //   .from("project")
+    //   .select()
+    //   .eq("id", projectId)
+    //   .limit(1)
+    //   .then((res) => res.data?.[0]),
     refetchInterval: 1000 * 15,
   });
 };
@@ -82,14 +82,14 @@ export const useProject = (projectId: number) => {
 // INSERT/UPDATE
 export const useProjectUpsert = () => {
   return useMutation({
-    mutationFn: async (project: Partial<TProject>) =>
-      project.id
-        ? supaClient
-            .from("project")
-            .update(omit(project, ["id"]))
-            .eq("id", project.id)
-            .select("*")
-        : supaClient.from("project").insert(project).select("*"),
+    mutationFn: async (project: Partial<TProject>) => null,
+    // project.id
+    //   ? supaClient
+    //       .from("project")
+    //       .update(omit(project, ["id"]))
+    //       .eq("id", project.id)
+    //       .select("*")
+    //   : supaClient.from("project").insert(project).select("*"),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["projects"] }), // On success, just refetch data to ensure alls up-to-date
   });
 };
@@ -107,22 +107,22 @@ export const useProjectUserRelate = () => {
       user_id: number;
       role?: string;
       relate?: boolean;
-    }) =>
-      relate !== false
-        ? supaClient
-            .from("project_user")
-            .insert({
-              project_id,
-              user_id,
-              role,
-            })
-            .select()
-        : supaClient
-            .from("project_user")
-            .delete()
-            .eq("project_id", project_id)
-            .eq("user_id", user_id)
-            .select(),
+    }) => null,
+    // relate !== false
+    //   ? supaClient
+    //       .from("project_user")
+    //       .insert({
+    //         project_id,
+    //         user_id,
+    //         role,
+    //       })
+    //       .select()
+    //   : supaClient
+    //       .from("project_user")
+    //       .delete()
+    //       .eq("project_id", project_id)
+    //       .eq("user_id", user_id)
+    //       .select(),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["projects"] }), // On success, just refetch data to ensure alls up-to-date
   });
 };

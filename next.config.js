@@ -7,10 +7,7 @@ const nextConfig = {
   },
   distDir: "dist",
   // Prefix NEXT_PUBLIC_ exposes envs by default, but we're pulling from secrets manager
-  env: {
-    SUPABASE_URL: process.env.DATABASE_SUPABASE_URL,
-    SUPABASE_ANON_KEY: process.env.DATABASE_SUPABASE_PUBLIC_KEY,
-  },
+  env: {},
   output: "export",
   reactStrictMode: true,
   trailingSlash: false,

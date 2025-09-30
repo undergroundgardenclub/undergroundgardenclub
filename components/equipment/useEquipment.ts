@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { TEquipment } from "./types";
-import { supaClient } from "../query/supaClient";
+// import { supaClient } from "../query/supaClient";
 
 // DATA (ditching external database)
 const localEquipments: TEquipment[] = [
