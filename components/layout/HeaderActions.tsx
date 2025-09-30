@@ -30,7 +30,7 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
   return (
     <StyledHeaderActions>
       <div className="header__inspo">
-        {!isQuesting && (
+        {/* {!isQuesting && (
           <StyledButton
             className="learning-btn"
             variant="blue"
@@ -38,7 +38,7 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
           >
             ⚘
           </StyledButton>
-        )}
+        )} */}
         <StyledButton
           variant={
             sidebar.viewType === "projects" && (!isMobile || !isQuesting)
@@ -68,7 +68,7 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
           BUILD YOUR LAB
         </StyledButton>
       </div>
-      <div className="header__actions">
+      {/* <div className="header__actions">
         {user?.id && (
           <StyledButtonAvatar
             variant={props.invert ? "green" : "blue"}
@@ -81,7 +81,7 @@ export const HeaderActions: React.FC<{ hide?: string[]; invert?: boolean }> = (
             )}
           </StyledButtonAvatar>
         )}
-      </div>
+      </div> */}
       {/* TODO: music player */}
     </StyledHeaderActions>
   );

@@ -40,22 +40,6 @@ export const ProjectList = () => {
         {/* <div className="resource-list__add-btn"><ProjectCreatorButton /></div> */}
       </div>
       <div className="resource-list__divider">
-        Events <hr />
-      </div>
-      <div className="resource-list__list">
-        {orderBy(resources, ["name"])
-          ?.filter((r) => r.type === "event")
-          ?.filter((p) =>
-            searchText.length === 0
-              ? true
-              : Object.values(p).map(String).join(" ").includes(searchText)
-          )
-          ?.map((resource) => (
-            <ResourcePanel key={resource.id} resource={resource} />
-          ))}
-        {/* <div className="resource-list__add-btn"><ProjectCreatorButton /></div> */}
-      </div>
-      <div className="resource-list__divider">
         Organizations <hr />
       </div>
       <div className="resource-list__list">

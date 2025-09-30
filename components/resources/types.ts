@@ -1,5 +1,5 @@
 export type TResource = {
-  id: number;
+  id?: number;
   type: string;
   name: string;
   description?: string;

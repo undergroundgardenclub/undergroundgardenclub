@@ -9,10 +9,9 @@ export type TProjectUser = {
 };
 
 export type TProject = {
-  id: number;
+  id?: number;
   name: string;
-  slug: string;
-  lead_user_id: string; // uuid from user
+  slug?: string;
   goal?: string;
   meeting_schedule?: string;
   meeting_location?: string;
