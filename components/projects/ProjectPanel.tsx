@@ -66,7 +66,6 @@ export const ProjectPanel: React.FC<{ project: TProject }> = ({ project }) => {
                 </ReactMarkdown>
               </p>
             ) : null} */}
-            {/* @ts-expect-error */}
             {project?.onboarding_doc_url?.length > 0 ? (
               <ReactMarkdown
                 linkTarget="_blank"

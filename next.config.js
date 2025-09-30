@@ -14,16 +14,6 @@ const nextConfig = {
   output: "export",
   reactStrictMode: true,
   trailingSlash: false,
-  redirects: async () => {
-    return [
-      {
-        source: "/privacy-policy",
-        destination:
-          "https://undergroundgardenclub.notion.site/Privacy-Policy-4e2d7108200d4a4cbde30c1a34229fa7?pvs=4",
-        permanent: false,
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
