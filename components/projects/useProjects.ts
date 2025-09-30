@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { TProject } from "./types";
 import { supaClient } from "../query/supaClient";
 import { queryClient } from "../query/queryClient";
@@ -58,29 +58,31 @@ const localProjects: TProject[] = [
 
 // FETCHES
 export const useProjects = () => {
-  return useQuery<TProject[]>(["projects"], () => localProjects, {
+  return useQuery<TProject[]>({
+    queryKey: ["projects"],
+    queryFn: () => localProjects,
     refetchInterval: 1000 * 15,
   });
 };
 
 export const useProject = (projectId: number) => {
-  return useQuery<TProject>(
-    ["projects", projectId],
-    async () =>
+  return useQuery<TProject>({
+    queryKey: ["projects", projectId],
+    queryFn: async () =>
       supaClient
         .from("project")
         .select()
         .eq("id", projectId)
         .limit(1)
         .then((res) => res.data?.[0]),
-    { refetchInterval: 1000 * 15 }
-  );
+    refetchInterval: 1000 * 15,
+  });
 };
 
 // INSERT/UPDATE
 export const useProjectUpsert = () => {
-  return useMutation(
-    async (project: Partial<TProject>) =>
+  return useMutation({
+    mutationFn: async (project: Partial<TProject>) =>
       project.id
         ? supaClient
             .from("project")
@@ -88,16 +90,14 @@ export const useProjectUpsert = () => {
             .eq("id", project.id)
             .select("*")
         : supaClient.from("project").insert(project).select("*"),
-    {
-      onSuccess: () => queryClient.invalidateQueries(["projects"]), // On success, just refetch data to ensure alls up-to-date
-    }
-  );
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["projects"] }), // On success, just refetch data to ensure alls up-to-date
+  });
 };
 
 // USER RELATES/UNRELATES
 export const useProjectUserRelate = () => {
-  return useMutation(
-    async ({
+  return useMutation({
+    mutationFn: async ({
       project_id,
       user_id,
       role,
@@ -123,8 +123,6 @@ export const useProjectUserRelate = () => {
             .eq("project_id", project_id)
             .eq("user_id", user_id)
             .select(),
-    {
-      onSuccess: () => queryClient.invalidateQueries(["projects"]), // On success, just refetch data to ensure alls up-to-date
-    }
-  );
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["projects"] }), // On success, just refetch data to ensure alls up-to-date
+  });
 };

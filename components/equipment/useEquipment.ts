@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { TEquipment } from "./types";
 import { supaClient } from "../query/supaClient";
 
@@ -105,7 +105,9 @@ const localEquipments: TEquipment[] = [
 
 // FETCHES
 export const useEquipments = () => {
-  return useQuery<TEquipment[]>(["equipments"], () => localEquipments, {
+  return useQuery<TEquipment[]>({
+    queryKey: ["equipments"],
+    queryFn: () => localEquipments,
     refetchInterval: 1000 * 15,
   });
 };

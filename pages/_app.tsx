@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import { QueryClientProvider } from "react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { useStore } from "zustand";
 import { queryClient } from "../components/query/queryClient";
 import "reactflow/dist/style.css";

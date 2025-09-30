@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { TResource } from "./types";
 import { supaClient } from "../query/supaClient";
 import { queryClient } from "../query/queryClient";
@@ -58,7 +58,9 @@ const localResources: TResource[] = [
 
 // FETCHES
 export const useResources = () => {
-  return useQuery<TResource[]>(["resources"], () => localResources, {
+  return useQuery<TResource[]>({
+    queryKey: ["resources"],
+    queryFn: () => localResources,
     refetchInterval: 1000 * 15,
   });
 };
